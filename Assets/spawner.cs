@@ -3,12 +3,13 @@ using System.Collections;
 
 public class spawner : MonoBehaviour {
 
-    public Transform spawnLocation;
-    public GameObject whatToSpawnPrefab;
-    public GameObject whatToSpawnClone;
-    public GameObject Tunnel;
+    public Transform spawnLocation; //spawnLocation is the Transform of the second chunk
+    public GameObject whatToSpawnPrefab; // This is the first chunk which will always remain in game in order to instantiate copies. *could simply be removed and replaced by Tunnel
+    public GameObject whatToSpawnClone; // This acts as a reference to the most recent game object to be instantiated.
+    public GameObject Tunnel; // This is the first chunk which will always remain in game in order to instantiate copies.
     public GameObject player;
-    private bool destroy = false;
+    private bool destroy = false; // This boolean is used to prevent the first Tunnel chunk from being destroyed.
+    // The Tunnel# objects reference the the 10 chunks being "recycled"
     public GameObject Tunnel1;
     public GameObject Tunnel2;
     public GameObject Tunnel3;
@@ -19,12 +20,12 @@ public class spawner : MonoBehaviour {
     public GameObject Tunnel8;
     public GameObject Tunnel9;
     public GameObject Tunnel10;
-    private Vector3 needPos;
+    private Vector3 needPos; // Represents the point the player must cross in order to destroy the previous chunk and instantiating the next chunk
     private int count;
 
     void Start()
     {
-        needPos = spawnLocation.position;
+        needPos = spawnLocation.position; 
         count = 2;
     }
 
@@ -81,7 +82,7 @@ public class spawner : MonoBehaviour {
         
         needPos.z = needPos.z - 1001.664f;
 
-        whatToSpawnClone = Instantiate(whatToSpawnPrefab, needPos, Quaternion.Euler(0, 90, 0)) as GameObject;
+        whatToSpawnClone = Instantiate(whatToSpawnPrefab, needPos, Quaternion.Euler(0, 90, 0)) as GameObject; //
         switch (count) {
             case 1:
                 Tunnel10 = whatToSpawnClone;
