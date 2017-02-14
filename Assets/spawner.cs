@@ -78,11 +78,8 @@ public class spawner : MonoBehaviour {
 
     void spawnObject()
     {
-        //spawnLocation.transform.position = spawnLocation.transform.postion.z - 52.75;
-        //needPos = spawnLocation.position;
+        
         needPos.z = needPos.z - 1001.664f;
-
-        //whatToSpawnClone.gameObject.SetActive(false);
 
         whatToSpawnClone = Instantiate(whatToSpawnPrefab, needPos, Quaternion.Euler(0, 90, 0)) as GameObject;
         switch (count) {
@@ -129,6 +126,5 @@ public class spawner : MonoBehaviour {
         }
         needPos.z = needPos.z + 890.368f;
 
-        //spawnLocation.transform.position = needPos;
     }
 }
