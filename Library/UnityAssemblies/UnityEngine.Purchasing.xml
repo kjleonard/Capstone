@@ -14,6 +14,11 @@
         <para>The products built so far.</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.Purchasing.ConfigurationBuilder.useCloudCatalog">
+      <summary>
+        <para>If set Unity IAP will retrieve your product catalog from Unity cloud services, allowing you to change your catalog dynamically without updating your App.</para>
+      </summary>
+    </member>
     <member name="M:UnityEngine.Purchasing.ConfigurationBuilder.AddProduct(System.String,UnityEngine.Purchasing.ProductType)">
       <summary>
         <para>Add a product with a Unity IAP ID, type and optional set of store-specific IDs.</para>
@@ -167,7 +172,7 @@
     </member>
     <member name="?:UnityEngine.Purchasing.Extension.IStore">
       <summary>
-        <para>The public interface of an underlying store system (e.g. Google Play or Apple App Store) typically exposed to Unity IAP extending its in app purchasing platform support.</para>
+        <para>The public interface of an underlying store system (e.g. Google Play or Apple App Store) typically exposed to Unity IAP extending its in-app purchasing platform support.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Purchasing.Extension.IStore.FinishTransaction(UnityEngine.Purchasing.ProductDefinition,System.String)">
@@ -206,6 +211,11 @@
         <para>Gets the item with local identifier.</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.Purchasing.Extension.IStoreCallback.useTransactionLog">
+      <summary>
+        <para>Toggle use of Unity IAP's transaction log.</para>
+      </summary>
+    </member>
     <member name="M:UnityEngine.Purchasing.Extension.IStoreCallback.OnProductsRetrieved(System.Collections.Generic.List`1&lt;UnityEngine.Purchasing.Extension.ProductDescription&gt;)">
       <summary>
         <para>Complete setup by providing a list of available products, complete with metadata and any associated purchase receipts and transaction IDs.</para>
@@ -239,7 +249,7 @@
     </member>
     <member name="T:UnityEngine.Purchasing.Extension.ProductDescription">
       <summary>
-        <para>A common format store subsystems use to describe available products.</para>
+        <para>A common format which store subsystems use to describe available products.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Purchasing.Extension.ProductDescription.metadata">
@@ -262,6 +272,11 @@
         <para>The purchase transaction ID, if owned. Otherwise null.</para>
       </summary>
     </member>
+    <member name="F:UnityEngine.Purchasing.Extension.ProductDescription.type">
+      <summary>
+        <para>The ProductType.</para>
+      </summary>
+    </member>
     <member name="M:UnityEngine.Purchasing.Extension.ProductDescription.#ctor(System.String,UnityEngine.Purchasing.ProductMetadata,System.String,System.String)">
       <summary>
         <para>Create a ProductDescription.</para>
@@ -270,6 +285,7 @@
       <param name="metadata">Localized metadata retrieved from the Store.</param>
       <param name="receipt">A purchase receipt, if owned. Otherwise null.</param>
       <param name="transactionId">The purchase transaction ID, if owned. Otherwise null.</param>
+      <param name="type">The product type (optional for products queried by Unity IAP).</param>
     </member>
     <member name="M:UnityEngine.Purchasing.Extension.ProductDescription.#ctor(System.String,UnityEngine.Purchasing.ProductMetadata)">
       <summary>
@@ -279,6 +295,17 @@
       <param name="metadata">Localized metadata retrieved from the Store.</param>
       <param name="receipt">A purchase receipt, if owned. Otherwise null.</param>
       <param name="transactionId">The purchase transaction ID, if owned. Otherwise null.</param>
+      <param name="type">The product type (optional for products queried by Unity IAP).</param>
+    </member>
+    <member name="M:UnityEngine.Purchasing.Extension.ProductDescription.#ctor(System.String,UnityEngine.Purchasing.ProductMetadata,System.String,System.String,UnityEngine.Purchasing.ProductType)">
+      <summary>
+        <para>Create a ProductDescription.</para>
+      </summary>
+      <param name="id">The store-specific ID.</param>
+      <param name="metadata">Localized metadata retrieved from the Store.</param>
+      <param name="receipt">A purchase receipt, if owned. Otherwise null.</param>
+      <param name="transactionId">The purchase transaction ID, if owned. Otherwise null.</param>
+      <param name="type">The product type (optional for products queried by Unity IAP).</param>
     </member>
     <member name="T:UnityEngine.Purchasing.Extension.PurchaseFailureDescription">
       <summary>
@@ -313,9 +340,16 @@
         <para>Maps store-specific product identifiers to one or more store names.</para>
       </summary>
     </member>
+    <member name="M:UnityEngine.Purchasing.IDs.Add(System.String,System.Object[])">
+      <summary>
+        <para>Add a product ID which is supported by a list of store platform names.</para>
+      </summary>
+      <param name="id">Platform specific Product ID.</param>
+      <param name="stores">Array of platform names using this Product ID.</param>
+    </member>
     <member name="M:UnityEngine.Purchasing.IDs.Add(System.String,System.String[])">
       <summary>
-        <para>Add a product id which is supported by a list of store platform names.</para>
+        <para>Add a product ID which is supported by a list of store platform names.</para>
       </summary>
       <param name="id">Platform specific Product ID.</param>
       <param name="stores">Array of platform names using this Product ID.</param>
@@ -330,7 +364,7 @@
         <para>Enumerator for IDs.</para>
       </summary>
       <returns>
-        <para>The first string of the pair is the store-specific product id. The second is one of the mapped store names.</para>
+        <para>The first string of the pair is the store-specific product ID. The second is one of the mapped store names.</para>
       </returns>
     </member>
     <member name="?:UnityEngine.Purchasing.IExtensionProvider">
@@ -363,7 +397,7 @@
     </member>
     <member name="F:UnityEngine.Purchasing.InitializationFailureReason.PurchasingUnavailable">
       <summary>
-        <para>In App Purchases disabled in device settings.</para>
+        <para>In-App Purchases disabled in device settings.</para>
       </summary>
     </member>
     <member name="?:UnityEngine.Purchasing.IStoreController">
@@ -381,6 +415,14 @@
         <para>Confirm a pending purchase.</para>
       </summary>
       <param name="product">The product to confirm the conclusion of its purchase transaction.</param>
+    </member>
+    <member name="M:UnityEngine.Purchasing.IStoreController.FetchAdditionalProducts(System.Collections.Generic.HashSet`1&lt;UnityEngine.Purchasing.ProductDefinition&gt;,System.Action,System.Action`1&lt;UnityEngine.Purchasing.InitializationFailureReason&gt;)">
+      <summary>
+        <para>This method may be used to fetch additional products for purchasing, or to refresh metadata on existing products.</para>
+      </summary>
+      <param name="products">The additional products to fetch or existing products to refresh.</param>
+      <param name="successCallback">Callback invoked when products are retrieved successfully.</param>
+      <param name="failCallback">Callback invoked when the fetch fails for unrecoverable reasons.</param>
     </member>
     <member name="M:UnityEngine.Purchasing.IStoreController.InitiatePurchase(UnityEngine.Purchasing.Product,System.String)">
       <summary>
@@ -455,7 +497,7 @@
     </member>
     <member name="T:UnityEngine.Purchasing.Product">
       <summary>
-        <para>Represents a product that may be purchased as an In App Purchase.</para>
+        <para>Represents a product that may be purchased as an In-App Purchase.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Purchasing.Product.availableToPurchase">
@@ -488,14 +530,33 @@
         <para>A unique identifier for this product's transaction, if available. Otherwise null.</para>
       </summary>
     </member>
+    <member name="M:UnityEngine.Purchasing.Product.Equals(System.Object)">
+      <summary>
+        <para>Equality defined for use in collections.</para>
+      </summary>
+      <param name="obj"></param>
+    </member>
+    <member name="M:UnityEngine.Purchasing.Product.GetHashCode">
+      <summary>
+        <para>GetHashCode defined for use in collections.</para>
+      </summary>
+      <returns>
+        <para>Hashcode.</para>
+      </returns>
+    </member>
     <member name="T:UnityEngine.Purchasing.ProductCollection">
       <summary>
-        <para>Provides helper methods to retrieve products by id.</para>
+        <para>Provides helper methods to retrieve products by ID.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Purchasing.ProductCollection.all">
       <summary>
         <para>All products.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Purchasing.ProductCollection.set">
+      <summary>
+        <para>The set of products.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Purchasing.ProductCollection.WithID(System.String)">
@@ -538,10 +599,17 @@
     </member>
     <member name="M:UnityEngine.Purchasing.ProductDefinition.#ctor(System.String,System.String,UnityEngine.Purchasing.ProductType)">
       <summary>
-        <para>Create a ProductDefinition.</para>
+        <para>Create a ProductDefinition with different Store-independent ID and Store-specific ID. Use this when you need to two IDs to be different.</para>
       </summary>
       <param name="id">Store-independent ID.</param>
       <param name="storeSpecificId">Store-specific ID.</param>
+      <param name="type">Product type.</param>
+    </member>
+    <member name="M:UnityEngine.Purchasing.ProductDefinition.#ctor(System.String,UnityEngine.Purchasing.ProductType)">
+      <summary>
+        <para>Create a ProductDefinition where the Store-independent ID is the same as the store-specific ID. Use this when you don't need the two IDs to be different.</para>
+      </summary>
+      <param name="id">Store-independent ID and store-specific ID.</param>
       <param name="type">Product type.</param>
     </member>
     <member name="M:UnityEngine.Purchasing.ProductDefinition.Equals(System.Object)">
@@ -719,6 +787,11 @@
     <member name="T:UnityEngine.Purchasing.UnityPurchasing">
       <summary>
         <para>Entry point for Applications using Unity IAP.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Purchasing.UnityPurchasing.ClearTransactionLog">
+      <summary>
+        <para>Clears Unity IAP's internal transaction log.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Purchasing.UnityPurchasing.Initialize(UnityEngine.Purchasing.IStoreListener,UnityEngine.Purchasing.ConfigurationBuilder)">
