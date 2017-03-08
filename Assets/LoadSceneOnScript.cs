@@ -8,4 +8,9 @@ public class LoadSceneOnScript : MonoBehaviour {
     {
         SceneManager.LoadScene(sceneIndex);
     }
+
+    public void EndSimulation()
+    {
+        Application.Quit();
+    }
 }
