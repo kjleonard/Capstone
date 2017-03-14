@@ -146,6 +146,7 @@
      <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Scripts\TiltWindow.cs" />
      <Compile Include="Assets\SmoothFollow.cs" />
+     <Compile Include="Assets\SpawnObsticle.cs" />
      <Compile Include="Assets\spawner.cs" />
      <None Include="Assets\Prefabs\Infinite\Code\LibNoise\COPYING.txt" />
      <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
