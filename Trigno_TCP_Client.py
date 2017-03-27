@@ -4,44 +4,45 @@ import socket
 import struct
 
 TCP_IP = '127.0.0.1'
-TCP_PORT = 50040
-BUFFER_SIZE = 4096
+
+###Command Interface###
+
+TCP_PORT_CI = 50040
+BUFFER_SIZE_CI = 4096
 MESSAGE = ""
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect((TCP_IP, TCP_PORT))
+s_ci = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s_ci.connect((TCP_IP, TCP_PORT_CI))
 
-data = s.recv(BUFFER_SIZE)
+data = s_ci.recv(BUFFER_SIZE_CI)
 print "received data:", data
 
+#Commands server to send the bytes for floats in big endian.
 MESSAGE = "ENDIAN BIG\r\n\r\n"
-s.send(MESSAGE)
-data = s.recv(BUFFER_SIZE)
+s_ci.send(MESSAGE)
+data = s_ci.recv(BUFFER_SIZE_CI)
 print "received data:", data
 
-#s.close()
-#quit()
-
-BUFFER_SIZE = 24
-
+#Begins data collection on ports 50041-50044
 MESSAGE = "START\r\n\r\n"
-s.send(MESSAGE)
-data = s.recv(BUFFER_SIZE)
+s_ci.send(MESSAGE)
+data = s_ci.recv(BUFFER_SIZE_CI)
 print "received data:", data
 
 
+###Acceleromter###
 
-#Acceleromter
 TCP_PORT_ACC = 50042
+BUFFER_SIZE_ACC = 24
 
 s_acc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s_acc.connect((TCP_IP, TCP_PORT_ACC))
 
 while True:
-	data = s_acc.recv(BUFFER_SIZE)
+	data = s_acc.recv(BUFFER_SIZE_ACC)
 	data.replace(" ", "")
 	data1 = data[:4]
-	print len(data), "\t", data
+	print len(data), "\t", data #Prints the length and data in byte format, could be removed/ignored for data collection
 	if len(data1) == 4:
 		print "data1: ", struct.unpack('>f',data1)
 	data2 = data[4:-16]
