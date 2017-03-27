@@ -61,4 +61,3 @@ while True:
 	if len(data6) == 4:
 		print "data6: ", struct.unpack('>f',data6)
 
-s.close()
