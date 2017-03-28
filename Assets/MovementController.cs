@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System;
 using System.Threading;
+using System.IO;
+using System.Net.Sockets;
 using System.Collections;
 
 public class MovementController : MonoBehaviour {
@@ -18,7 +20,7 @@ public class MovementController : MonoBehaviour {
         {
             velocity = Vector3.zero;
             dir = transform.forward;
-            speed = 1;
+            speed = PlayerPrefs.GetInt("speed");
             
             //Creates Child Thread to retrieve Postional Information
             ThreadStart childref_getXYZ = new ThreadStart(getXYZ);
