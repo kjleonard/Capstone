@@ -68,16 +68,16 @@ public class MovementController : MonoBehaviour {
             }*/
 
             port = 50042;
-            TcpClient accelerometerPort = new TcpClient (hostname, port);
+            TcpClient accelerometerPort = new TcpClient ("127.0.0.1", port);
             NetworkStream accStream = accelerometerPort.GetStream ();
             bool running = true;
             float[] values = new float[48];
-            commandWrite.WriteLineAsync("START\r\n");
-            command = commandRead.ReadLineAsync ();
+            commandWrite.WriteLine("START\r\n");
+            command = commandRead.ReadLine ();
             if (command == "OK") {
                 float leftX, leftY, leftZ, rightX, rightY, rightZ;
                 while (running) {
-                    accStream.ReadAsync (data, 0, 192);
+                    accStream.Read (data, 0, 192);
                     leftX = System.BitConverter.ToSingle (data, 0);
                     leftY = System.BitConverter.ToSingle (data, 4);
                     leftZ = System.BitConverter.ToSingle (data, 8);
