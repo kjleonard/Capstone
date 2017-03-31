@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.VR;
-using System.Collections.Generic;
 
 public class LoadSceneOnScript : MonoBehaviour {
 
@@ -23,28 +21,25 @@ public class LoadSceneOnScript : MonoBehaviour {
         SceneManager.LoadScene(sceneIndex);
     }
 
-    /// <summary>
-    /// Saves preferences when exiting the start screen so that they can be utilized in the simulation
-    /// </summary>
-    public void SavePlayerPrefs()
-    {
-        //PlayerPrefs.SetInt("Speed", selSpeed.GetComponent<Dropdown>.value);
-        //int durationIndex = selDuration.GetComponent<Dropdown>.value;
-        //List<Dropdown.OptionData> durationOptions = selDuration.GetComponent<Dropdown>().options;
-        //PlayerPrefs.SetString("Duration", durationOptions[durationIndex].text);
-        //PlayerPrefs.SetInt("ObstacleType", selObstacleType.GetComponent<Dropdown>.value);
-        //PlayerPrefs.SetInt("ObstacleFrequency", selObstacleFrequency.GetComponent<Dropdown>.value);
-    }
+    //void OnEnable()
+    //{
+    //    //Tell our 'OnLevelFinishedLoading' function to start listening for a scene change as soon as this script is enabled.
+    //    SceneManager.sceneLoaded += OnLevelFinishedLoading;
+    //}
 
-    public void setPref(Object x, int y)
-    {
-        PlayerPrefs.SetInt(x.name, y);
-    }
+    //void OnDisable()
+    //{
+    //    //Tell our 'OnLevelFinishedLoading' function to stop listening for a scene change as soon as this script is disabled. Remember to always have an unsubscription for every delegate you subscribe to!
+    //    SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+    //}
 
-    public int getPref(Object x)
-    {
-        return PlayerPrefs.GetInt(x.name);
-    }
+    //void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+    //{
+    //    if (scene.buildIndex == 1)
+    //    {
+    //        Dropdowns.getValue(GameObject.Find("selSpeed").GetComponent<Dropdown>());
+    //    }
+    //}
 
     public void EndSimulation()
     {
