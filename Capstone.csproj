@@ -178,7 +178,7 @@
     <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\SmoothFollow.cs" />
-    <Compile Include="Assets\SpawnObsticle.cs" />
+    <Compile Include="Assets\SpawnObstacle.cs" />
     <Compile Include="Assets\spawner.cs" />
   </ItemGroup>
   <ItemGroup>

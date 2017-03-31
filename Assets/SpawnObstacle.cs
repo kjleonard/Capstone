@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnObsticle : MonoBehaviour {
+public class SpawnObstacle : MonoBehaviour {
 
 	private Transform spawnLocation;
 	public GameObject playerPos;
-	public GameObject obsticle;
+	public GameObject obstacle;
 
 
 	private float NextPosToGenerate = 50f;
@@ -27,7 +27,7 @@ public class SpawnObsticle : MonoBehaviour {
 			z = playerPos.transform.position.z - 40f;
 			NextPosToGenerate = z;
 			Object.Destroy (generatedCube);
-			generatedCube = Instantiate(obsticle, new Vector3(x,y,z), Quaternion.Euler(0, 0, 0)) as GameObject;
+			generatedCube = Instantiate(obstacle, new Vector3(x,y,z), Quaternion.Euler(0, 0, 0)) as GameObject;
 
 		} else {
 
