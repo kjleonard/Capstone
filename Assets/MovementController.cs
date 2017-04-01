@@ -3,8 +3,6 @@ using System;
 using System.Threading;
 using System.IO;
 using System.Net.Sockets;
-using System.Collections;
-using System.Timers;
 
 public class MovementController : MonoBehaviour
 {
@@ -19,17 +17,6 @@ public class MovementController : MonoBehaviour
     public float rightX;
     public float rightY;
     public float rightZ;
-        void Start()
-        {
-            velocity = Vector3.zero;
-            dir = transform.forward;
-            speed = PlayerPrefs.GetInt("speed");
-            
-            //Creates Child Thread to retrieve Postional Information
-            ThreadStart childref_getXYZ = new ThreadStart(getXYZ);
-            Thread childThread_getXYZ = new Thread(childref_getXYZ);
-            childThread_getXYZ.Start();
-        }
 
     void Start()
     {
@@ -63,7 +50,7 @@ public class MovementController : MonoBehaviour
     {
 
         if (Input.GetKeyDown("w"))
-        { 
+        {
             speed += 15f;
         }
         else if (Input.GetKeyDown("s"))
@@ -77,14 +64,14 @@ public class MovementController : MonoBehaviour
         }
 
 
-            velocity = Vector3.zero;
+        velocity = Vector3.zero;
         velocity = dir / dir.magnitude * Time.deltaTime * speed * (float)(Math.Log(Convert.ToInt32(speed), 25)) / 35; //calculate velocity
         transform.position += velocity; //move character forward
 
-        }
-    
-        void getXYZ ()
-        {
+    }
+
+    void getXYZ()
+    {
         //here is where the TCP Client will run to communicate with the Control Application
         Int32 port = 50040;		//command interface port
         TcpClient client = new TcpClient("127.0.0.1", port);
@@ -126,29 +113,10 @@ public class MovementController : MonoBehaviour
             Debug.Log(String.Format("rightY = {0}", rightY));
             Debug.Log(String.Format("rightZ = {0}", rightZ));*/
             //Thread.Sleep(50);
-        }*/
-
-        port = 50042;
-        TcpClient accelerometerPort = new TcpClient("127.0.0.1", port);
-        NetworkStream accStream = accelerometerPort.GetStream();
-        bool running = true;
-        float[] values = new float[48];
-        commandWrite.WriteLine("START\r\n");
-        command = commandRead.ReadLine();
-        if (command == "OK")
-        {
-            float leftX, leftY, leftZ, rightX, rightY, rightZ;
-            while (running)
-            {
-                accStream.Read(data, 0, 192);
-                leftX = System.BitConverter.ToSingle(data, 0);
-                leftY = System.BitConverter.ToSingle(data, 4);
-                leftZ = System.BitConverter.ToSingle(data, 8);
-                rightX = System.BitConverter.ToSingle(data, 12);
-                rightY = System.BitConverter.ToSingle(data, 16);
-                rightZ = System.BitConverter.ToSingle(data, 20);
-            }
         }
+
+        float[] values = new float[48];
+
         Debug.Log("Reached STOP");
         commandWrite.WriteLine("STOP\r\n");
     }
