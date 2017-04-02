@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class FeetScript : MonoBehaviour {
@@ -59,9 +60,13 @@ public class FeetScript : MonoBehaviour {
         leftFoot.transform.position.Set(-.96f, playerMovement.leftY - 11.1f, 2.8f);
         //rightFoot.transform.position.Set(.6f, playerMovement.rightY - 12f, 2.8f);
 
-        if ( leftFoot.transform.position.y + playerMovement.leftY > floor && leftFoot.transform.position.y + playerMovement.leftY < ceiling)
+        if ( Math.Abs(playerMovement.leftY) > 1.0f
+            && leftFoot.transform.position.y + playerMovement.leftY > floor 
+            && leftFoot.transform.position.y + playerMovement.leftY < ceiling)
             leftFoot.transform.Translate(0, playerMovement.leftY, 0);
-        if (rightFoot.transform.position.y + playerMovement.rightY > floor && rightFoot.transform.position.y + playerMovement.rightY < ceiling)
+        if ( Math.Abs(playerMovement.leftY) > 1.0f
+            && rightFoot.transform.position.y + playerMovement.rightY > floor
+            && rightFoot.transform.position.y + playerMovement.rightY < ceiling)
             rightFoot.transform.Translate(0, playerMovement.rightY, 0);
 
         Debug.Log(string.Format("leftfoot position = {0}", leftFoot.transform.position));
