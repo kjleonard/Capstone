@@ -11,6 +11,7 @@ public class MovementController : MonoBehaviour
     private float speed;
     private Vector3 dir;
 
+
     public float leftX;
     public float leftY;
     public float leftZ;
@@ -29,6 +30,7 @@ public class MovementController : MonoBehaviour
         t.Interval = durationPref * 60000;
         t.Elapsed += OnTimedEvent;
         t.AutoReset = false;
+
 
         //Creates Child Thread to retrieve Postional Information
         ThreadStart childref_getXYZ = new ThreadStart(getXYZ);
@@ -66,7 +68,8 @@ public class MovementController : MonoBehaviour
 
         velocity = Vector3.zero;
         velocity = dir / dir.magnitude * Time.deltaTime * speed * (float)(Math.Log(Convert.ToInt32(speed), 25)) / 35; //calculate velocity
-        transform.position += velocity; //move character forward
+        if(speed > 0)
+            transform.position += velocity; //move character forward
 
     }
 
@@ -100,6 +103,7 @@ public class MovementController : MonoBehaviour
         while (running)
         {
             accStream.Read(data, 0, data.Length);
+            
             leftX = BitConverter.ToSingle(data, 0);
             leftY = BitConverter.ToSingle(data, 4);
             leftZ = BitConverter.ToSingle(data, 8);
