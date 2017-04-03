@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Threading;
 using System.IO;
@@ -11,6 +12,7 @@ public class MovementController : MonoBehaviour
     private float speed;
     private Vector3 dir;
 
+    public Text mpm_text;
 
     public float leftX;
     public float leftY;
@@ -35,7 +37,7 @@ public class MovementController : MonoBehaviour
         //Creates Child Thread to retrieve Postional Information
         ThreadStart childref_getXYZ = new ThreadStart(getXYZ);
         Thread childThread_getXYZ = new Thread(childref_getXYZ);
-        childThread_getXYZ.Start();
+        //childThread_getXYZ.Start();
 
         t.Enabled = true;
     }
@@ -53,11 +55,11 @@ public class MovementController : MonoBehaviour
 
         if (Input.GetKeyDown("w"))
         {
-            speed += 15f;
+            speed += 5f;
         }
         else if (Input.GetKeyDown("s"))
         {
-            speed -= 15f;
+            speed -= 5f;
         }
         else if (Input.GetKeyDown(KeyCode.Escape))  // Panic button to kill simulation early
         {
@@ -65,12 +67,19 @@ public class MovementController : MonoBehaviour
             endSimulation.LoadByIndex(2);
         }
 
+        updateMPMText();
+        
 
         velocity = Vector3.zero;
         velocity = dir / dir.magnitude * Time.deltaTime * speed * (float)(Math.Log(Convert.ToInt32(speed), 25)) / 35; //calculate velocity
         if(speed > 0)
             transform.position += velocity; //move character forward
 
+    }
+
+    void updateMPMText()
+    {
+        mpm_text.text = String.Format("{0} mpm", speed/5); //speed needs to be replaced to the closest aproximation to mpm
     }
 
     void getXYZ()
