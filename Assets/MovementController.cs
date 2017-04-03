@@ -37,7 +37,7 @@ public class MovementController : MonoBehaviour
         //Creates Child Thread to retrieve Postional Information
         ThreadStart childref_getXYZ = new ThreadStart(getXYZ);
         Thread childThread_getXYZ = new Thread(childref_getXYZ);
-        //childThread_getXYZ.Start();
+        childThread_getXYZ.Start();
 
         t.Enabled = true;
     }
