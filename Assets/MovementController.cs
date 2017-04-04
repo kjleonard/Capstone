@@ -21,6 +21,9 @@ public class MovementController : MonoBehaviour
     public float rightY;
     public float rightZ;
 
+    public Boolean obstacleHit = false;
+
+
     void Start()
     {
         velocity = Vector3.zero;
@@ -28,6 +31,38 @@ public class MovementController : MonoBehaviour
         int speedPref = PlayerPrefs.GetInt("selSpeed");
         speed = speedPref * 30f;
         int durationPref = PlayerPrefs.GetInt("selDuration");
+        int obstacleFrequency = PlayerPrefs.GetInt("selObstacleFrequency");
+        int obstaclesRemaining = 0;
+
+        // To-Do: Figure out best way to accomodate for # per minute in combination with speed
+        if (obstacleFrequency == 1)
+        {   // Low - 4 per minute = 1/15s
+            obstaclesRemaining = 4 * durationPref;
+        }
+        else if (obstacleFrequency == 2)
+        {   // Medium - 6 per minute = 1/10s
+            obstaclesRemaining = 6 * durationPref;
+        }
+        else if (obstacleFrequency == 3)
+        {   // High - 10 per minute = 1/6s
+            obstaclesRemaining = 10 * durationPref;
+        }
+        PlayerPrefs.SetInt("obstacleTotal", obstaclesRemaining);
+
+        int obstacleType = PlayerPrefs.GetInt("selObstacleType");
+        // To-Do: Should we change this from a dropdown to checkboxes to accomodate randomized selection of obstacles?
+        switch (obstacleType)
+        {
+            case 0: // None
+                break;
+            case 1: // Boxes
+                break;
+            case 2: // Strings
+                break;
+            case 3: // Other
+                break;
+        }
+
         System.Timers.Timer t = new System.Timers.Timer();
         t.Interval = durationPref * 60000;
         t.Elapsed += OnTimedEvent;
