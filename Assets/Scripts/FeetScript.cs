@@ -60,16 +60,16 @@ public class FeetScript : MonoBehaviour {
         leftFoot.transform.position.Set(-.96f, playerMovement.leftY - 11.1f, 2.8f);
         //rightFoot.transform.position.Set(.6f, playerMovement.rightY - 12f, 2.8f);
 
-        if ( Math.Abs(playerMovement.leftY) > 1.0f
+        if ( Math.Abs(playerMovement.leftY) > .2f
             && leftFoot.transform.position.y + playerMovement.leftY > floor 
             && leftFoot.transform.position.y + playerMovement.leftY < ceiling)
             leftFoot.transform.Translate(0, playerMovement.leftY, 0);
-        if ( Math.Abs(playerMovement.leftY) > 1.0f
+        if ( Math.Abs(playerMovement.rightY) > .2f
             && rightFoot.transform.position.y + playerMovement.rightY > floor
             && rightFoot.transform.position.y + playerMovement.rightY < ceiling)
             rightFoot.transform.Translate(0, playerMovement.rightY, 0);
 
-        Debug.Log(string.Format("leftfoot position = {0}", leftFoot.transform.position));
-        Debug.Log(string.Format("leftfoot z position = {0}", leftFoot.transform.position.z));
+        Debug.Log(string.Format("left Y = {0}", playerMovement.leftY));
+        Debug.Log(string.Format("right Y = {0}", playerMovement.rightY));
     }
 }
