@@ -1610,6 +1610,7 @@ GameObject:
   - component: {fileID: 2027499612}
   - component: {fileID: 2027499611}
   - component: {fileID: 2027499610}
+  - component: {fileID: 2027499613}
   m_Layer: 5
   m_Name: lblAvoidedCount
   m_TagString: Untagged
@@ -1723,6 +1724,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2027499608}
+--- !u!114 &2027499613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2027499608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d357ebb958becf045b324c7f0481e08f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2094419462
 GameObject:
   m_ObjectHideFlags: 0
