@@ -64,6 +64,8 @@ public class MovementController : MonoBehaviour
         }
 
         System.Timers.Timer t = new System.Timers.Timer();
+        if (durationPref == 0)
+            durationPref = 10000;
         t.Interval = durationPref * 60000;
         t.Elapsed += OnTimedEvent;
         t.AutoReset = false;
@@ -129,15 +131,15 @@ public class MovementController : MonoBehaviour
         Byte[] data = new Byte[192];
 
         commandRead.Read(commandBuffer, 0, commandBuffer.Length); //read connection response
-        Debug.Log(String.Format("command = {0}", new String(commandBuffer)));   //debugging only
+        //Debug.Log(String.Format("command = {0}", new String(commandBuffer)));   //debugging only
 
 
         commandWrite.Write("START\r\n\r\n");    //start sensors
 
         commandRead.Read(commandBuffer, 0, commandBuffer.Length);   //read "OK"
-        commandWrite.Write("ENDIANNESS?\r\n\r\n");
-        commandRead.Read(commandBuffer, 0, commandBuffer.Length);
-        Debug.Log(String.Format("command = {0}", new String(commandBuffer)));   //debugging only
+        //commandWrite.Write("ENDIANNESS?\r\n\r\n");
+        //commandRead.Read(commandBuffer, 0, commandBuffer.Length);
+        //Debug.Log(String.Format("command = {0}", new String(commandBuffer)));   //debugging only
 
         port = 50042;
         TcpClient accelerometerPort = new TcpClient("127.0.0.1", port);    //connect to sensor port
