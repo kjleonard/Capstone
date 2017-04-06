@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capstone", "Capstone.csproj", "{C62817EB-7B23-CE11-DD90-CBB1E2E141EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capstone.CSharp", "Capstone.CSharp.csproj", "{559A0251-2FFF-F49E-257F-57435946CB01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capstone.Editor", "Capstone.Editor.csproj", "{6F46C54F-D70B-70B1-CE31-25E5270328BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capstone.CSharp.Editor", "Capstone.CSharp.Editor.csproj", "{5960BFD8-4054-892B-4F36-9D7BC615041E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C62817EB-7B23-CE11-DD90-CBB1E2E141EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C62817EB-7B23-CE11-DD90-CBB1E2E141EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C62817EB-7B23-CE11-DD90-CBB1E2E141EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C62817EB-7B23-CE11-DD90-CBB1E2E141EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6F46C54F-D70B-70B1-CE31-25E5270328BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F46C54F-D70B-70B1-CE31-25E5270328BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F46C54F-D70B-70B1-CE31-25E5270328BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F46C54F-D70B-70B1-CE31-25E5270328BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{559A0251-2FFF-F49E-257F-57435946CB01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{559A0251-2FFF-F49E-257F-57435946CB01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{559A0251-2FFF-F49E-257F-57435946CB01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{559A0251-2FFF-F49E-257F-57435946CB01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5960BFD8-4054-892B-4F36-9D7BC615041E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5960BFD8-4054-892B-4F36-9D7BC615041E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5960BFD8-4054-892B-4F36-9D7BC615041E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5960BFD8-4054-892B-4F36-9D7BC615041E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
