@@ -2017,7 +2017,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b71b0fe2524360743aa211598d368124, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b71b0fe2524360743aa211598d368124, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2025,7 +2025,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b71b0fe2524360743aa211598d368124, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b71b0fe2524360743aa211598d368124, type: 3}
       propertyPath: m_RootOrder
@@ -2042,6 +2042,10 @@ Prefab:
     - target: {fileID: 400000, guid: b71b0fe2524360743aa211598d368124, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: b71b0fe2524360743aa211598d368124, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b71b0fe2524360743aa211598d368124, type: 3}
@@ -2216,7 +2220,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b71b0fe2524360743aa211598d368124, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b71b0fe2524360743aa211598d368124, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2224,7 +2228,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b71b0fe2524360743aa211598d368124, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b71b0fe2524360743aa211598d368124, type: 3}
       propertyPath: m_RootOrder
@@ -2238,6 +2242,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 225c7d3451be440048963eb1fac08b2c, type: 2}
+    - target: {fileID: 400000, guid: b71b0fe2524360743aa211598d368124, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b71b0fe2524360743aa211598d368124, type: 3}
   m_IsPrefabParent: 0
@@ -3711,6 +3719,7 @@ MonoBehaviour:
   rightX: 0
   rightY: 0
   rightZ: 0
+  obstacleHit: 0
 --- !u!4 &1018838940 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400006, guid: 5dbc54281938cf942a6fbe03367bb4d1, type: 3}
