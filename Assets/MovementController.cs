@@ -72,9 +72,9 @@ public class MovementController : MonoBehaviour
 
 
         //Creates Child Thread to retrieve Postional Information
-        ThreadStart childref_getXYZ = new ThreadStart(getXYZ);
-        Thread childThread_getXYZ = new Thread(childref_getXYZ);
-        childThread_getXYZ.Start();
+        ThreadStart childref_TCP_Client = new ThreadStart(TCP_Client);
+        Thread childThread_TCP_Client = new Thread(childref_TCP_Client);
+        childThread_TCP_Client.Start();
 
         t.Enabled = true;
     }
@@ -119,7 +119,7 @@ public class MovementController : MonoBehaviour
         mpm_text.text = String.Format("{0} mpm", speed/5); //speed needs to be replaced to the closest aproximation to mpm
     }
 
-    void getXYZ()
+    void TCP_Client()
     {
         //here is where the TCP Client will run to communicate with the Control Application
         Int32 port = 50040;		//command interface port
