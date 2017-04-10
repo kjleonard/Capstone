@@ -166,8 +166,8 @@ public class MovementController : MonoBehaviour
             rightZ = BitConverter.ToSingle(accData, 20);
 
 
-            leftEmg = BitConverter.ToSingle(accData, 0);
-            rightEmg = BitConverter.ToSingle(accData, 4);
+            leftEmg = BitConverter.ToSingle(emgData, 0);
+            rightEmg = BitConverter.ToSingle(emgData, 4);
             /*Debug.Log(String.Format("leftX = {0}", leftX));
             Debug.Log(String.Format("leftY = {0}", leftY));
             Debug.Log(String.Format("leftZ = {0}", leftZ));
