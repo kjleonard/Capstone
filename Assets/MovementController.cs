@@ -128,8 +128,8 @@ public class MovementController : MonoBehaviour
         commandWrite.AutoFlush = true;
         StreamReader commandRead = new StreamReader(client.GetStream());
         Char[] commandBuffer = new Char[2048];
-        Byte[] data = new Byte[192];
-
+        Byte[] accData = new Byte[192];
+        Byte[] emgData = new Byte[64];
         commandRead.Read(commandBuffer, 0, commandBuffer.Length); //read connection response
         //Debug.Log(String.Format("command = {0}", new String(commandBuffer)));   //debugging only
 
@@ -140,22 +140,34 @@ public class MovementController : MonoBehaviour
         //commandWrite.Write("ENDIANNESS?\r\n\r\n");
         //commandRead.Read(commandBuffer, 0, commandBuffer.Length);
         //Debug.Log(String.Format("command = {0}", new String(commandBuffer)));   //debugging only
-
+        
+        
+        //Accelerometer Port
         port = 50042;
         TcpClient accelerometerPort = new TcpClient("127.0.0.1", port);    //connect to sensor port
         NetworkStream accStream = accelerometerPort.GetStream();
+
+        //EMG Port
+        port = 50043;
+        TcpClient emgPort = new TcpClient("127.0.0.1", port);
+        NetworkStream emgStream = emgPort.GetStream();
         bool running = true;
         //float leftX, leftY, leftZ, rightX, rightY, rightZ;
         while (running)
         {
-            accStream.Read(data, 0, data.Length);
-            
-            leftX = BitConverter.ToSingle(data, 0);
-            leftY = BitConverter.ToSingle(data, 4);
-            leftZ = BitConverter.ToSingle(data, 8);
-            rightX = BitConverter.ToSingle(data, 12);
-            rightY = BitConverter.ToSingle(data, 16);
-            rightZ = BitConverter.ToSingle(data, 20);
+            accStream.Read(accData, 0, accData.Length);
+            emgStream.Read(emgData, 0, emgData.Length);
+
+            leftX = BitConverter.ToSingle(accData, 0);
+            leftY = BitConverter.ToSingle(accData, 4);
+            leftZ = BitConverter.ToSingle(accData, 8);
+            rightX = BitConverter.ToSingle(accData, 12);
+            rightY = BitConverter.ToSingle(accData, 16);
+            rightZ = BitConverter.ToSingle(accData, 20);
+
+
+            leftEmg = BitConverter.ToSingle(accData, 0);
+            rightEmg = BitConverter.ToSingle(accData, 4);
             /*Debug.Log(String.Format("leftX = {0}", leftX));
             Debug.Log(String.Format("leftY = {0}", leftY));
             Debug.Log(String.Format("leftZ = {0}", leftZ));
