@@ -46,6 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Dropdowns.cs" />
+     <Compile Include="Assets\EndScreen.cs" />
      <Compile Include="Assets\LoadSceneOnScript.cs" />
      <Compile Include="Assets\MainMenuSettings.cs" />
      <Compile Include="Assets\MovementController.cs" />
@@ -146,7 +148,7 @@
      <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Scripts\TiltWindow.cs" />
      <Compile Include="Assets\SmoothFollow.cs" />
-     <Compile Include="Assets\SpawnObsticle.cs" />
+     <Compile Include="Assets\SpawnObstacle.cs" />
      <Compile Include="Assets\spawner.cs" />
      <None Include="Assets\Prefabs\Infinite\Code\LibNoise\COPYING.txt" />
      <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
