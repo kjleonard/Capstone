@@ -28,8 +28,7 @@ public class MovementController : MonoBehaviour
     {
         velocity = Vector3.zero;
         dir = transform.forward;
-        int speedPref = PlayerPrefs.GetInt("selSpeed");
-        speed = speedPref * 30f;
+        speed = PlayerPrefs.GetFloat("selSpeed") * 1100f / 60f;    // kilometers/hour to meters/min
         int durationPref = PlayerPrefs.GetInt("selDuration");
         int obstacleFrequency = PlayerPrefs.GetInt("selObstacleFrequency");
         int obstaclesRemaining = 0;
@@ -65,7 +64,33 @@ public class MovementController : MonoBehaviour
 
         System.Timers.Timer t = new System.Timers.Timer();
         if (durationPref == 0)
+        {
             durationPref = 10000;
+        }
+        else if (durationPref == 1)
+        {
+            durationPref = 2 * 10000;
+        }
+        else if (durationPref == 2)
+        {
+            durationPref = 4 * 10000;
+        }
+        else if (durationPref == 3)
+        {
+            durationPref = 5 * 10000;
+        }
+        else if (durationPref == 4)
+        {
+            durationPref = 6 * 10000;
+        }
+        else if (durationPref == 5)
+        {
+            durationPref = 8 * 10000;
+        }
+        else if (durationPref == 6)
+        {
+            durationPref = 10 * 10000;
+        }
         t.Interval = durationPref * 60000;
         t.Elapsed += OnTimedEvent;
         t.AutoReset = false;
@@ -116,7 +141,7 @@ public class MovementController : MonoBehaviour
 
     void updateMPMText()
     {
-        mpm_text.text = String.Format("{0} mpm", speed/5); //speed needs to be replaced to the closest aproximation to mpm
+        mpm_text.text = String.Format("{0} mpm", speed);    // We should truncate/round this value
     }
 
     void TCP_Client()
@@ -165,9 +190,10 @@ public class MovementController : MonoBehaviour
             rightY = BitConverter.ToSingle(accData, 16);
             rightZ = BitConverter.ToSingle(accData, 20);
 
+            // Commented out below two lines so the program would compile
+            //leftEmg = BitConverter.ToSingle(emgData, 0);
+            //rightEmg = BitConverter.ToSingle(emgData, 4);
 
-            leftEmg = BitConverter.ToSingle(emgData, 0);
-            rightEmg = BitConverter.ToSingle(emgData, 4);
             /*Debug.Log(String.Format("leftX = {0}", leftX));
             Debug.Log(String.Format("leftY = {0}", leftY));
             Debug.Log(String.Format("leftZ = {0}", leftZ));

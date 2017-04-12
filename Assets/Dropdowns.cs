@@ -18,9 +18,19 @@ public class Dropdowns : MonoBehaviour {
         PlayerPrefs.SetInt(x.name, x.value);
     }
 
+    public void setFloat(Dropdown x)
+    {
+        PlayerPrefs.SetFloat(x.name, x.value);
+    }
+
     public void getValue(Dropdown x)
     {
         x.value = PlayerPrefs.GetInt(x.name);
+    }
+
+    public float getFloat(Dropdown x)
+    {
+        return PlayerPrefs.GetFloat(x.name);
     }
 
 }
