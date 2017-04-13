@@ -28,7 +28,7 @@ public class MovementController : MonoBehaviour
     {
         velocity = Vector3.zero;
         dir = transform.forward;
-        speed = PlayerPrefs.GetFloat("selSpeed") * 1100f / 60f;    // kilometers/hour to meters/min
+        speed = PlayerPrefs.GetFloat("selSpeed") * 5000f / 60f;    // kilometers/hour to meters/min
         int durationPref = PlayerPrefs.GetInt("selDuration");
         int obstacleFrequency = PlayerPrefs.GetInt("selObstacleFrequency");
         int obstaclesRemaining = 0;
@@ -141,7 +141,7 @@ public class MovementController : MonoBehaviour
 
     void updateMPMText()
     {
-        mpm_text.text = String.Format("{0} mpm", speed);    // We should truncate/round this value
+        mpm_text.text = String.Format("{0:0,0} mpm", speed/5);    // We should truncate/round this value
     }
 
     void TCP_Client()
