@@ -13,6 +13,8 @@ public class MovementController : MonoBehaviour
     private Vector3 dir;
 
     public Text mpm_text;
+    public Text left_emg_text;
+    public Text right_emg_text;
 
     public float leftX;
     public float leftY;
@@ -21,11 +23,15 @@ public class MovementController : MonoBehaviour
     public float rightY;
     public float rightZ;
 
-    public Boolean obstacleHit = false;
+    private float leftEMG;
+    private float rightEMG;
+
+    public Boolean obstacleHit;
 
 
     void Start()
     {
+        obstacleHit = false;
         velocity = Vector3.zero;
         dir = transform.forward;
         speed = PlayerPrefs.GetFloat("selSpeed") * 5000f / 60f;    // kilometers/hour to meters/min
@@ -130,7 +136,8 @@ public class MovementController : MonoBehaviour
         }
 
         updateMPMText();
-        
+        updateEMGText();
+
 
         velocity = Vector3.zero;
         velocity = dir / dir.magnitude * Time.deltaTime * speed * (float)(Math.Log(Convert.ToInt32(speed), 25)) / 35; //calculate velocity
@@ -142,6 +149,12 @@ public class MovementController : MonoBehaviour
     void updateMPMText()
     {
         mpm_text.text = String.Format("{0:0,0} mpm", speed/5);    // We should truncate/round this value
+    }
+
+    void updateEMGText()
+    {
+        left_emg_text.text = String.Format("Left EMG: {0:0,0} mv", leftEMG);
+        right_emg_text.text = String.Format("Right EMG: {0:0,0} mv", rightEMG);
     }
 
     void TCP_Client()
@@ -191,8 +204,8 @@ public class MovementController : MonoBehaviour
             rightZ = BitConverter.ToSingle(accData, 20);
 
             // Commented out below two lines so the program would compile
-            //leftEmg = BitConverter.ToSingle(emgData, 0);
-            //rightEmg = BitConverter.ToSingle(emgData, 4);
+            leftEMG = BitConverter.ToSingle(emgData, 0);
+            rightEMG = BitConverter.ToSingle(emgData, 4);
 
             /*Debug.Log(String.Format("leftX = {0}", leftX));
             Debug.Log(String.Format("leftY = {0}", leftY));
