@@ -91,15 +91,22 @@ public class FeetScript : MonoBehaviour {
         if (Math.Abs(left_y) > .1f
             & leftFoot.transform.position.y + left_y > floor
             & leftFoot.transform.position.y + left_y < ceiling)
-            leftFoot.transform.Translate(0, left_y, 0);
+            leftFoot.transform.Translate(0, left_y/2, 0);
         if (Math.Abs(right_y) > .1f
             & rightFoot.transform.position.y + right_y > floor
             & rightFoot.transform.position.y + right_y < ceiling)
-            rightFoot.transform.Translate(0, right_y, 0);
+            rightFoot.transform.Translate(0, right_y/2, 0);
+        if (Math.Abs(left_z) > .1f
+            & rightFoot.transform.position.y + left_z > max_backward
+            & rightFoot.transform.position.y + left_z < max_forward)
+            rightFoot.transform.Translate(0, 0, left_z/2);
+        if (Math.Abs(right_z) > .1f
+            & rightFoot.transform.position.y + right_z > max_backward
+            & rightFoot.transform.position.y + right_z < max_forward)
+            rightFoot.transform.Translate(0, 0, right_z/2);
 
 
         Debug.Log(string.Format("left z = {0}, right z = {2}, player z = {1}", leftFoot.transform.position.z, Player.transform.position.z, rightFoot.transform.position.z));
-	Debug.Log(string.Format("left y = {0}", left_y));
         //Debug.Log(string.Format("right Y = {0}", right_y));
     }
 }
