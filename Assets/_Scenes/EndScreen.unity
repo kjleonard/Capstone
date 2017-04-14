@@ -1079,7 +1079,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Placeholder
+  m_Text: 'Speed:'
 --- !u!222 &1521838788
 CanvasRenderer:
   m_ObjectHideFlags: 0

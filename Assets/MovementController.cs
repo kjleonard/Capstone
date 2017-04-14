@@ -13,6 +13,8 @@ public class MovementController : MonoBehaviour
     private Vector3 dir;
 
     public Text mpm_text;
+    public Text left_emg_text;
+    public Text right_emg_text;
 
     public float leftX;
     public float leftY;
@@ -21,15 +23,18 @@ public class MovementController : MonoBehaviour
     public float rightY;
     public float rightZ;
 
-    public Boolean obstacleHit = false;
+    private float leftEMG;
+    private float rightEMG;
+
+    public Boolean obstacleHit;
 
 
     void Start()
     {
+        obstacleHit = false;
         velocity = Vector3.zero;
         dir = transform.forward;
-        int speedPref = PlayerPrefs.GetInt("selSpeed");
-        speed = speedPref * 30f;
+        speed = PlayerPrefs.GetFloat("selSpeed") * 5000f / 60f;    // kilometers/hour to meters/min
         int durationPref = PlayerPrefs.GetInt("selDuration");
         int obstacleFrequency = PlayerPrefs.GetInt("selObstacleFrequency");
         int obstaclesRemaining = 0;
@@ -65,16 +70,42 @@ public class MovementController : MonoBehaviour
 
         System.Timers.Timer t = new System.Timers.Timer();
         if (durationPref == 0)
+        {
             durationPref = 10000;
+        }
+        else if (durationPref == 1)
+        {
+            durationPref = 2 * 10000;
+        }
+        else if (durationPref == 2)
+        {
+            durationPref = 4 * 10000;
+        }
+        else if (durationPref == 3)
+        {
+            durationPref = 5 * 10000;
+        }
+        else if (durationPref == 4)
+        {
+            durationPref = 6 * 10000;
+        }
+        else if (durationPref == 5)
+        {
+            durationPref = 8 * 10000;
+        }
+        else if (durationPref == 6)
+        {
+            durationPref = 10 * 10000;
+        }
         t.Interval = durationPref * 60000;
         t.Elapsed += OnTimedEvent;
         t.AutoReset = false;
 
 
         //Creates Child Thread to retrieve Postional Information
-        ThreadStart childref_getXYZ = new ThreadStart(getXYZ);
-        Thread childThread_getXYZ = new Thread(childref_getXYZ);
-        childThread_getXYZ.Start();
+        ThreadStart childref_TCP_Client = new ThreadStart(TCP_Client);
+        Thread childThread_TCP_Client = new Thread(childref_TCP_Client);
+        childThread_TCP_Client.Start();
 
         t.Enabled = true;
     }
@@ -105,7 +136,8 @@ public class MovementController : MonoBehaviour
         }
 
         updateMPMText();
-        
+        updateEMGText();
+
 
         velocity = Vector3.zero;
         velocity = dir / dir.magnitude * Time.deltaTime * speed * (float)(Math.Log(Convert.ToInt32(speed), 25)) / 35; //calculate velocity
@@ -116,10 +148,16 @@ public class MovementController : MonoBehaviour
 
     void updateMPMText()
     {
-        mpm_text.text = String.Format("{0} mpm", speed/5); //speed needs to be replaced to the closest aproximation to mpm
+        mpm_text.text = String.Format("{0:0,0} mpm", speed/5);    // We should truncate/round this value
     }
 
-    void getXYZ()
+    void updateEMGText()
+    {
+        left_emg_text.text = String.Format("Left EMG: {0:0,0} mv", leftEMG);
+        right_emg_text.text = String.Format("Right EMG: {0:0,0} mv", rightEMG);
+    }
+
+    void TCP_Client()
     {
         //here is where the TCP Client will run to communicate with the Control Application
         Int32 port = 50040;		//command interface port
@@ -128,8 +166,8 @@ public class MovementController : MonoBehaviour
         commandWrite.AutoFlush = true;
         StreamReader commandRead = new StreamReader(client.GetStream());
         Char[] commandBuffer = new Char[2048];
-        Byte[] data = new Byte[192];
-
+        Byte[] accData = new Byte[192];
+        Byte[] emgData = new Byte[64];
         commandRead.Read(commandBuffer, 0, commandBuffer.Length); //read connection response
         //Debug.Log(String.Format("command = {0}", new String(commandBuffer)));   //debugging only
 
@@ -140,22 +178,35 @@ public class MovementController : MonoBehaviour
         //commandWrite.Write("ENDIANNESS?\r\n\r\n");
         //commandRead.Read(commandBuffer, 0, commandBuffer.Length);
         //Debug.Log(String.Format("command = {0}", new String(commandBuffer)));   //debugging only
-
+        
+        
+        //Accelerometer Port
         port = 50042;
         TcpClient accelerometerPort = new TcpClient("127.0.0.1", port);    //connect to sensor port
         NetworkStream accStream = accelerometerPort.GetStream();
+
+        //EMG Port
+        port = 50043;
+        TcpClient emgPort = new TcpClient("127.0.0.1", port);
+        NetworkStream emgStream = emgPort.GetStream();
         bool running = true;
         //float leftX, leftY, leftZ, rightX, rightY, rightZ;
         while (running)
         {
-            accStream.Read(data, 0, data.Length);
-            
-            leftX = BitConverter.ToSingle(data, 0);
-            leftY = BitConverter.ToSingle(data, 4);
-            leftZ = BitConverter.ToSingle(data, 8);
-            rightX = BitConverter.ToSingle(data, 12);
-            rightY = BitConverter.ToSingle(data, 16);
-            rightZ = BitConverter.ToSingle(data, 20);
+            accStream.Read(accData, 0, accData.Length);
+            emgStream.Read(emgData, 0, emgData.Length);
+
+            leftX = BitConverter.ToSingle(accData, 0);
+            leftY = BitConverter.ToSingle(accData, 4);
+            leftZ = BitConverter.ToSingle(accData, 8);
+            rightX = BitConverter.ToSingle(accData, 12);
+            rightY = BitConverter.ToSingle(accData, 16);
+            rightZ = BitConverter.ToSingle(accData, 20);
+
+            // Commented out below two lines so the program would compile
+            leftEMG = BitConverter.ToSingle(emgData, 0);
+            rightEMG = BitConverter.ToSingle(emgData, 4);
+
             /*Debug.Log(String.Format("leftX = {0}", leftX));
             Debug.Log(String.Format("leftY = {0}", leftY));
             Debug.Log(String.Format("leftZ = {0}", leftZ));
