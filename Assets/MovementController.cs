@@ -153,8 +153,8 @@ public class MovementController : MonoBehaviour
 
     void updateEMGText()
     {
-        left_emg_text.text = String.Format("Left EMG: {0:0,0} mv", leftEMG);
-        right_emg_text.text = String.Format("Right EMG: {0:0,0} mv", rightEMG);
+        left_emg_text.text = String.Format("Left EMG: {0} mv", leftEMG);
+        right_emg_text.text = String.Format("Right EMG: {0} mv", rightEMG);
     }
 
     void TCP_Client()
@@ -207,6 +207,11 @@ public class MovementController : MonoBehaviour
             leftEMG = BitConverter.ToSingle(emgData, 0);
             rightEMG = BitConverter.ToSingle(emgData, 4);
 
+            
+            AppendAllBytes("TestData/AccelerometerTestData.data", accData);
+            AppendAllBytes("TestData/EMGTestData.data", emgData);
+            
+
             /*Debug.Log(String.Format("leftX = {0}", leftX));
             Debug.Log(String.Format("leftY = {0}", leftY));
             Debug.Log(String.Format("leftZ = {0}", leftZ));
@@ -221,4 +226,13 @@ public class MovementController : MonoBehaviour
         Debug.Log("Reached STOP");
         commandWrite.WriteLine("STOP\r\n");
     }
+
+    public static void AppendAllBytes(string path, byte[] bytes)
+    {
+        using (var stream = new FileStream(path, FileMode.Append))
+        {
+            stream.Write(bytes, 0, bytes.Length);
+        }
+    }
+
 }
