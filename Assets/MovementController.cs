@@ -28,6 +28,8 @@ public class MovementController : MonoBehaviour
 
     public Boolean obstacleHit;
 
+    public DateTime endTime;
+
 
     void Start()
     {
@@ -71,32 +73,35 @@ public class MovementController : MonoBehaviour
         System.Timers.Timer t = new System.Timers.Timer();
         if (durationPref == 0)
         {
-            durationPref = 10000;
+            durationPref = 1;
         }
         else if (durationPref == 1)
         {
-            durationPref = 2 * 10000;
+            durationPref = 2;
         }
         else if (durationPref == 2)
         {
-            durationPref = 4 * 10000;
+            durationPref = 4;
         }
         else if (durationPref == 3)
         {
-            durationPref = 5 * 10000;
+            durationPref = 5;
         }
         else if (durationPref == 4)
         {
-            durationPref = 6 * 10000;
+            durationPref = 6;
         }
         else if (durationPref == 5)
         {
-            durationPref = 8 * 10000;
+            durationPref = 8;
         }
         else if (durationPref == 6)
         {
-            durationPref = 10 * 10000;
+            durationPref = 10;
         }
+        endTime = DateTime.Now;
+        endTime.AddMinutes((double) durationPref);
+
         t.Interval = durationPref * 60000;
         t.Elapsed += OnTimedEvent;
         t.AutoReset = false;
@@ -134,6 +139,12 @@ public class MovementController : MonoBehaviour
             LoadSceneOnScript endSimulation = new LoadSceneOnScript();
             endSimulation.LoadByIndex(2);
         }
+
+        //if (DateTime.Now >= endTime)
+        //{
+        //    LoadSceneOnScript endSimulation = new LoadSceneOnScript();
+        //    endSimulation.LoadByIndex(2);
+        //}
 
         updateMPMText();
         updateEMGText();
