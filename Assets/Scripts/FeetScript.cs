@@ -87,7 +87,9 @@ public class FeetScript : MonoBehaviour {
         //leftFoot.transform.position.Set(-.96f, playerMovement.leftY - 11.1f, 2.8f);
         //rightFoot.transform.position.Set(.6f, playerMovement.rightY - 12f, 2.8f);
 
-
+	left_y +=1;
+	right_y += 1;
+		
         if (Math.Abs(left_y) > .1f
             & leftFoot.transform.position.y + left_y > floor
             & leftFoot.transform.position.y + left_y < ceiling)
