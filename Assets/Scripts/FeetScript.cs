@@ -61,54 +61,65 @@ public class FeetScript : MonoBehaviour {
 
 
         /*
-        if (Input.GetKeyDown("q") & leftFoot.transform.position.y + .5f < ceiling)
+        if (Input.GetKeyDown("q") & leftFoot.transform.position.x - .5f > max_right)
         {
-            leftFoot.transform.Translate(up);
-            rightFoot.transform.Translate(up);
+            leftFoot.transform.Translate(right);
+            rightFoot.transform.Translate(right);
         }
 
-        if (Input.GetKeyDown("a") & leftFoot.transform.position.y - 0.5f > floor)
+        if (Input.GetKeyDown("a") & leftFoot.transform.position.x + 0.5f < max_left)
         {
-            leftFoot.transform.Translate(down);
-            rightFoot.transform.Translate(down);
+            leftFoot.transform.Translate(left);
+            rightFoot.transform.Translate(left);
         }
-        if (Input.GetKeyDown ("f") &  leftFoot.transform.position.z - .5f > Player.transform.position.z - max_forward ) {
-			leftFoot.transform.Translate(forward);
+        if (Input.GetKeyDown("f") & leftFoot.transform.position.z - .5f > Player.transform.position.z - max_forward)
+        {
+            leftFoot.transform.Translate(forward);
             rightFoot.transform.Translate(forward);
 
         }
 
-		if (Input.GetKeyDown ("b") & rightFoot.transform.position.z + 0.5f < Player.transform.position.z - max_backward) {
+        if (Input.GetKeyDown("b") & rightFoot.transform.position.z + 0.5f < Player.transform.position.z - max_backward)
+        {
             leftFoot.transform.Translate(backward);
             rightFoot.transform.Translate(backward);
-		}             
+        }
         */
 
         //leftFoot.transform.position.Set(-.96f, playerMovement.leftY - 11.1f, 2.8f);
         //rightFoot.transform.position.Set(.6f, playerMovement.rightY - 12f, 2.8f);
 
-	left_y +=1;
-	right_y += 1;
-		
+        left_y += 1;
+        right_y += 1;
+
+        if (Math.Abs(left_x) > .1f
+                & rightFoot.transform.position.y + left_x > max_right
+                & rightFoot.transform.position.y + left_x < max_left)
+            rightFoot.transform.Translate(left_x / 2, 0, 0);
+        if (Math.Abs(right_z) > .1f
+                & rightFoot.transform.position.y + right_x > max_right
+                & rightFoot.transform.position.y + right_x < max_left)
+            rightFoot.transform.Translate(right_x / 2, 0, 0);
         if (Math.Abs(left_y) > .1f
-            & leftFoot.transform.position.y + left_y > floor
-            & leftFoot.transform.position.y + left_y < ceiling)
-            leftFoot.transform.Translate(0, left_y/2, 0);
+                & leftFoot.transform.position.y + left_y > floor
+                & leftFoot.transform.position.y + left_y < ceiling)
+            leftFoot.transform.Translate(0, left_y / 2, 0);
         if (Math.Abs(right_y) > .1f
             & rightFoot.transform.position.y + right_y > floor
             & rightFoot.transform.position.y + right_y < ceiling)
-            rightFoot.transform.Translate(0, right_y/2, 0);
+            rightFoot.transform.Translate(0, right_y / 2, 0);
         if (Math.Abs(left_z) > .1f
-            & rightFoot.transform.position.y + left_z > max_backward
-            & rightFoot.transform.position.y + left_z < max_forward)
-            rightFoot.transform.Translate(0, 0, left_z/2);
+            & rightFoot.transform.position.y + left_z < Player.transform.position.z - max_backward
+            & rightFoot.transform.position.y + left_z > Player.transform.position.z - max_forward)
+            rightFoot.transform.Translate(0, 0, left_z / 2);
         if (Math.Abs(right_z) > .1f
-            & rightFoot.transform.position.y + right_z > max_backward
-            & rightFoot.transform.position.y + right_z < max_forward)
-            rightFoot.transform.Translate(0, 0, right_z/2);
+            & rightFoot.transform.position.y + right_z < Player.transform.position.z - max_backward
+            & rightFoot.transform.position.y + right_z > Player.transform.position.z - max_forward)
+            rightFoot.transform.Translate(0, 0, right_z / 2);
 
 
-        Debug.Log(string.Format("left z = {0}, right z = {2}, player z = {1}", leftFoot.transform.position.z, Player.transform.position.z, rightFoot.transform.position.z));
+
+        Debug.Log(string.Format("left x = {0}, right x = {2}, player z = {1}", leftFoot.transform.position.x, Player.transform.position.z, rightFoot.transform.position.x));
         //Debug.Log(string.Format("right Y = {0}", right_y));
     }
 }
