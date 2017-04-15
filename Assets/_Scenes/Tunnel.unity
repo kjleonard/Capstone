@@ -3789,8 +3789,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mpm_text: {fileID: 1518547119}
-  left_emg_text: {fileID: 0}
-  right_emg_text: {fileID: 0}
+  left_emg_text: {fileID: 684819497}
+  right_emg_text: {fileID: 1842441140}
   leftX: 0
   leftY: 0
   leftZ: 0
