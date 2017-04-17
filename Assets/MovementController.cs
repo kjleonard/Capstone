@@ -107,11 +107,17 @@ public class MovementController : MonoBehaviour
         t.AutoReset = false;
 
 
-        //Creates Child Thread to retrieve Postional Information
+        //Creates Child Thread to start TCP Client
         ThreadStart childref_TCP_Client = new ThreadStart(TCP_Client);
         Thread childThread_TCP_Client = new Thread(childref_TCP_Client);
         childThread_TCP_Client.Start();
-
+        
+        //Creates Child Thread to test/
+        /*
+        ThreadStart childref_File_Streamer = new ThreadStart(File_Streamer);
+        Thread childThread_File_Streamer = new Thread(childref_File_Streamer);
+        childThread_File_Streamer.Start();
+        */
         t.Enabled = true;
     }
 
@@ -236,6 +242,11 @@ public class MovementController : MonoBehaviour
 
         Debug.Log("Reached STOP");
         commandWrite.WriteLine("STOP\r\n");
+    }
+    
+    void File_Streamer()
+    {
+        //Put code to read from EMG and Accelerometer data files here.
     }
 
     public static void AppendAllBytes(string path, byte[] bytes)
