@@ -208,11 +208,11 @@ public class MovementController : MonoBehaviour
             emgStream.Read(emgData, 0, emgData.Length);
 
             leftX = BitConverter.ToSingle(accData, 0);
-            leftY = BitConverter.ToSingle(accData, 8);
             leftZ = BitConverter.ToSingle(accData, 4);
+            leftY = BitConverter.ToSingle(accData, 8);
             rightX = BitConverter.ToSingle(accData, 12);
-            rightY = BitConverter.ToSingle(accData, 20);
-            rightZ = BitConverter.ToSingle(accData, 16);           
+            rightZ = BitConverter.ToSingle(accData, 16);
+            rightY = BitConverter.ToSingle(accData, 20);           
 
             // Commented out below two lines so the program would compile
             leftEMG = BitConverter.ToSingle(emgData, 0);
