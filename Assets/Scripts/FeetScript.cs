@@ -93,12 +93,12 @@ public class FeetScript : MonoBehaviour {
         right_y += 1;
 
         if (Math.Abs(left_x) > .12f
-                & leftFoot.transform.position.y + left_x > max_right
-                & leftFoot.transform.position.y + left_x < max_left)
+                & leftFoot.transform.position.x + left_x > max_right
+                & leftFoot.transform.position.x + left_x < max_left)
             leftFoot.transform.Translate(left_x / 2, 0, 0);
-        if (Math.Abs(right_z) > .12f
-                & rightFoot.transform.position.y + right_x > max_right
-                & rightFoot.transform.position.y + right_x < max_left)
+        if (Math.Abs(right_x) > .12f
+                & rightFoot.transform.position.x + right_x > max_right
+                & rightFoot.transform.position.x + right_x < max_left)
             rightFoot.transform.Translate(right_x / 2, 0, 0);
         if (Math.Abs(left_y) > .12f
                 & leftFoot.transform.position.y + left_y > floor
@@ -109,12 +109,12 @@ public class FeetScript : MonoBehaviour {
             & rightFoot.transform.position.y + right_y < ceiling)
             rightFoot.transform.Translate(0, right_y / 2, 0);
         if (Math.Abs(left_z) > .12f
-            & leftFoot.transform.position.y + left_z < Player.transform.position.z - max_backward
-            & leftFoot.transform.position.y + left_z > Player.transform.position.z - max_forward)
+            & leftFoot.transform.position.z + left_z < Player.transform.position.z - max_backward
+            & leftFoot.transform.position.z + left_z > Player.transform.position.z - max_forward)
             leftFoot.transform.Translate(0, 0, left_z / 2);
         if (Math.Abs(right_z) > .12f
-            & rightFoot.transform.position.y + right_z < Player.transform.position.z - max_backward
-            & rightFoot.transform.position.y + right_z > Player.transform.position.z - max_forward)
+            & rightFoot.transform.position.z + right_z < Player.transform.position.z - max_backward
+            & rightFoot.transform.position.z + right_z > Player.transform.position.z - max_forward)
             rightFoot.transform.Translate(0, 0, right_z / 2);
 
 
