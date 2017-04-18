@@ -7,7 +7,7 @@ using System.Net.Sockets;
 
 public class MovementController : MonoBehaviour
 {
-
+    private bool debug = true;
     private Vector3 velocity;
     private float speed;
     private Vector3 dir;
@@ -108,16 +108,20 @@ public class MovementController : MonoBehaviour
 
 
         //Creates Child Thread to start TCP Client
-        ThreadStart childref_TCP_Client = new ThreadStart(TCP_Client);
-        Thread childThread_TCP_Client = new Thread(childref_TCP_Client);
-        childThread_TCP_Client.Start();
-        
+        if (!debug)
+        {
+            ThreadStart childref_TCP_Client = new ThreadStart(TCP_Client);
+            Thread childThread_TCP_Client = new Thread(childref_TCP_Client);
+            childThread_TCP_Client.Start();
+        }
+
         //Creates Child Thread to test/
-        /*
-        ThreadStart childref_File_Streamer = new ThreadStart(File_Streamer);
-        Thread childThread_File_Streamer = new Thread(childref_File_Streamer);
-        childThread_File_Streamer.Start();
-        */
+        if (debug)
+        {
+            ThreadStart childref_File_Streamer = new ThreadStart(File_Streamer);
+            Thread childThread_File_Streamer = new Thread(childref_File_Streamer);
+            childThread_File_Streamer.Start();
+        }
         t.Enabled = true;
     }
 
@@ -247,6 +251,33 @@ public class MovementController : MonoBehaviour
     void File_Streamer()
     {
         //Put code to read from EMG and Accelerometer data files here.
+        Byte[] accData = new Byte[192];
+        Byte[] emgData = new Byte[64];
+        FileStream accStream = new FileStream("TestData/AccelerometerTestData.data", FileMode.Open);
+        FileStream emgStream = new FileStream("TestData/EMGTestData.data", FileMode.Open);
+
+        while (accStream.Read(accData, 0, accData.Length) > 0 && emgStream.Read(emgData, 0, emgData.Length) > 0)
+        {
+
+            leftX = BitConverter.ToSingle(accData, 0);
+            leftZ = BitConverter.ToSingle(accData, 4);
+            leftY = BitConverter.ToSingle(accData, 8);
+            rightX = BitConverter.ToSingle(accData, 12);
+            rightZ = BitConverter.ToSingle(accData, 16);
+            rightY = BitConverter.ToSingle(accData, 20);
+
+            // Commented out below two lines so the program would compile
+            leftEMG = BitConverter.ToSingle(emgData, 0);
+            rightEMG = BitConverter.ToSingle(emgData, 4);
+
+            Debug.Log(String.Format("leftX = {0}", leftX));
+            Debug.Log(String.Format("leftY = {0}", leftY));
+            Debug.Log(String.Format("leftZ = {0}", leftZ));
+            Debug.Log(String.Format("rightX = {0}", rightX));
+            Debug.Log(String.Format("rightY = {0}", rightY));
+            Debug.Log(String.Format("rightZ = {0}", rightZ));
+        }
+        Debug.Log("Reached end of File\n\n");
     }
 
     public static void AppendAllBytes(string path, byte[] bytes)
