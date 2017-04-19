@@ -18,10 +18,15 @@ public class Dropdowns : MonoBehaviour {
         PlayerPrefs.SetInt(x.name, x.value);
     }
 
-    public void setFloat(Dropdown x)
-    {
-        PlayerPrefs.SetFloat(x.name, x.value);
-    }
+	public void setFloat(Dropdown x)
+	{
+		int menuIndex = x.GetComponent<Dropdown> ().value;
+		List<Dropdown.OptionData> menuOptions = x.GetComponent<Dropdown> ().options;
+		string value = menuOptions [menuIndex].text;
+		float f;
+		float.TryParse (value, out f);
+		PlayerPrefs.SetFloat(x.name, f);
+	}
 
     public void getValue(Dropdown x)
     {
