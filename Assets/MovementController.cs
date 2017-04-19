@@ -7,7 +7,7 @@ using System.Net.Sockets;
 
 public class MovementController : MonoBehaviour
 {
-    private bool debug = false;
+    private bool debug = true;
     private Vector3 velocity;
     private float speed;
     private Vector3 dir;
@@ -46,7 +46,6 @@ public class MovementController : MonoBehaviour
         int durationPref = PlayerPrefs.GetInt("selDuration");
         int obstacleFrequency = PlayerPrefs.GetInt("selObstacleFrequency");
         int obstaclesRemaining = 0;
-
         // To-Do: Figure out best way to accomodate for # per minute in combination with speed
         if (obstacleFrequency == 1)
         {   // Low - 4 per minute = 1/15s
@@ -109,31 +108,33 @@ public class MovementController : MonoBehaviour
         PlayerPrefs.SetInt("selDuration", durationPref);
 
         t.Interval = durationPref * 60000;
+        Debug.Log(String.Format("Duration = {0}", t.Interval));
         t.Elapsed += OnTimedEvent;
         t.AutoReset = false;
 
 
+        t.Enabled = true;
         //Creates Child Thread to start TCP Client
-        if (!debug)
-        {
-            ThreadStart childref_TCP_Client = new ThreadStart(TCP_Client);
-            Thread childThread_TCP_Client = new Thread(childref_TCP_Client);
-            childThread_TCP_Client.Start();
-        }
-
-        //Creates Child Thread to test/
         if (debug)
         {
             ThreadStart childref_File_Streamer = new ThreadStart(File_Streamer);
             Thread childThread_File_Streamer = new Thread(childref_File_Streamer);
             childThread_File_Streamer.Start();
         }
-        t.Enabled = true;
+
+        //Creates Child Thread to test/
+        else
+        {
+            ThreadStart childref_TCP_Client = new ThreadStart(TCP_Client);
+            Thread childThread_TCP_Client = new Thread(childref_TCP_Client);
+            childThread_TCP_Client.Start();
+        }
     }
 
     // Once the selected duration has been reached, move to the end screen
     private void OnTimedEvent(System.Object source, System.Timers.ElapsedEventArgs e)
     {
+        t.Enabled = false;
         PlayerPrefs.SetFloat("countLeftEMG", (countLeftEMG / countEMG));
         PlayerPrefs.SetFloat("countRightEMG", (countRightEMG / countEMG));
         LoadSceneOnScript endSimulation = new LoadSceneOnScript();
@@ -154,6 +155,7 @@ public class MovementController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape))  // Panic button to kill simulation early
         {
+            t.Enabled = false;
             PlayerPrefs.SetFloat("countLeftEMG", (countLeftEMG / countEMG));
             PlayerPrefs.SetFloat("countRightEMG", (countRightEMG / countEMG));
             LoadSceneOnScript endSimulation = new LoadSceneOnScript();
@@ -220,19 +222,18 @@ public class MovementController : MonoBehaviour
         port = 50043;
         TcpClient emgPort = new TcpClient("127.0.0.1", port);
         NetworkStream emgStream = emgPort.GetStream();
-        bool running = true;
-        //float leftX, leftY, leftZ, rightX, rightY, rightZ;
-        while (running)
+        
+        while (t.Enabled == true)
         {
             accStream.Read(accData, 0, accData.Length);
             emgStream.Read(emgData, 0, emgData.Length);
 
             leftX = BitConverter.ToSingle(accData, 0);
-            leftZ = BitConverter.ToSingle(accData, 4);
-            leftY = BitConverter.ToSingle(accData, 8);
+            leftY = BitConverter.ToSingle(accData, 4);
+            leftZ = BitConverter.ToSingle(accData, 8);
             rightX = BitConverter.ToSingle(accData, 12);
-            rightZ = BitConverter.ToSingle(accData, 16);
-            rightY = BitConverter.ToSingle(accData, 20);           
+            rightY = BitConverter.ToSingle(accData, 16);
+            rightZ = BitConverter.ToSingle(accData, 20);           
 
             // Commented out below two lines so the program would compile
             leftEMG = BitConverter.ToSingle(emgData, 0);
@@ -252,7 +253,7 @@ public class MovementController : MonoBehaviour
             //Thread.Sleep(50);
         }
 
-        float[] values = new float[48];
+
 
         Debug.Log("Reached STOP");
         commandWrite.WriteLine("STOP\r\n");
@@ -266,8 +267,11 @@ public class MovementController : MonoBehaviour
         FileStream accStream = new FileStream("TestData/AccelerometerTestData.data", FileMode.Open);
         FileStream emgStream = new FileStream("TestData/EMGTestData.data", FileMode.Open);
 
-        while (accStream.Read(accData, 0, accData.Length) > 0 && emgStream.Read(emgData, 0, emgData.Length) > 0)
+        while (t.Enabled == true)
         {
+
+            accStream.Read(accData, 0, accData.Length);
+            emgStream.Read(emgData, 0, emgData.Length);
 
             leftX = BitConverter.ToSingle(accData, 0);
             leftZ = BitConverter.ToSingle(accData, 4);
@@ -284,12 +288,13 @@ public class MovementController : MonoBehaviour
             countRightEMG += rightEMG;
             countEMG++;
 
-            Debug.Log(String.Format("leftX = {0}", leftX));
+            /*Debug.Log(String.Format("leftX = {0}", leftX));
             Debug.Log(String.Format("leftY = {0}", leftY));
             Debug.Log(String.Format("leftZ = {0}", leftZ));
             Debug.Log(String.Format("rightX = {0}", rightX));
             Debug.Log(String.Format("rightY = {0}", rightY));
-            Debug.Log(String.Format("rightZ = {0}", rightZ));
+            Debug.Log(String.Format("rightZ = {0}", rightZ));*/
+            Debug.Log(String.Format("rightEMG = {0}", rightEMG));
         }
         Debug.Log("Reached end of File\n\n");
     }
