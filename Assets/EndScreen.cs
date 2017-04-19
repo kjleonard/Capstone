@@ -5,22 +5,27 @@ using UnityEngine.UI;
 
 public class EndScreen : MonoBehaviour {
 
-    Text lblAvoidedCount;
-    Text lblDistance;
+    public Text lblAvoidedCount;
+    public Text lblDistance;
+    public Text lblSpeed;
+    public Text lblLeftEMG;
+    public Text lblRightEMG;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
-        int obstaclesHit = PlayerPrefs.GetInt("selObstaclesHit");
-        int obstacleTotal = PlayerPrefs.GetInt("selObstacleFrequency");
+        int obstaclesHit = PlayerPrefs.GetInt("obstaclesHit");
+        int obstacleTotal = PlayerPrefs.GetInt("obstacleTotal");
         int duration = PlayerPrefs.GetInt("selDuration");
         float speed = PlayerPrefs.GetFloat("selSpeed");
+        float leftEMG = PlayerPrefs.GetFloat("countLeftEMG");
+        float rightEMG = PlayerPrefs.GetFloat("countRightEMG");
 
         lblAvoidedCount.text = (obstacleTotal - obstaclesHit).ToString() + " / " + obstacleTotal.ToString();
-        lblDistance.text = (duration * speed).ToString() + " meters";
-
-        //GameObject lblAvoidedCount = GameObject.Find("lblAvoidedCount");
-        //lblAvoidedCount.GetComponent
+        lblDistance.text = (duration * speed * 1000 / 60).ToString() + " meters";
+        lblSpeed.text = speed + " kilometers/hour";
+        lblLeftEMG.text = leftEMG + " mv";
+        lblRightEMG.text = rightEMG + " mv";
 		
 	}
 	

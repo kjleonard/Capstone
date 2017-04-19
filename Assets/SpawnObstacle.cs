@@ -19,6 +19,7 @@ public class SpawnObstacle : MonoBehaviour {
 		y = 10f;
 		z = playerPos.transform.position.z - 40f;
 		NextPosToGenerate = z;
+        PlayerPrefs.SetInt("obstaclesHit", 0);
 	}
 
 	void Update () {

@@ -7,7 +7,7 @@ using System.Net.Sockets;
 
 public class MovementController : MonoBehaviour
 {
-    private bool debug = true;
+    private bool debug = false;
     private Vector3 velocity;
     private float speed;
     private Vector3 dir;
@@ -26,9 +26,15 @@ public class MovementController : MonoBehaviour
     private float leftEMG;
     private float rightEMG;
 
+    public int countEMG;
+    public float countLeftEMG;
+    public float countRightEMG;
+
     public Boolean obstacleHit;
 
     public DateTime endTime;
+
+    System.Timers.Timer t = new System.Timers.Timer();
 
 
     void Start()
@@ -70,7 +76,6 @@ public class MovementController : MonoBehaviour
                 break;
         }
 
-        System.Timers.Timer t = new System.Timers.Timer();
         if (durationPref == 0)
         {
             durationPref = 1;
@@ -101,6 +106,7 @@ public class MovementController : MonoBehaviour
         }
         endTime = DateTime.Now;
         endTime.AddMinutes((double) durationPref);
+        PlayerPrefs.SetInt("selDuration", durationPref);
 
         t.Interval = durationPref * 60000;
         t.Elapsed += OnTimedEvent;
@@ -126,8 +132,10 @@ public class MovementController : MonoBehaviour
     }
 
     // Once the selected duration has been reached, move to the end screen
-    private static void OnTimedEvent(System.Object source, System.Timers.ElapsedEventArgs e)
+    private void OnTimedEvent(System.Object source, System.Timers.ElapsedEventArgs e)
     {
+        PlayerPrefs.SetFloat("countLeftEMG", (countLeftEMG / countEMG));
+        PlayerPrefs.SetFloat("countRightEMG", (countRightEMG / countEMG));
         LoadSceneOnScript endSimulation = new LoadSceneOnScript();
         endSimulation.LoadByIndex(2);
     }
@@ -146,6 +154,8 @@ public class MovementController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape))  // Panic button to kill simulation early
         {
+            PlayerPrefs.SetFloat("countLeftEMG", (countLeftEMG / countEMG));
+            PlayerPrefs.SetFloat("countRightEMG", (countRightEMG / countEMG));
             LoadSceneOnScript endSimulation = new LoadSceneOnScript();
             endSimulation.LoadByIndex(2);
         }
@@ -269,6 +279,10 @@ public class MovementController : MonoBehaviour
             // Commented out below two lines so the program would compile
             leftEMG = BitConverter.ToSingle(emgData, 0);
             rightEMG = BitConverter.ToSingle(emgData, 4);
+
+            countLeftEMG += leftEMG;
+            countRightEMG += rightEMG;
+            countEMG++;
 
             Debug.Log(String.Format("leftX = {0}", leftX));
             Debug.Log(String.Format("leftY = {0}", leftY));
