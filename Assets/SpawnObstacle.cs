@@ -21,15 +21,19 @@ public class SpawnObstacle : MonoBehaviour {
 		NextPosToGenerate = z;
 	}
 
-	// Update is called once per frame
 	void Update () {
 		if (playerPos.transform.position.z < NextPosToGenerate) {
 			z = playerPos.transform.position.z - 40f;
 			NextPosToGenerate = z;
 			Object.Destroy (generatedCube);
-			generatedCube = Instantiate(obstacle, new Vector3(x,y,z), Quaternion.Euler(0, 0, 0)) as GameObject;
+			generatedCube = Instantiate(obstacle, new Vector3(x,y,z), Quaternion.Euler(90, 0, 90)) as GameObject;
 
-		} else {
+			Rigidbody gameObjectsRigidBody = generatedCube.AddComponent<Rigidbody>();
+			gameObjectsRigidBody.mass = 5; 
+			gameObjectsRigidBody.useGravity = true;
+
+			BoxCollider bc = generatedCube.AddComponent<BoxCollider> ();
+		}  else {
 
 		}
 
