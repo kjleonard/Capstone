@@ -50,7 +50,6 @@ public class FeetScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
         //This keeps the child thread from modifying the values used for translation after they are checked to be within the boundaries.
         left_x = playerMovement.leftX;
         left_y = playerMovement.leftY;
@@ -88,38 +87,44 @@ public class FeetScript : MonoBehaviour {
 
         //leftFoot.transform.position.Set(-.96f, playerMovement.leftY - 11.1f, 2.8f);
         //rightFoot.transform.position.Set(.6f, playerMovement.rightY - 12f, 2.8f);
+        //Debug.Log(String.Format("Left Z: {0}, Right Z: {1}", left_z, right_z));
+        left_z = left_z * -1;
+        right_z -= right_z * -1;
 
-        left_y += 1;
-        right_y += 1;
+        left_x *= -1;
+        right_x *= -1;
 
-        if (Math.Abs(left_x) > .12f
+        left_y += 1.16f;
+        right_y += 1.16f;
+        
+        if (Math.Abs(left_x) > .3f
                 & leftFoot.transform.position.x + left_x > max_right
                 & leftFoot.transform.position.x + left_x < max_left)
-            leftFoot.transform.Translate(left_x / 2, 0, 0);
-        if (Math.Abs(right_x) > .12f
+            leftFoot.transform.Translate(left_x / 4, 0, 0);
+        if (Math.Abs(right_x) > .3f
                 & rightFoot.transform.position.x + right_x > max_right
                 & rightFoot.transform.position.x + right_x < max_left)
-            rightFoot.transform.Translate(right_x / 2, 0, 0);
-        if (Math.Abs(left_y) > .12f
+            rightFoot.transform.Translate(right_x / 4, 0, 0);
+        if (Math.Abs(left_y) > .18f
                 & leftFoot.transform.position.y + left_y > floor
                 & leftFoot.transform.position.y + left_y < ceiling)
             leftFoot.transform.Translate(0, left_y / 2, 0);
-        if (Math.Abs(right_y) > .12f
+        if (Math.Abs(right_y) > .18f
             & rightFoot.transform.position.y + right_y > floor
             & rightFoot.transform.position.y + right_y < ceiling)
             rightFoot.transform.Translate(0, right_y / 2, 0);
-        if (Math.Abs(left_z) > .12f
+        if (Math.Abs(left_z) > .25f
             & leftFoot.transform.position.z + left_z < Player.transform.position.z - max_backward
             & leftFoot.transform.position.z + left_z > Player.transform.position.z - max_forward)
             leftFoot.transform.Translate(0, 0, left_z / 2);
-        if (Math.Abs(right_z) > .12f
+        if (Math.Abs(right_z) > .25f
             & rightFoot.transform.position.z + right_z < Player.transform.position.z - max_backward
             & rightFoot.transform.position.z + right_z > Player.transform.position.z - max_forward)
             rightFoot.transform.Translate(0, 0, right_z / 2);
 
 
 
-        Debug.Log(string.Format("left x = {0}, right x = {2}, player z = {1}", leftFoot.transform.position.x, Player.transform.position.z, rightFoot.transform.position.x));
+        //Debug.Log(string.Format("left x = {0}, right x = {2}, player z = {1}", leftFoot.transform.position.x, Player.transform.position.z, rightFoot.transform.position.x));
         //Debug.Log(string.Format("right Y = {0}", right_y));
     }
 }

@@ -31,10 +31,10 @@ public class MovementController : MonoBehaviour
     public float countRightEMG;
 
     public Boolean obstacleHit;
-
+    private bool isRunning = true;
     public DateTime endTime;
 
-    System.Timers.Timer t = new System.Timers.Timer();
+    System.Timers.Timer t;
 
 
     void Start()
@@ -107,9 +107,10 @@ public class MovementController : MonoBehaviour
         endTime.AddMinutes((double) durationPref);
         PlayerPrefs.SetInt("selDuration", durationPref);
 
+        t = new System.Timers.Timer();
         t.Interval = durationPref * 60000;
-        Debug.Log(String.Format("Duration = {0}", t.Interval));
-        t.Elapsed += OnTimedEvent;
+        Debug.Log(String.Format("DurationPref = {1}, Duration = {0}", t.Interval, durationPref));
+        t.Elapsed += new System.Timers.ElapsedEventHandler(OnTimedEvent);
         t.AutoReset = false;
 
 
@@ -134,9 +135,8 @@ public class MovementController : MonoBehaviour
     // Once the selected duration has been reached, move to the end screen
     private void OnTimedEvent(System.Object source, System.Timers.ElapsedEventArgs e)
     {
-        t.Enabled = false;
-        PlayerPrefs.SetFloat("countLeftEMG", (countLeftEMG / countEMG));
-        PlayerPrefs.SetFloat("countRightEMG", (countRightEMG / countEMG));
+        isRunning = false;
+        
         LoadSceneOnScript endSimulation = new LoadSceneOnScript();
         endSimulation.LoadByIndex(2);
     }
@@ -155,9 +155,9 @@ public class MovementController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape))  // Panic button to kill simulation early
         {
-            t.Enabled = false;
-            PlayerPrefs.SetFloat("countLeftEMG", (countLeftEMG / countEMG));
-            PlayerPrefs.SetFloat("countRightEMG", (countRightEMG / countEMG));
+            isRunning = false;
+            //PlayerPrefs.SetFloat("countLeftEMG", (countLeftEMG / countEMG));
+            //PlayerPrefs.SetFloat("countRightEMG", (countRightEMG / countEMG));
             LoadSceneOnScript endSimulation = new LoadSceneOnScript();
             endSimulation.LoadByIndex(2);
         }
@@ -176,7 +176,8 @@ public class MovementController : MonoBehaviour
         velocity = dir / dir.magnitude * Time.deltaTime * speed * (float)(Math.Log(Convert.ToInt32(speed), 25)) / 35; //calculate velocity
         if(speed > 0)
             transform.position += velocity; //move character forward
-
+        PlayerPrefs.SetFloat("countLeftEMG", (countLeftEMG / countEMG));
+        PlayerPrefs.SetFloat("countRightEMG", (countRightEMG / countEMG));
     }
 
     void updateMPMText()
@@ -186,8 +187,8 @@ public class MovementController : MonoBehaviour
 
     void updateEMGText()
     {
-        left_emg_text.text = String.Format("Left EMG: {0} mv", leftEMG);
-        right_emg_text.text = String.Format("Right EMG: {0} mv", rightEMG);
+        left_emg_text.text = String.Format("Left EMG: {0} mV", leftEMG);
+        right_emg_text.text = String.Format("Right EMG: {0} mV", rightEMG);
     }
 
     void TCP_Client()
@@ -223,22 +224,21 @@ public class MovementController : MonoBehaviour
         TcpClient emgPort = new TcpClient("127.0.0.1", port);
         NetworkStream emgStream = emgPort.GetStream();
         
-        while (t.Enabled == true)
+        while (isRunning)
         {
             accStream.Read(accData, 0, accData.Length);
             emgStream.Read(emgData, 0, emgData.Length);
 
-            leftX = BitConverter.ToSingle(accData, 0);
-            leftY = BitConverter.ToSingle(accData, 4);
-            leftZ = BitConverter.ToSingle(accData, 8);
-            rightX = BitConverter.ToSingle(accData, 12);
-            rightY = BitConverter.ToSingle(accData, 16);
-            rightZ = BitConverter.ToSingle(accData, 20);           
+            leftZ = BitConverter.ToSingle(accData, 0);  //Trigno X axis is parallel to arrow
+            leftX = BitConverter.ToSingle(accData, 4);  //Trigno Y axis is perpendicular to arrow, on same plane as arrow
+            leftY = BitConverter.ToSingle(accData, 8);  //Trigno Z axis is perpendicular to x-y plane
+            rightZ = BitConverter.ToSingle(accData, 12);
+            rightX = BitConverter.ToSingle(accData, 16);
+            rightY = BitConverter.ToSingle(accData, 20);           
 
             // Commented out below two lines so the program would compile
             leftEMG = BitConverter.ToSingle(emgData, 0);
             rightEMG = BitConverter.ToSingle(emgData, 4);
-
             
             AppendAllBytes("TestData/AccelerometerTestData.data", accData);
             AppendAllBytes("TestData/EMGTestData.data", emgData);
@@ -267,7 +267,7 @@ public class MovementController : MonoBehaviour
         FileStream accStream = new FileStream("TestData/AccelerometerTestData.data", FileMode.Open);
         FileStream emgStream = new FileStream("TestData/EMGTestData.data", FileMode.Open);
 
-        while (t.Enabled == true)
+        while (isRunning)
         {
 
             accStream.Read(accData, 0, accData.Length);
@@ -295,6 +295,7 @@ public class MovementController : MonoBehaviour
             Debug.Log(String.Format("rightY = {0}", rightY));
             Debug.Log(String.Format("rightZ = {0}", rightZ));*/
             Debug.Log(String.Format("rightEMG = {0}", rightEMG));
+            Thread.Sleep(10);
         }
         Debug.Log("Reached end of File\n\n");
     }
