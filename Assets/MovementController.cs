@@ -34,7 +34,8 @@ public class MovementController : MonoBehaviour
     private bool isRunning = true;
     public DateTime endTime;
 
-    System.Timers.Timer t;
+    public static System.Timers.Timer t;
+    public static LoadSceneOnScript endSimulation;
 
 
     void Start()
@@ -107,14 +108,12 @@ public class MovementController : MonoBehaviour
         endTime.AddMinutes((double) durationPref);
         PlayerPrefs.SetInt("selDuration", durationPref);
 
-        t = new System.Timers.Timer();
-        t.Interval = durationPref * 60000;
+        t = new System.Timers.Timer((double) durationPref * 60000);
         Debug.Log(String.Format("DurationPref = {1}, Duration = {0}", t.Interval, durationPref));
-        t.Elapsed += new System.Timers.ElapsedEventHandler(OnTimedEvent);
+        t.Elapsed += new System.Timers.ElapsedEventHandler(OnTimedEvent_Elapsed);
         t.AutoReset = false;
-
-
         t.Enabled = true;
+
         //Creates Child Thread to start TCP Client
         if (debug)
         {
@@ -133,11 +132,12 @@ public class MovementController : MonoBehaviour
     }
 
     // Once the selected duration has been reached, move to the end screen
-    private void OnTimedEvent(System.Object source, System.Timers.ElapsedEventArgs e)
+    private void OnTimedEvent_Elapsed(System.Object source, System.Timers.ElapsedEventArgs e)
     {
         isRunning = false;
-        
-        LoadSceneOnScript endSimulation = new LoadSceneOnScript();
+        Debug.Log(String.Format("Timer fired!"));
+
+        endSimulation = new LoadSceneOnScript();
         endSimulation.LoadByIndex(2);
     }
 
@@ -293,8 +293,8 @@ public class MovementController : MonoBehaviour
             Debug.Log(String.Format("leftZ = {0}", leftZ));
             Debug.Log(String.Format("rightX = {0}", rightX));
             Debug.Log(String.Format("rightY = {0}", rightY));
-            Debug.Log(String.Format("rightZ = {0}", rightZ));*/
-            Debug.Log(String.Format("rightEMG = {0}", rightEMG));
+            Debug.Log(String.Format("rightZ = {0}", rightZ));
+            Debug.Log(String.Format("rightEMG = {0}", rightEMG));*/
             Thread.Sleep(10);
         }
         Debug.Log("Reached end of File\n\n");

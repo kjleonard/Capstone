@@ -2012,11 +2012,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5531c4f95d56d6e4eab187060e1a03ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lblAvoidedCount: {fileID: 0}
-  lblDistance: {fileID: 0}
-  lblSpeed: {fileID: 0}
-  lblLeftEMG: {fileID: 0}
-  lblRightEMG: {fileID: 0}
+  lblAvoidedCount: {fileID: 1436428626}
+  lblDistance: {fileID: 390985408}
+  lblSpeed: {fileID: 1330993413}
+  lblLeftEMG: {fileID: 1270581457}
+  lblRightEMG: {fileID: 1372865895}
 --- !u!1 &1940352754
 GameObject:
   m_ObjectHideFlags: 0

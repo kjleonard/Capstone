@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VR;
 
 public class EndScreen : MonoBehaviour {
 
@@ -13,6 +14,9 @@ public class EndScreen : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        Cursor.visible = true;
+        VRSettings.enabled = false;
 
         int obstaclesHit = PlayerPrefs.GetInt("obstaclesHit");
         int obstacleTotal = PlayerPrefs.GetInt("obstacleTotal");
