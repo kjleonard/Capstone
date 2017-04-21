@@ -33,6 +33,7 @@ public class MovementController : MonoBehaviour
     public Boolean obstacleHit;
     private bool isRunning = true;
     public DateTime endTime;
+    public bool endSim = false;
 
     public static System.Timers.Timer t;
     public static LoadSceneOnScript endSimulation;
@@ -136,9 +137,9 @@ public class MovementController : MonoBehaviour
     {
         isRunning = false;
         Debug.Log(String.Format("Timer fired!"));
-
-        endSimulation = new LoadSceneOnScript();
-        endSimulation.LoadByIndex(2);
+        endSim = true;
+        //endSimulation = new LoadSceneOnScript();
+        //endSimulation.LoadByIndex(2);
     }
 
     // Update is called once per frame
@@ -153,8 +154,9 @@ public class MovementController : MonoBehaviour
         {
             speed -= 5f;
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))  // Panic button to kill simulation early
+        else if (Input.GetKeyDown(KeyCode.Escape) || endSim == true)  // Panic button to kill simulation early
         {
+            // This is a horrible way of dealing with the timer, but deadlines....
             isRunning = false;
             //PlayerPrefs.SetFloat("countLeftEMG", (countLeftEMG / countEMG));
             //PlayerPrefs.SetFloat("countRightEMG", (countRightEMG / countEMG));
