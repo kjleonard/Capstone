@@ -301,6 +301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lblAvoidedCount: {fileID: 0}
   lblDistance: {fileID: 0}
+  lblFeedback: {fileID: 0}
   lblSpeed: {fileID: 0}
   lblLeftEMG: {fileID: 0}
   lblRightEMG: {fileID: 0}
@@ -838,6 +839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lblAvoidedCount: {fileID: 0}
   lblDistance: {fileID: 0}
+  lblFeedback: {fileID: 0}
   lblSpeed: {fileID: 0}
   lblLeftEMG: {fileID: 0}
   lblRightEMG: {fileID: 0}
@@ -986,6 +988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lblAvoidedCount: {fileID: 0}
   lblDistance: {fileID: 0}
+  lblFeedback: {fileID: 0}
   lblSpeed: {fileID: 0}
   lblLeftEMG: {fileID: 0}
   lblRightEMG: {fileID: 0}
@@ -1077,6 +1080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lblAvoidedCount: {fileID: 0}
   lblDistance: {fileID: 0}
+  lblFeedback: {fileID: 0}
   lblSpeed: {fileID: 0}
   lblLeftEMG: {fileID: 0}
   lblRightEMG: {fileID: 0}
@@ -1168,6 +1172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lblAvoidedCount: {fileID: 1436428626}
   lblDistance: {fileID: 390985408}
+  lblFeedback: {fileID: 0}
   lblSpeed: {fileID: 1330993413}
   lblLeftEMG: {fileID: 1270581457}
   lblRightEMG: {fileID: 1372865895}
@@ -2014,6 +2019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lblAvoidedCount: {fileID: 1436428626}
   lblDistance: {fileID: 390985408}
+  lblFeedback: {fileID: 1445800670}
   lblSpeed: {fileID: 1330993413}
   lblLeftEMG: {fileID: 1270581457}
   lblRightEMG: {fileID: 1372865895}

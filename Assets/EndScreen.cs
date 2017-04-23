@@ -8,6 +8,7 @@ public class EndScreen : MonoBehaviour {
 
     public Text lblAvoidedCount;
     public Text lblDistance;
+    public Text lblFeedback;
     public Text lblSpeed;
     public Text lblLeftEMG;
     public Text lblRightEMG;
@@ -30,8 +31,28 @@ public class EndScreen : MonoBehaviour {
         lblSpeed.text = speed + " kilometers/hour";
         lblLeftEMG.text = leftEMG + " mV";
         lblRightEMG.text = rightEMG + " mV";
-		
-	}
+
+        double feedback = (obstacleTotal - obstaclesHit) / obstacleTotal;
+        string feedbackText = "";
+        if (feedback < .25) // < 25% obstacles avoided
+        {
+            feedbackText = "Nice Work!";
+        }
+        else if (feedback < .5) // < 50% obstacles avoided
+        {
+            feedbackText = "Great Job!";
+        }
+        else if (feedback < .75)    // < 75% obstacles avoided
+        {
+            feedbackText = "Awesome!";
+        }
+        else    // < 100% obstacles avoided
+        {
+            feedbackText = "Excellent!";
+        }
+        lblFeedback.text = feedbackText;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

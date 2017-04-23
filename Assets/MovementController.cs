@@ -48,34 +48,6 @@ public class MovementController : MonoBehaviour
         int durationPref = PlayerPrefs.GetInt("selDuration");
         int obstacleFrequency = PlayerPrefs.GetInt("selObstacleFrequency");
         int obstaclesRemaining = 0;
-        // To-Do: Figure out best way to accomodate for # per minute in combination with speed
-        if (obstacleFrequency == 1)
-        {   // Low - 4 per minute = 1/15s
-            obstaclesRemaining = 4 * durationPref;
-        }
-        else if (obstacleFrequency == 2)
-        {   // Medium - 6 per minute = 1/10s
-            obstaclesRemaining = 6 * durationPref;
-        }
-        else if (obstacleFrequency == 3)
-        {   // High - 10 per minute = 1/6s
-            obstaclesRemaining = 10 * durationPref;
-        }
-        PlayerPrefs.SetInt("obstacleTotal", obstaclesRemaining);
-
-        int obstacleType = PlayerPrefs.GetInt("selObstacleType");
-        // To-Do: Should we change this from a dropdown to checkboxes to accomodate randomized selection of obstacles?
-        switch (obstacleType)
-        {
-            case 0: // None
-                break;
-            case 1: // Boxes
-                break;
-            case 2: // Strings
-                break;
-            case 3: // Other
-                break;
-        }
 
         if (durationPref == 0)
         {
@@ -105,8 +77,38 @@ public class MovementController : MonoBehaviour
         {
             durationPref = 10;
         }
-        endTime = DateTime.Now;
-        endTime.AddMinutes((double) durationPref);
+
+        // To-Do: Figure out best way to accomodate for # per minute in combination with speed
+        if (obstacleFrequency == 1)
+        {   // Low - 4 per minute = 1/15s
+            obstaclesRemaining = 4 * durationPref;
+        }
+        else if (obstacleFrequency == 2)
+        {   // Medium - 6 per minute = 1/10s
+            obstaclesRemaining = 6 * durationPref;
+        }
+        else if (obstacleFrequency == 3)
+        {   // High - 10 per minute = 1/6s
+            obstaclesRemaining = 10 * durationPref;
+        }
+        PlayerPrefs.SetInt("obstacleTotal", obstaclesRemaining);
+
+        int obstacleType = PlayerPrefs.GetInt("selObstacleType");
+        // To-Do: Should we change this from a dropdown to checkboxes to accomodate randomized selection of obstacles?
+        switch (obstacleType)
+        {
+            case 0: // None
+                break;
+            case 1: // Boxes
+                break;
+            case 2: // Strings
+                break;
+            case 3: // Other
+                break;
+        }
+
+        //endTime = DateTime.Now;
+        //endTime.AddMinutes((double) durationPref);
         PlayerPrefs.SetInt("selDuration", durationPref);
 
         t = new System.Timers.Timer((double) durationPref * 60000);
@@ -184,7 +186,7 @@ public class MovementController : MonoBehaviour
 
     void updateMPMText()
     {
-        mpm_text.text = String.Format("{0:0,0} mpm", speed/5);    // We should truncate/round this value
+        mpm_text.text = String.Format("{0:0,0} mpm", speed/5);
     }
 
     void updateEMGText()
