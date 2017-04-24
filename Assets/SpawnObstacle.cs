@@ -8,6 +8,7 @@ public class SpawnObstacle : MonoBehaviour {
 	private Transform spawnLocation;
 	public GameObject playerPos;
 	public GameObject obstacle;
+    public UnityEngine.AudioSource chime;
     public UnityEngine.UI.Text Feedback_Text;
     public System.Timers.Timer feedbackTimer;
 	public System.Timers.Timer obstacleSpawnTimer;
@@ -36,6 +37,8 @@ public class SpawnObstacle : MonoBehaviour {
         feedbackTimer.Enabled = false;
         feedbackTimerFired = false;
         firstRun = true;
+        chime.enabled = false;
+        chime.playOnAwake = false;
 
 		obstacleFrequency = PlayerPrefs.GetInt("selObstacleFrequency");
 		int durationPref = PlayerPrefs.GetInt ("selDuration");
@@ -136,10 +139,12 @@ public class SpawnObstacle : MonoBehaviour {
                 Feedback_Text.text = feedbackText;
                 Feedback_Text.enabled = true;
                 feedbackTimer.Enabled = true;
+                chime.Play();
             }
             else
             {
                 firstRun = false;
+                chime.enabled = true;
             }
 
 

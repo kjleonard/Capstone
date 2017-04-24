@@ -5737,7 +5737,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 193fad78b3434bc4a916a0e9f9570d6d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -7254,6 +7254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPos: {fileID: 1002332098}
   obstacle: {fileID: 1380694843}
+  chime: {fileID: 1410169064}
   Feedback_Text: {fileID: 365611966}
   obstacleHit: 0
 --- !u!4 &1825987073
