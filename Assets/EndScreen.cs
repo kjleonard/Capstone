@@ -27,7 +27,7 @@ public class EndScreen : MonoBehaviour {
         float rightEMG = PlayerPrefs.GetFloat("countRightEMG");
 
         lblAvoidedCount.text = (obstacleTotal - obstaclesHit).ToString() + " / " + obstacleTotal.ToString();
-        lblDistance.text = (duration * speed * 1000 / 60).ToString() + " meters";
+		lblDistance.text = ((duration/60000) * speed * 1000 / 60).ToString() + " meters";
         lblSpeed.text = speed + " kilometers/hour";
         lblLeftEMG.text = leftEMG + " mV";
         lblRightEMG.text = rightEMG + " mV";

@@ -32,7 +32,6 @@ public class MovementController : MonoBehaviour
 
     public Boolean obstacleHit;
     private bool isRunning = true;
-    public DateTime endTime;
     public bool endSim = false;
 
     public static System.Timers.Timer t;
@@ -46,72 +45,9 @@ public class MovementController : MonoBehaviour
         dir = transform.forward;
         speed = PlayerPrefs.GetFloat("selSpeed") * 5000f / 60f;    // kilometers/hour to meters/min
         int durationPref = PlayerPrefs.GetInt("selDuration");
-        int obstacleFrequency = PlayerPrefs.GetInt("selObstacleFrequency");
-        int obstaclesRemaining = 0;
 
-        if (durationPref == 0)
-        {
-            durationPref = 1;
-        }
-        else if (durationPref == 1)
-        {
-            durationPref = 2;
-        }
-        else if (durationPref == 2)
-        {
-            durationPref = 4;
-        }
-        else if (durationPref == 3)
-        {
-            durationPref = 5;
-        }
-        else if (durationPref == 4)
-        {
-            durationPref = 6;
-        }
-        else if (durationPref == 5)
-        {
-            durationPref = 8;
-        }
-        else if (durationPref == 6)
-        {
-            durationPref = 10;
-        }
 
-        // To-Do: Figure out best way to accomodate for # per minute in combination with speed
-        if (obstacleFrequency == 1)
-        {   // Low - 4 per minute = 1/15s
-            obstaclesRemaining = 4 * durationPref;
-        }
-        else if (obstacleFrequency == 2)
-        {   // Medium - 6 per minute = 1/10s
-            obstaclesRemaining = 6 * durationPref;
-        }
-        else if (obstacleFrequency == 3)
-        {   // High - 10 per minute = 1/6s
-            obstaclesRemaining = 10 * durationPref;
-        }
-        PlayerPrefs.SetInt("obstacleTotal", obstaclesRemaining);
-
-        int obstacleType = PlayerPrefs.GetInt("selObstacleType");
-        // To-Do: Should we change this from a dropdown to checkboxes to accomodate randomized selection of obstacles?
-        switch (obstacleType)
-        {
-            case 0: // None
-                break;
-            case 1: // Boxes
-                break;
-            case 2: // Strings
-                break;
-            case 3: // Other
-                break;
-        }
-
-        //endTime = DateTime.Now;
-        //endTime.AddMinutes((double) durationPref);
-        PlayerPrefs.SetInt("selDuration", durationPref);
-
-        t = new System.Timers.Timer((double) durationPref * 60000);
+        t = new System.Timers.Timer(durationPref);
         Debug.Log(String.Format("DurationPref = {1}, Duration = {0}", t.Interval, durationPref));
         t.Elapsed += new System.Timers.ElapsedEventHandler(OnTimedEvent_Elapsed);
         t.AutoReset = false;
@@ -138,7 +74,7 @@ public class MovementController : MonoBehaviour
     private void OnTimedEvent_Elapsed(System.Object source, System.Timers.ElapsedEventArgs e)
     {
         isRunning = false;
-        Debug.Log(String.Format("Timer fired!"));
+        Debug.Log(String.Format("End Simulation Timer Fired!"));
         endSim = true;
         //endSimulation = new LoadSceneOnScript();
         //endSimulation.LoadByIndex(2);
