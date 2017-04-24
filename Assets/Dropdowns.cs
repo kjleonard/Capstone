@@ -15,13 +15,42 @@ public class Dropdowns : MonoBehaviour {
 
     public void setValue(Dropdown x)
     {
-        PlayerPrefs.SetInt(x.name, x.value);
+		if (x.name == "selDuration") {
+			int durationPref = x.value;
+
+			if (durationPref == 0) {
+				durationPref = 1;
+			} else if (durationPref == 1) {
+				durationPref = 2;
+			} else if (durationPref == 2) {
+				durationPref = 4;
+			} else if (durationPref == 3) {
+				durationPref = 5;
+			} else if (durationPref == 4) {
+				durationPref = 6;
+			} else if (durationPref == 5) {
+				durationPref = 8;
+			} else if (durationPref == 6) {
+				durationPref = 10;
+			}
+
+			durationPref *= 60000;
+			PlayerPrefs.SetInt (x.name, durationPref);
+
+		} else {
+			PlayerPrefs.SetInt (x.name, x.value);
+		}
     }
 
-    public void setFloat(Dropdown x)
-    {
-        PlayerPrefs.SetFloat(x.name, x.value);
-    }
+	public void setFloat(Dropdown x)
+	{
+		int menuIndex = x.GetComponent<Dropdown> ().value;
+		List<Dropdown.OptionData> menuOptions = x.GetComponent<Dropdown> ().options;
+		string value = menuOptions [menuIndex].text;
+		float f;
+		float.TryParse (value, out f);
+		PlayerPrefs.SetFloat(x.name, f);
+	}
 
     public void getValue(Dropdown x)
     {

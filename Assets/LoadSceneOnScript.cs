@@ -8,12 +8,7 @@ public class LoadSceneOnScript : MonoBehaviour {
     public void LoadByIndex(int sceneIndex)
     {
         // Enables VR if we are in simulation (Scene 1), disables when at start/end screens (Scene 0 or Scene 2)
-        if (sceneIndex == 0 || sceneIndex == 2)
-        {
-            Cursor.visible = true;
-            VRSettings.enabled = false;
-        }
-        else
+        if (sceneIndex == 1)
         {
             Cursor.visible = false;
             VRSettings.enabled = true;

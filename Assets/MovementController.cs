@@ -7,7 +7,7 @@ using System.Net.Sockets;
 
 public class MovementController : MonoBehaviour
 {
-
+    private bool debug = true;
     private Vector3 velocity;
     private float speed;
     private Vector3 dir;
@@ -26,7 +26,16 @@ public class MovementController : MonoBehaviour
     private float leftEMG;
     private float rightEMG;
 
+    public int countEMG;
+    public float countLeftEMG;
+    public float countRightEMG;
+
     public Boolean obstacleHit;
+    private bool isRunning = true;
+    public bool endSim = false;
+
+    public static System.Timers.Timer t;
+    public static LoadSceneOnScript endSimulation;
 
 
     void Start()
@@ -36,85 +45,39 @@ public class MovementController : MonoBehaviour
         dir = transform.forward;
         speed = PlayerPrefs.GetFloat("selSpeed") * 5000f / 60f;    // kilometers/hour to meters/min
         int durationPref = PlayerPrefs.GetInt("selDuration");
-        int obstacleFrequency = PlayerPrefs.GetInt("selObstacleFrequency");
-        int obstaclesRemaining = 0;
 
-        // To-Do: Figure out best way to accomodate for # per minute in combination with speed
-        if (obstacleFrequency == 1)
-        {   // Low - 4 per minute = 1/15s
-            obstaclesRemaining = 4 * durationPref;
-        }
-        else if (obstacleFrequency == 2)
-        {   // Medium - 6 per minute = 1/10s
-            obstaclesRemaining = 6 * durationPref;
-        }
-        else if (obstacleFrequency == 3)
-        {   // High - 10 per minute = 1/6s
-            obstaclesRemaining = 10 * durationPref;
-        }
-        PlayerPrefs.SetInt("obstacleTotal", obstaclesRemaining);
 
-        int obstacleType = PlayerPrefs.GetInt("selObstacleType");
-        // To-Do: Should we change this from a dropdown to checkboxes to accomodate randomized selection of obstacles?
-        switch (obstacleType)
-        {
-            case 0: // None
-                break;
-            case 1: // Boxes
-                break;
-            case 2: // Strings
-                break;
-            case 3: // Other
-                break;
-        }
-
-        System.Timers.Timer t = new System.Timers.Timer();
-        if (durationPref == 0)
-        {
-            durationPref = 10000;
-        }
-        else if (durationPref == 1)
-        {
-            durationPref = 2 * 10000;
-        }
-        else if (durationPref == 2)
-        {
-            durationPref = 4 * 10000;
-        }
-        else if (durationPref == 3)
-        {
-            durationPref = 5 * 10000;
-        }
-        else if (durationPref == 4)
-        {
-            durationPref = 6 * 10000;
-        }
-        else if (durationPref == 5)
-        {
-            durationPref = 8 * 10000;
-        }
-        else if (durationPref == 6)
-        {
-            durationPref = 10 * 10000;
-        }
-        t.Interval = durationPref * 60000;
-        t.Elapsed += OnTimedEvent;
+        t = new System.Timers.Timer(durationPref);
+        Debug.Log(String.Format("DurationPref = {1}, Duration = {0}", t.Interval, durationPref));
+        t.Elapsed += new System.Timers.ElapsedEventHandler(OnTimedEvent_Elapsed);
         t.AutoReset = false;
-
-
-        //Creates Child Thread to retrieve Postional Information
-        ThreadStart childref_TCP_Client = new ThreadStart(TCP_Client);
-        Thread childThread_TCP_Client = new Thread(childref_TCP_Client);
-        childThread_TCP_Client.Start();
-
         t.Enabled = true;
+
+        //Creates Child Thread to start TCP Client
+        if (debug)
+        {
+            ThreadStart childref_File_Streamer = new ThreadStart(File_Streamer);
+            Thread childThread_File_Streamer = new Thread(childref_File_Streamer);
+            childThread_File_Streamer.Start();
+        }
+
+        //Creates Child Thread to test/
+        else
+        {
+            ThreadStart childref_TCP_Client = new ThreadStart(TCP_Client);
+            Thread childThread_TCP_Client = new Thread(childref_TCP_Client);
+            childThread_TCP_Client.Start();
+        }
     }
 
     // Once the selected duration has been reached, move to the end screen
-    private static void OnTimedEvent(System.Object source, System.Timers.ElapsedEventArgs e)
+    private void OnTimedEvent_Elapsed(System.Object source, System.Timers.ElapsedEventArgs e)
     {
-        LoadSceneOnScript endSimulation = new LoadSceneOnScript();
-        endSimulation.LoadByIndex(2);
+        isRunning = false;
+        Debug.Log(String.Format("End Simulation Timer Fired!"));
+        endSim = true;
+        //endSimulation = new LoadSceneOnScript();
+        //endSimulation.LoadByIndex(2);
     }
 
     // Update is called once per frame
@@ -129,11 +92,21 @@ public class MovementController : MonoBehaviour
         {
             speed -= 5f;
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))  // Panic button to kill simulation early
+        else if (Input.GetKeyDown(KeyCode.Escape) || endSim == true)  // Panic button to kill simulation early
         {
+            // This is a horrible way of dealing with the timer, but deadlines....
+            isRunning = false;
+            //PlayerPrefs.SetFloat("countLeftEMG", (countLeftEMG / countEMG));
+            //PlayerPrefs.SetFloat("countRightEMG", (countRightEMG / countEMG));
             LoadSceneOnScript endSimulation = new LoadSceneOnScript();
             endSimulation.LoadByIndex(2);
         }
+
+        //if (DateTime.Now >= endTime)
+        //{
+        //    LoadSceneOnScript endSimulation = new LoadSceneOnScript();
+        //    endSimulation.LoadByIndex(2);
+        //}
 
         updateMPMText();
         updateEMGText();
@@ -143,18 +116,19 @@ public class MovementController : MonoBehaviour
         velocity = dir / dir.magnitude * Time.deltaTime * speed * (float)(Math.Log(Convert.ToInt32(speed), 25)) / 35; //calculate velocity
         if(speed > 0)
             transform.position += velocity; //move character forward
-
+        PlayerPrefs.SetFloat("countLeftEMG", (countLeftEMG / countEMG));
+        PlayerPrefs.SetFloat("countRightEMG", (countRightEMG / countEMG));
     }
 
     void updateMPMText()
     {
-        mpm_text.text = String.Format("{0:0,0} mpm", speed/5);    // We should truncate/round this value
+        mpm_text.text = String.Format("{0:0,0} mpm", speed/5);
     }
 
     void updateEMGText()
     {
-        left_emg_text.text = String.Format("Left EMG: {0} mv", leftEMG);
-        right_emg_text.text = String.Format("Right EMG: {0} mv", rightEMG);
+        left_emg_text.text = String.Format("Left EMG: {0} mV", leftEMG);
+        right_emg_text.text = String.Format("Right EMG: {0} mV", rightEMG);
     }
 
     void TCP_Client()
@@ -189,24 +163,22 @@ public class MovementController : MonoBehaviour
         port = 50043;
         TcpClient emgPort = new TcpClient("127.0.0.1", port);
         NetworkStream emgStream = emgPort.GetStream();
-        bool running = true;
-        //float leftX, leftY, leftZ, rightX, rightY, rightZ;
-        while (running)
+        
+        while (isRunning)
         {
             accStream.Read(accData, 0, accData.Length);
             emgStream.Read(emgData, 0, emgData.Length);
 
-            leftX = BitConverter.ToSingle(accData, 0);
-            leftY = BitConverter.ToSingle(accData, 8);
-            leftZ = BitConverter.ToSingle(accData, 4);
-            rightX = BitConverter.ToSingle(accData, 12);
-            rightY = BitConverter.ToSingle(accData, 20);
-            rightZ = BitConverter.ToSingle(accData, 16);           
+            leftZ = BitConverter.ToSingle(accData, 0);  //Trigno X axis is parallel to arrow
+            leftX = BitConverter.ToSingle(accData, 4);  //Trigno Y axis is perpendicular to arrow, on same plane as arrow
+            leftY = BitConverter.ToSingle(accData, 8);  //Trigno Z axis is perpendicular to x-y plane
+            rightZ = BitConverter.ToSingle(accData, 12);
+            rightX = BitConverter.ToSingle(accData, 16);
+            rightY = BitConverter.ToSingle(accData, 20);           
 
             // Commented out below two lines so the program would compile
             leftEMG = BitConverter.ToSingle(emgData, 0);
             rightEMG = BitConverter.ToSingle(emgData, 4);
-
             
             AppendAllBytes("TestData/AccelerometerTestData.data", accData);
             AppendAllBytes("TestData/EMGTestData.data", emgData);
@@ -221,10 +193,51 @@ public class MovementController : MonoBehaviour
             //Thread.Sleep(50);
         }
 
-        float[] values = new float[48];
+
 
         Debug.Log("Reached STOP");
         commandWrite.WriteLine("STOP\r\n");
+    }
+    
+    void File_Streamer()
+    {
+        //Put code to read from EMG and Accelerometer data files here.
+        Byte[] accData = new Byte[192];
+        Byte[] emgData = new Byte[64];
+        FileStream accStream = new FileStream("TestData/AccelerometerTestData.data", FileMode.Open);
+        FileStream emgStream = new FileStream("TestData/EMGTestData.data", FileMode.Open);
+
+        while (isRunning)
+        {
+
+            accStream.Read(accData, 0, accData.Length);
+            emgStream.Read(emgData, 0, emgData.Length);
+
+            leftX = BitConverter.ToSingle(accData, 0);
+            leftZ = BitConverter.ToSingle(accData, 4);
+            leftY = BitConverter.ToSingle(accData, 8);
+            rightX = BitConverter.ToSingle(accData, 12);
+            rightZ = BitConverter.ToSingle(accData, 16);
+            rightY = BitConverter.ToSingle(accData, 20);
+
+            // Commented out below two lines so the program would compile
+            leftEMG = BitConverter.ToSingle(emgData, 0);
+            rightEMG = BitConverter.ToSingle(emgData, 4);
+
+            countLeftEMG += leftEMG;
+            countRightEMG += rightEMG;
+            countEMG++;
+
+            /*Debug.Log(String.Format("leftX = {0}", leftX));
+            Debug.Log(String.Format("leftY = {0}", leftY));
+            Debug.Log(String.Format("leftZ = {0}", leftZ));
+            Debug.Log(String.Format("rightX = {0}", rightX));
+            Debug.Log(String.Format("rightY = {0}", rightY));
+            Debug.Log(String.Format("rightZ = {0}", rightZ));
+            Debug.Log(String.Format("rightEMG = {0}", rightEMG));*/
+            Thread.Sleep(10);
+        }
+        Debug.Log("Reached end of File\n\n");
     }
 
     public static void AppendAllBytes(string path, byte[] bytes)
