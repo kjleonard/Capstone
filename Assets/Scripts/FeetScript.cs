@@ -85,6 +85,7 @@ public class FeetScript : MonoBehaviour {
         }
         */
 
+
         //leftFoot.transform.position.Set(-.96f, playerMovement.leftY - 11.1f, 2.8f);
         //rightFoot.transform.position.Set(.6f, playerMovement.rightY - 12f, 2.8f);
         //Debug.Log(String.Format("Left Z: {0}, Right Z: {1}", left_z, right_z));
@@ -99,24 +100,30 @@ public class FeetScript : MonoBehaviour {
         
         if (Math.Abs(left_x) > .3f
                 & leftFoot.transform.position.x + left_x > max_right
-                & leftFoot.transform.position.x + left_x < max_left)
-            leftFoot.transform.Translate(left_x / 4, 0, 0);
+			& leftFoot.transform.position.x + left_x < max_left){
+			leftFoot.GetComponent<Rigidbody>().MovePosition(new Vector3(leftFoot.transform.position.x + left_x/4,leftFoot.transform.position.y,leftFoot.transform.position.z));
+            //leftFoot.transform.Translate(left_x / 4, 0, 0);
+				}
         if (Math.Abs(right_x) > .3f
                 & rightFoot.transform.position.x + right_x > max_right
-                & rightFoot.transform.position.x + right_x < max_left)
+			& rightFoot.transform.position.x + right_x < max_left)
             rightFoot.transform.Translate(right_x / 4, 0, 0);
-        if (Math.Abs(left_y) > .18f
-                & leftFoot.transform.position.y + left_y > floor
-                & leftFoot.transform.position.y + left_y < ceiling)
-            leftFoot.transform.Translate(0, left_y / 2, 0);
+		if (Math.Abs (left_y) > .18f
+		          & leftFoot.transform.position.y + left_y > floor
+		          & leftFoot.transform.position.y + left_y < ceiling) {
+			leftFoot.GetComponent<Rigidbody>().MovePosition(new Vector3(leftFoot.transform.position.x,leftFoot.transform.position.y+left_y/2,leftFoot.transform.position.z));
+			//leftFoot.transform.Translate(0, left_y / 2, 0);
+		} 
         if (Math.Abs(right_y) > .18f
             & rightFoot.transform.position.y + right_y > floor
             & rightFoot.transform.position.y + right_y < ceiling)
             rightFoot.transform.Translate(0, right_y / 2, 0);
-        if (Math.Abs(left_z) > .25f
-            & leftFoot.transform.position.z + left_z < Player.transform.position.z - max_backward
-            & leftFoot.transform.position.z + left_z > Player.transform.position.z - max_forward)
-            leftFoot.transform.Translate(0, 0, left_z / 2);
+		if (Math.Abs (left_z) > .25f
+		          & leftFoot.transform.position.z + left_z < Player.transform.position.z - max_backward
+		          & leftFoot.transform.position.z + left_z > Player.transform.position.z - max_forward) {
+			leftFoot.GetComponent<Rigidbody>().MovePosition(new Vector3(leftFoot.transform.position.x,leftFoot.transform.position.y,leftFoot.transform.position.z+left_z/2));
+			//leftFoot.transform.Translate (0, 0, left_z / 2);
+		}
         if (Math.Abs(right_z) > .25f
             & rightFoot.transform.position.z + right_z < Player.transform.position.z - max_backward
             & rightFoot.transform.position.z + right_z > Player.transform.position.z - max_forward)
@@ -127,4 +134,15 @@ public class FeetScript : MonoBehaviour {
         //Debug.Log(string.Format("left x = {0}, right x = {2}, player z = {1}", leftFoot.transform.position.x, Player.transform.position.z, rightFoot.transform.position.x));
         //Debug.Log(string.Format("right Y = {0}", right_y));
     }
+
+
+	void OnTriggerEnter (Collider col)
+	{
+		Debug.Log ("WE HIT SOMETHING");
+		Destroy (col.gameObject);
+	}
+
+	void OnControllerColliderHit(ControllerColliderHit col){
+		Debug.Log ("EKEKEKEKEKEKKEE");
+	}
 }

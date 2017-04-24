@@ -14,7 +14,7 @@ public class SpawnObstacle : MonoBehaviour {
 	private float NextPosToGenerate = 50f;
 	private GameObject generatedCube;
 	private float x, y, z;
-    private bool obstacleHit;
+    public  bool obstacleHit;
     private bool feedbackTimerFired;
     private bool firstRun;  // Used to not display feedback text on first obstacle spawn
 
@@ -42,6 +42,8 @@ public class SpawnObstacle : MonoBehaviour {
         // Workaround for multi-threading and Unity calls
         feedbackTimerFired = true;
     }
+
+
 
     void Update () {
         if (feedbackTimerFired)
@@ -91,19 +93,21 @@ public class SpawnObstacle : MonoBehaviour {
                 firstRun = false;
             }
             Destroy(generatedCube);
-			generatedCube = Instantiate(obstacle, new Vector3(x,y,z), Quaternion.Euler(90, 0, 90)) as GameObject;
 
-			Rigidbody gameObjectsRigidBody = generatedCube.AddComponent<Rigidbody>();
-			gameObjectsRigidBody.mass = 5; 
-			gameObjectsRigidBody.useGravity = true;
+			generatedCube = Instantiate(obstacle, new Vector3(x,y,z), Quaternion.Euler(0, 0, 0)) as GameObject;
+			Rigidbody r = generatedCube.GetComponent<Rigidbody>();
+			r.angularDrag = 0;
+			r.isKinematic = false;
+			r.useGravity = true;
 
-			BoxCollider bc = generatedCube.AddComponent<BoxCollider> ();
 		}
         else
         {
 
 		}
 
-
 	}
+
+
+
 }

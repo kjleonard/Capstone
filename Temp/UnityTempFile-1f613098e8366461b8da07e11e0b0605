@@ -1,0 +1,235 @@
+-debug
+-target:library
+-nowarn:0169
+-langversion:4
+-out:'Temp/Assembly-CSharp.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/PlaymodeTestsRunner/UnityEngine.PlaymodeTestsRunner.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll'
+-r:'/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll'
+-r:'/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll'
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_5_OR_NEWER
+-define:UNITY_5_5_1
+-define:UNITY_5_5
+-define:UNITY_5
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_DUCK_TYPING
+-define:ENABLE_GENERICS
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_SPRITERENDERER_FLIPPING
+-define:ENABLE_SPRITES
+-define:ENABLE_TERRAIN
+-define:ENABLE_RAKNET
+-define:ENABLE_UNET
+-define:ENABLE_LZMA
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_WEBCAM
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES_COLLAB
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_HUB
+-define:ENABLE_CLOUD_PROJECT_ID
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_METRICS
+-define:ENABLE_EDITOR_METRICS_CACHING
+-define:INCLUDE_DYNAMIC_GI
+-define:INCLUDE_GI
+-define:PLATFORM_SUPPORTS_MONO
+-define:RENDER_SOFTWARE_CURSOR
+-define:INCLUDE_PUBNUB
+-define:ENABLE_PLAYMODE_TESTS_RUNNER
+-define:ENABLE_SCRIPTING_NEW_CSHARP_COMPILER
+-define:UNITY_STANDALONE_WIN
+-define:UNITY_STANDALONE
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_MOVIES
+-define:ENABLE_NETWORK
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_EVENT_QUEUE
+-define:ENABLE_CLUSTERINPUT
+-define:ENABLE_VIDEO
+-define:ENABLE_VR
+-define:ENABLE_WEBSOCKET_HOST
+-define:ENABLE_MONO
+-define:ENABLE_PROFILER
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_OSX
+-define:UNITY_TEAM_LICENSE
+-define:CROSS_PLATFORM_INPUT
+'Assets/CollisionDetectionScript.cs'
+'Assets/Dropdowns.cs'
+'Assets/EndScreen.cs'
+'Assets/IJUSTWANTTHECOLLISIONTOWORKDAMNIT.cs'
+'Assets/LoadSceneOnScript.cs'
+'Assets/MainMenuSettings.cs'
+'Assets/MovementController.cs'
+'Assets/Prefabs/Infinite/Code/GameController.cs'
+'Assets/Prefabs/Infinite/Code/Generator/Chunk/ChunkCache.cs'
+'Assets/Prefabs/Infinite/Code/Generator/Chunk/TerrainChunk.cs'
+'Assets/Prefabs/Infinite/Code/Generator/Chunk/TerrainChunkGenerator.cs'
+'Assets/Prefabs/Infinite/Code/Generator/Chunk/TerrainChunkNeightborhood.cs'
+'Assets/Prefabs/Infinite/Code/Generator/Chunk/TerrainChunkSettings.cs'
+'Assets/Prefabs/Infinite/Code/Generator/Noise/INoiseProvider.cs'
+'Assets/Prefabs/Infinite/Code/Generator/Noise/NoiseProvider.cs'
+'Assets/Prefabs/Infinite/Code/Generator/Standard/Delegates.cs'
+'Assets/Prefabs/Infinite/Code/Generator/Standard/Vec2I.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Generator/Billow.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Generator/Checker.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Generator/Const.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Generator/Cylinders.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Generator/Perlin.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Generator/RidgedMultifractal.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Generator/Spheres.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Generator/Voronoi.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/GradientPresets.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/ModuleBase.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Noise2D.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Abs.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Add.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Blend.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Cache.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Clamp.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Curve.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Displace.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Exponent.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Invert.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Max.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Min.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Multiply.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Power.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Rotate.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Scale.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/ScaleBias.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Select.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Subtract.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Terrace.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Translate.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Operator/Turbulence.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Properties/AssemblyInfo.cs'
+'Assets/Prefabs/Infinite/Code/LibNoise/Utils.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Characters/FirstPersonCharacter/Scripts/HeadBob.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Characters/FirstPersonCharacter/Scripts/MouseLook.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Characters/FirstPersonCharacter/Scripts/RigidbodyFirstPersonController.cs'
+'Assets/Prefabs/Infinite/Standard Assets/CrossPlatformInput/Scripts/AxisTouchButton.cs'
+'Assets/Prefabs/Infinite/Standard Assets/CrossPlatformInput/Scripts/ButtonHandler.cs'
+'Assets/Prefabs/Infinite/Standard Assets/CrossPlatformInput/Scripts/CrossPlatformInputManager.cs'
+'Assets/Prefabs/Infinite/Standard Assets/CrossPlatformInput/Scripts/InputAxisScrollbar.cs'
+'Assets/Prefabs/Infinite/Standard Assets/CrossPlatformInput/Scripts/Joystick.cs'
+'Assets/Prefabs/Infinite/Standard Assets/CrossPlatformInput/Scripts/MobileControlRig.cs'
+'Assets/Prefabs/Infinite/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/MobileInput.cs'
+'Assets/Prefabs/Infinite/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/StandaloneInput.cs'
+'Assets/Prefabs/Infinite/Standard Assets/CrossPlatformInput/Scripts/TiltInput.cs'
+'Assets/Prefabs/Infinite/Standard Assets/CrossPlatformInput/Scripts/TouchPad.cs'
+'Assets/Prefabs/Infinite/Standard Assets/CrossPlatformInput/Scripts/VirtualInput.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/ActivateTrigger.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/AutoMobileShaderSwitch.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/AutoMoveAndRotate.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/CameraRefocus.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/CurveControlledBob.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/DragRigidbody.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/DynamicShadowSettings.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/FOVKick.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/FPSCounter.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/FollowTarget.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/ForcedReset.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/LerpControlledBob.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/ObjectResetter.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/ParticleSystemDestroyer.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/PlatformSpecificContent.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/SimpleActivatorMenu.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/SimpleMouseRotator.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/SmoothFollow.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/TimedObjectActivator.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/TimedObjectDestructor.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/WaypointCircuit.cs'
+'Assets/Prefabs/Infinite/Standard Assets/Utility/WaypointProgressTracker.cs'
+'Assets/Scripts/ActiveStateToggler.cs'
+'Assets/Scripts/ApplicationManager.cs'
+'Assets/Scripts/CameraController.cs'
+'Assets/Scripts/ChangeColor.cs'
+'Assets/Scripts/DragMe.cs'
+'Assets/Scripts/DragPanel.cs'
+'Assets/Scripts/DropMe.cs'
+'Assets/Scripts/FeetScript.cs'
+'Assets/Scripts/PanelManager.cs'
+'Assets/Scripts/PlayerController.cs'
+'Assets/Scripts/ResizePanel.cs'
+'Assets/Scripts/Rotator.cs'
+'Assets/Scripts/ScrollDetailTexture.cs'
+'Assets/Scripts/ShowSliderValue.cs'
+'Assets/Scripts/TiltWindow.cs'
+'Assets/SmoothFollow.cs'
+'Assets/SpawnObstacle.cs'
+'Assets/UnityTestTools/Assertions/AssertionComponent.cs'
+'Assets/UnityTestTools/Assertions/AssertionException.cs'
+'Assets/UnityTestTools/Assertions/Assertions.cs'
+'Assets/UnityTestTools/Assertions/CheckMethod.cs'
+'Assets/UnityTestTools/Assertions/Comparers/ActionBase.cs'
+'Assets/UnityTestTools/Assertions/Comparers/BoolComparer.cs'
+'Assets/UnityTestTools/Assertions/Comparers/ColliderComparer.cs'
+'Assets/UnityTestTools/Assertions/Comparers/ComparerBase.cs'
+'Assets/UnityTestTools/Assertions/Comparers/FloatComparer.cs'
+'Assets/UnityTestTools/Assertions/Comparers/GeneralComparer.cs'
+'Assets/UnityTestTools/Assertions/Comparers/IntComparer.cs'
+'Assets/UnityTestTools/Assertions/Comparers/IsRenderedByCamera.cs'
+'Assets/UnityTestTools/Assertions/Comparers/StringComparer.cs'
+'Assets/UnityTestTools/Assertions/Comparers/TransformComparer.cs'
+'Assets/UnityTestTools/Assertions/Comparers/ValueDoesNotChange.cs'
+'Assets/UnityTestTools/Assertions/Comparers/Vector2Comparer.cs'
+'Assets/UnityTestTools/Assertions/Comparers/Vector3Comparer.cs'
+'Assets/UnityTestTools/Assertions/Comparers/Vector4Comparer.cs'
+'Assets/UnityTestTools/Assertions/Comparers/VectorComparerBase.cs'
+'Assets/UnityTestTools/Assertions/InvalidPathException.cs'
+'Assets/UnityTestTools/Assertions/MemberResolver.cs'
+'Assets/UnityTestTools/Common/ITestResult.cs'
+'Assets/UnityTestTools/Common/TestResultState.cs'
+'Assets/UnityTestTools/Examples/IntegrationTestsFrameworkExamples/AngryBotsTests/Scripts/GameScore.cs'
+'Assets/UnityTestTools/Examples/IntegrationTestsFrameworkExamples/CodeBasedAssertionExample.cs'
+'Assets/UnityTestTools/Examples/IntegrationTestsFrameworkExamples/CustomComponent.cs'
+'Assets/UnityTestTools/Examples/IntegrationTestsFrameworkExamples/DynamicIntegrationTest.cs'
+'Assets/UnityTestTools/Examples/IntegrationTestsFrameworkExamples/ThrowCustomException.cs'
+'Assets/UnityTestTools/IntegrationTestsFramework/TestRunner/DTOFormatter.cs'
+'Assets/UnityTestTools/IntegrationTestsFramework/TestRunner/ITestRunnerCallback.cs'
+'Assets/UnityTestTools/IntegrationTestsFramework/TestRunner/IntegrationTest.cs'
+'Assets/UnityTestTools/IntegrationTestsFramework/TestRunner/IntegrationTestAttribute.cs'
+'Assets/UnityTestTools/IntegrationTestsFramework/TestRunner/IntegrationTestsProvider.cs'
+'Assets/UnityTestTools/IntegrationTestsFramework/TestRunner/NetworkResultSender.cs'
+'Assets/UnityTestTools/IntegrationTestsFramework/TestRunner/ResultDTO.cs'
+'Assets/UnityTestTools/IntegrationTestsFramework/TestRunner/TestComponent.cs'
+'Assets/UnityTestTools/IntegrationTestsFramework/TestRunner/TestResult.cs'
+'Assets/UnityTestTools/IntegrationTestsFramework/TestRunner/TestResultRenderer.cs'
+'Assets/UnityTestTools/IntegrationTestsFramework/TestRunner/TestRunner.cs'
+'Assets/UnityTestTools/IntegrationTestsFramework/TestRunner/TestRunnerCallbackList.cs'
+'Assets/UnityTestTools/IntegrationTestsFramework/TestRunner/TestRunnerConfigurator.cs'
+'Assets/UnityTestTools/IntegrationTestsFramework/TestingAssets/CallTesting.cs'
+'Assets/spawner.cs'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Runtime.Serialization.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Xml.Linq.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/UnityScript.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/UnityScript.Lang.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll'
+-sdk:unity
