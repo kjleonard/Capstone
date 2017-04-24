@@ -39,7 +39,7 @@ public class FeetScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         //Set boundaries for Feet
-        floor = 1.3f;
+        floor = .5f;
         ceiling = 2.91f;
         //Pending wether we decide to move along z and x axis we will. If so the max_forward and max_backward valuest will have to be subtracted from the z coordinate of the player object.
         max_left = 1.75f;
@@ -71,6 +71,16 @@ public class FeetScript : MonoBehaviour {
             leftFoot.transform.Translate(left);
             rightFoot.transform.Translate(left);
         }
+        if (Input.GetKeyDown("d") & rightFoot.transform.position.y - .5f > floor)
+        {
+            leftFoot.transform.Translate(down);
+            rightFoot.transform.Translate(down);
+        }
+        if (Input.GetKeyDown("u") & rightFoot.transform.position.y + .5f < ceiling)
+        {
+            leftFoot.transform.Translate(up);
+            rightFoot.transform.Translate(up);
+        }
         if (Input.GetKeyDown("f") & leftFoot.transform.position.z - .5f > Player.transform.position.z - max_forward)
         {
             leftFoot.transform.Translate(forward);
@@ -84,11 +94,15 @@ public class FeetScript : MonoBehaviour {
             rightFoot.transform.Translate(backward);
         }
         */
+        
 
 
         //leftFoot.transform.position.Set(-.96f, playerMovement.leftY - 11.1f, 2.8f);
         //rightFoot.transform.position.Set(.6f, playerMovement.rightY - 12f, 2.8f);
         //Debug.Log(String.Format("Left Z: {0}, Right Z: {1}", left_z, right_z));
+
+
+        
         left_z = left_z * -1;
         right_z -= right_z * -1;
 
@@ -128,11 +142,11 @@ public class FeetScript : MonoBehaviour {
             & rightFoot.transform.position.z + right_z < Player.transform.position.z - max_backward
             & rightFoot.transform.position.z + right_z > Player.transform.position.z - max_forward)
             rightFoot.transform.Translate(0, 0, right_z / 2);
+        
 
 
-
-        //Debug.Log(string.Format("left x = {0}, right x = {2}, player z = {1}", leftFoot.transform.position.x, Player.transform.position.z, rightFoot.transform.position.x));
-        //Debug.Log(string.Format("right Y = {0}", right_y));
+        //Debug.Log(string.Format("left y = {0}, right y = {2}, player y = {1}", leftFoot.transform.position.y, Player.transform.position.y, rightFoot.transform.position.y));
+        Debug.Log(string.Format("right Y = {0}", right_y));
     }
 
 

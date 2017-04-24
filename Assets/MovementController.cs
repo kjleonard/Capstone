@@ -40,6 +40,7 @@ public class MovementController : MonoBehaviour
 
     void Start()
     {
+        debug = true;
         obstacleHit = false;
         velocity = Vector3.zero;
         dir = transform.forward;
