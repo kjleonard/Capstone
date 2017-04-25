@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capstone-master", "Assembly-CSharp.csproj", "{FCD4401F-DA3F-C9CC-16FA-EC41288365AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capstone-master", "Assembly-CSharp-Editor.csproj", "{DADB514D-BFA1-368A-05A0-08EB34E15DCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCD4401F-DA3F-C9CC-16FA-EC41288365AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCD4401F-DA3F-C9CC-16FA-EC41288365AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCD4401F-DA3F-C9CC-16FA-EC41288365AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCD4401F-DA3F-C9CC-16FA-EC41288365AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DADB514D-BFA1-368A-05A0-08EB34E15DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DADB514D-BFA1-368A-05A0-08EB34E15DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DADB514D-BFA1-368A-05A0-08EB34E15DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DADB514D-BFA1-368A-05A0-08EB34E15DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
