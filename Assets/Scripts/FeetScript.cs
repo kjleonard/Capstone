@@ -36,11 +36,18 @@ public class FeetScript : MonoBehaviour {
     private float right_y;
     private float right_z;
 
+	private float prev_left_x;
+	private float prev_left_y;
+	private float prev_left_z;
+	private float prev_right_x;
+	private float prev_right_y;
+	private float prev_right_z;
+
     // Use this for initialization
     void Start () {
         //Set boundaries for Feet
-        floor = 1.3f;
-        ceiling = 2.91f;
+        floor = .99f;
+        ceiling = 2.51f;
         //Pending wether we decide to move along z and x axis we will. If so the max_forward and max_backward valuest will have to be subtracted from the z coordinate of the player object.
         max_left = 1.75f;
         max_right = -1.75f;
@@ -51,6 +58,7 @@ public class FeetScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //This keeps the child thread from modifying the values used for translation after they are checked to be within the boundaries.
+
         left_x = playerMovement.leftX;
         left_y = playerMovement.leftY;
         left_z = playerMovement.leftZ;
@@ -89,60 +97,89 @@ public class FeetScript : MonoBehaviour {
         //leftFoot.transform.position.Set(-.96f, playerMovement.leftY - 11.1f, 2.8f);
         //rightFoot.transform.position.Set(.6f, playerMovement.rightY - 12f, 2.8f);
         //Debug.Log(String.Format("Left Z: {0}, Right Z: {1}", left_z, right_z));
-        left_z = left_z * -1;
-        right_z -= right_z * -1;
+		if (!(left_x == 0 || left_y == 0 || left_z == 0 || right_x == 0 || right_y == 0 || right_z == 0)
+			& prev_left_x != left_x & 
+			prev_left_y != left_y & 
+			prev_left_z != left_z &
+			prev_right_x != right_x &
+			prev_right_y != right_y &
+			prev_right_z != right_z) {
+			
 
-        left_x *= -1;
-        right_x *= -1;
+				prev_left_x = left_x;
+				prev_left_y = left_y;
+				prev_left_z = left_z;
+				prev_right_x = right_x;
+				prev_right_y = right_y;
+				prev_right_z = right_z;
 
-        left_y += 1.16f;
-        right_y += 1.16f;
-        
-        if (Math.Abs(left_x) > .3f
-                & leftFoot.transform.position.x + left_x > max_right
-			& leftFoot.transform.position.x + left_x < max_left){
-			leftFoot.GetComponent<Rigidbody>().MovePosition(new Vector3(leftFoot.transform.position.x + left_x/4,leftFoot.transform.position.y,leftFoot.transform.position.z));
-            //leftFoot.transform.Translate(left_x / 4, 0, 0);
+				left_z = left_z *  + .25f;
+				right_z = right_z *  - .2f;
+
+				left_x = (left_x +.25f)*-.3f;
+				right_x = (right_x -.38f ) * -.3f;
+
+				left_y += .97f;
+				right_y += .955f;
+				
+	        
+				if (Math.Abs (left_x) > 1.0f
+				         & leftFoot.transform.position.x + left_x > max_right
+				         & leftFoot.transform.position.x + left_x < max_left) {
+					leftFoot.GetComponent<Rigidbody> ().MovePosition (new Vector3 (leftFoot.transform.position.x + left_x / 4, leftFoot.transform.position.y, leftFoot.transform.position.z));
+					//leftFoot.transform.Translate(left_x / 4, 0, 0);
 				}
-        if (Math.Abs(right_x) > .3f
-                & rightFoot.transform.position.x + right_x > max_right
-			& rightFoot.transform.position.x + right_x < max_left)
-            rightFoot.transform.Translate(right_x / 4, 0, 0);
-		if (Math.Abs (left_y) > .18f
-		          & leftFoot.transform.position.y + left_y > floor
-		          & leftFoot.transform.position.y + left_y < ceiling) {
-			leftFoot.GetComponent<Rigidbody>().MovePosition(new Vector3(leftFoot.transform.position.x,leftFoot.transform.position.y+left_y/2,leftFoot.transform.position.z));
-			//leftFoot.transform.Translate(0, left_y / 2, 0);
-		} 
-        if (Math.Abs(right_y) > .18f
-            & rightFoot.transform.position.y + right_y > floor
-            & rightFoot.transform.position.y + right_y < ceiling)
-            rightFoot.transform.Translate(0, right_y / 2, 0);
-		if (Math.Abs (left_z) > .25f
-		          & leftFoot.transform.position.z + left_z < Player.transform.position.z - max_backward
-		          & leftFoot.transform.position.z + left_z > Player.transform.position.z - max_forward) {
-			leftFoot.GetComponent<Rigidbody>().MovePosition(new Vector3(leftFoot.transform.position.x,leftFoot.transform.position.y,leftFoot.transform.position.z+left_z/2));
-			//leftFoot.transform.Translate (0, 0, left_z / 2);
+				if (Math.Abs (right_x) > 1.0f
+				         & rightFoot.transform.position.x + right_x > max_right
+				         & rightFoot.transform.position.x + right_x < max_left)
+					rightFoot.GetComponent<Rigidbody> ().MovePosition (new Vector3 (rightFoot.transform.position.x + right_x / 4, rightFoot.transform.position.y, rightFoot.transform.position.z));
+				if (left_y < 0){
+					if (Math.Abs (left_y) > .05f
+				      & leftFoot.transform.position.y + left_y > floor
+				      & leftFoot.transform.position.y + left_y < ceiling) {
+					leftFoot.GetComponent<Rigidbody> ().MovePosition (new Vector3 (leftFoot.transform.position.x, leftFoot.transform.position.y + left_y, leftFoot.transform.position.z));
+					//leftFoot.transform.Translate(0, left_y / 2, 0);
+					}
+				} else {
+					if (Math.Abs (left_y) > .25f
+					     & leftFoot.transform.position.y + left_y > floor
+					     & leftFoot.transform.position.y + left_y < ceiling) {
+						leftFoot.GetComponent<Rigidbody> ().MovePosition (new Vector3 (leftFoot.transform.position.x, leftFoot.transform.position.y + left_y / 3, leftFoot.transform.position.z));
+						//leftFoot.transform.Translate(0, left_y / 2, 0);
+						}
+				}
+				if (right_y < 0) {
+					if (Math.Abs (right_y) > .05f
+					     & rightFoot.transform.position.y + right_y > floor
+					     & rightFoot.transform.position.y + right_y < ceiling)
+						rightFoot.GetComponent<Rigidbody> ().MovePosition (new Vector3 (rightFoot.transform.position.x, rightFoot.transform.position.y + right_y*1.5f, rightFoot.transform.position.z));
+				} else {
+					if (Math.Abs (right_y) > .25f
+						& rightFoot.transform.position.y + right_y > floor
+						& rightFoot.transform.position.y + right_y < ceiling)
+						rightFoot.GetComponent<Rigidbody> ().MovePosition (new Vector3 (rightFoot.transform.position.x, rightFoot.transform.position.y + right_y, rightFoot.transform.position.z));
+				}
+				if (Math.Abs (left_z) > .1f
+				   & leftFoot.transform.position.z + left_z < Player.transform.position.z - max_backward
+				   & leftFoot.transform.position.z + left_z > Player.transform.position.z - max_forward) {
+					leftFoot.GetComponent<Rigidbody> ().MovePosition (new Vector3 (leftFoot.transform.position.x, leftFoot.transform.position.y, leftFoot.transform.position.z + left_z / 2));
+					//leftFoot.transform.Translate (0, 0, left_z / 2);
+				}
+				if (Math.Abs (right_z) > .25f
+				         & rightFoot.transform.position.z + right_z < Player.transform.position.z - max_backward
+				         & rightFoot.transform.position.z + right_z > Player.transform.position.z - max_forward)
+					rightFoot.GetComponent<Rigidbody> ().MovePosition (new Vector3 (rightFoot.transform.position.x, rightFoot.transform.position.y, rightFoot.transform.position.z + right_z / 2));
+			Debug.Log(string.Format("left x = {0}, left y = {1}, left z = {2}", left_x, left_y, left_z));
+			Debug.Log(string.Format("right x = {0}, right y = {1}, right z = {2}", right_x, right_y, right_z));
 		}
-        if (Math.Abs(right_z) > .25f
-            & rightFoot.transform.position.z + right_z < Player.transform.position.z - max_backward
-            & rightFoot.transform.position.z + right_z > Player.transform.position.z - max_forward)
-            rightFoot.transform.Translate(0, 0, right_z / 2);
 
 
-
-        //Debug.Log(string.Format("left x = {0}, right x = {2}, player z = {1}", leftFoot.transform.position.x, Player.transform.position.z, rightFoot.transform.position.x));
-        //Debug.Log(string.Format("right Y = {0}", right_y));
+        ///Debug.Log(string.Format("left y = {0}, right y = {2}, player y = {1}", leftFoot.transform.position.y, Player.transform.position.y, rightFoot.transform.position.y));
+		//Debug.Log(string.Format("left x = {0}, left y = {1}, left z = {2}", left_x, left_y, left_z));
+		//Debug.Log(string.Format("right Y = {0}", right_y));
     }
 
 
-	void OnTriggerEnter (Collider col)
-	{
-		Debug.Log ("WE HIT SOMETHING");
-		Destroy (col.gameObject);
-	}
 
-	void OnControllerColliderHit(ControllerColliderHit col){
-		Debug.Log ("EKEKEKEKEKEKKEE");
-	}
+
 }

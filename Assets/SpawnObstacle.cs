@@ -47,17 +47,17 @@ public class SpawnObstacle : MonoBehaviour {
 		// To-Do: Figure out best way to accomodate for # per minute in combination with speed
 		if (obstacleFrequency == 1)
 		{   // Low - 4 per minute = 1/15s
-			obstacleCount =4;
+			obstacleCount = 4;
 			obstaclesInterval = 15000;
 		}
 		else if (obstacleFrequency == 2)
 		{   // Medium - 6 per minute = 1/10s
-			obstacleCount =4;
+			obstacleCount = 6;
 			obstaclesInterval = 10000;
 		}
 		else if (obstacleFrequency == 3)
 		{   // High - 10 per minute = 1/6s
-			obstacleCount =4;
+			obstacleCount = 10;
 			obstaclesInterval = 6000;
 		}
 		PlayerPrefs.SetInt("obstacleTotal", obstacleCount * (durationPref/60000));

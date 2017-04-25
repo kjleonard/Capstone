@@ -34,7 +34,16 @@ public class Dropdowns : MonoBehaviour {
 				durationPref = 10;
 			}
 
+			int freq = PlayerPrefs.GetInt("selObstacleFrequency");
+
 			durationPref *= 60000;
+			if (freq == 0) {
+				durationPref += 15000;
+			} else if (freq == 1) {
+				durationPref += 10000;
+			} else {
+				durationPref += 6000;
+			}
 			PlayerPrefs.SetInt (x.name, durationPref);
 
 		} else {

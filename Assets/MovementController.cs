@@ -7,7 +7,7 @@ using System.Net.Sockets;
 
 public class MovementController : MonoBehaviour
 {
-    private bool debug = true;
+	private bool debug = false;
     private Vector3 velocity;
     private float speed;
     private Vector3 dir;
@@ -109,7 +109,7 @@ public class MovementController : MonoBehaviour
         //}
 
         updateMPMText();
-        updateEMGText();
+        //updateEMGText();
 
 
         velocity = Vector3.zero;
@@ -144,8 +144,9 @@ public class MovementController : MonoBehaviour
         Byte[] emgData = new Byte[64];
         commandRead.Read(commandBuffer, 0, commandBuffer.Length); //read connection response
         //Debug.Log(String.Format("command = {0}", new String(commandBuffer)));   //debugging only
-
-
+		/*commandWrite.Write("UPSAMPLING?\r\n\r\n");
+		commandRead.Read(commandBuffer, 0, commandBuffer.Length);
+		Debug.Log(String.Format("command = {0}", new String(commandBuffer)));*/
         commandWrite.Write("START\r\n\r\n");    //start sensors
 
         commandRead.Read(commandBuffer, 0, commandBuffer.Length);   //read "OK"
@@ -160,7 +161,7 @@ public class MovementController : MonoBehaviour
         NetworkStream accStream = accelerometerPort.GetStream();
 
         //EMG Port
-        port = 50043;
+        port = 50041;
         TcpClient emgPort = new TcpClient("127.0.0.1", port);
         NetworkStream emgStream = emgPort.GetStream();
         
@@ -169,27 +170,31 @@ public class MovementController : MonoBehaviour
             accStream.Read(accData, 0, accData.Length);
             emgStream.Read(emgData, 0, emgData.Length);
 
-            leftZ = BitConverter.ToSingle(accData, 0);  //Trigno X axis is parallel to arrow
-            leftX = BitConverter.ToSingle(accData, 4);  //Trigno Y axis is perpendicular to arrow, on same plane as arrow
-            leftY = BitConverter.ToSingle(accData, 8);  //Trigno Z axis is perpendicular to x-y plane
-            rightZ = BitConverter.ToSingle(accData, 12);
-            rightX = BitConverter.ToSingle(accData, 16);
-            rightY = BitConverter.ToSingle(accData, 20);           
+            leftZ = BitConverter.ToSingle(accData, 24);  //Trigno X axis is parallel to arrow
+            leftX = BitConverter.ToSingle(accData, 28);  //Trigno Y axis is perpendicular to arrow, on same plane as arrow
+            leftY = BitConverter.ToSingle(accData, 32);  //Trigno Z axis is perpendicular to x-y plane
+			rightZ = BitConverter.ToSingle(accData, 36);
+            rightX = BitConverter.ToSingle(accData, 40);
+            rightY = BitConverter.ToSingle(accData, 44);           
 
-            // Commented out below two lines so the program would compile
-            leftEMG = BitConverter.ToSingle(emgData, 0);
-            rightEMG = BitConverter.ToSingle(emgData, 4);
             
-            AppendAllBytes("TestData/AccelerometerTestData.data", accData);
-            AppendAllBytes("TestData/EMGTestData.data", emgData);
+            leftEMG = BitConverter.ToSingle(emgData, 8);
+            rightEMG = BitConverter.ToSingle(emgData, 12);
+            
+			countLeftEMG += leftEMG;
+			countRightEMG += rightEMG;
+			countEMG++;
+
+            //AppendAllBytes("TestData/AccelerometerTestData.data", accData);
+            //AppendAllBytes("TestData/EMGTestData.data", emgData);
             
 
-            /*Debug.Log(String.Format("leftX = {0}", leftX));
-            Debug.Log(String.Format("leftY = {0}", leftY));
-            Debug.Log(String.Format("leftZ = {0}", leftZ));
-            Debug.Log(String.Format("rightX = {0}", rightX));
-            Debug.Log(String.Format("rightY = {0}", rightY));
-            Debug.Log(String.Format("rightZ = {0}", rightZ));*/
+			//Debug.Log(String.Format("leftX = {0} leftY = {0} leftZ = {0}", leftX, leftY, leftZ));
+            //Debug.Log(String.Format("leftY = {0}", leftY));
+            //Debug.Log(String.Format("leftZ = {0}", leftZ));
+            //Debug.Log(String.Format("rightX = {0}", rightX));
+            //Debug.Log(String.Format("rightY = {0}", rightY));
+            //Debug.Log(String.Format("rightZ = {0}", rightZ));
             //Thread.Sleep(50);
         }
 

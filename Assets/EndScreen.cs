@@ -29,8 +29,8 @@ public class EndScreen : MonoBehaviour {
         lblAvoidedCount.text = (obstacleTotal - obstaclesHit).ToString() + " / " + obstacleTotal.ToString();
 		lblDistance.text = ((duration/60000) * speed * 1000 / 60).ToString() + " meters";
         lblSpeed.text = speed + " kilometers/hour";
-        lblLeftEMG.text = leftEMG + " mV";
-        lblRightEMG.text = rightEMG + " mV";
+        lblLeftEMG.text = leftEMG*1000 + " mV";
+        lblRightEMG.text = rightEMG*1000 + " mV";
 
         double feedback = (obstacleTotal - obstaclesHit) / obstacleTotal;
         string feedbackText = "";

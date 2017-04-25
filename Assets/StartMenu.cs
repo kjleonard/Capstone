@@ -13,7 +13,7 @@ public class StartMenu : MonoBehaviour {
         VRSettings.enabled = false;
 
         PlayerPrefs.SetFloat("selSpeed", (float) 0.9);
-        PlayerPrefs.SetInt("selDuration", 60000);
+        PlayerPrefs.SetInt("selDuration", 75000);
         PlayerPrefs.SetInt("selObstacleType", 0);
         PlayerPrefs.SetInt("selObstacleFrequency", 0);
 	}
