@@ -1,0 +1,157 @@
+\hypertarget{class_lib_noise_1_1_operator_1_1_curve}{}\section{Lib\+Noise.\+Operator.\+Curve Class Reference}
+\label{class_lib_noise_1_1_operator_1_1_curve}\index{Lib\+Noise.\+Operator.\+Curve@{Lib\+Noise.\+Operator.\+Curve}}
+
+
+Provides a noise module that maps the output value from a source module onto an arbitrary function curve. \mbox{[}O\+P\+E\+R\+A\+T\+OR\mbox{]}  
+
+
+Inheritance diagram for Lib\+Noise.\+Operator.\+Curve\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_lib_noise_1_1_operator_1_1_curve}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_lib_noise_1_1_operator_1_1_curve_ae32d42df5a7a3865c2a3aaa15f40a277}{Curve} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of \hyperlink{class_lib_noise_1_1_operator_1_1_curve}{Curve}. \end{DoxyCompactList}\item 
+\hyperlink{class_lib_noise_1_1_operator_1_1_curve_a67e6fbd88ca58ea59c2204db591d49bb}{Curve} (\hyperlink{class_lib_noise_1_1_module_base}{Module\+Base} input)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of \hyperlink{class_lib_noise_1_1_operator_1_1_curve}{Curve}. \end{DoxyCompactList}\item 
+void \hyperlink{class_lib_noise_1_1_operator_1_1_curve_a74c4b5d7f66a2573ef558d8eafd0a4a9}{Add} (double input, double output)
+\begin{DoxyCompactList}\small\item\em Adds a control point to the curve. \end{DoxyCompactList}\item 
+void \hyperlink{class_lib_noise_1_1_operator_1_1_curve_ae495ff6ce885a7951cb04343953884d6}{Clear} ()
+\begin{DoxyCompactList}\small\item\em Clears the control points. \end{DoxyCompactList}\item 
+override double \hyperlink{class_lib_noise_1_1_operator_1_1_curve_a82dfe40676ac017ae05b5c9e11cdbb74}{Get\+Value} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em Returns the output value for the given input coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_lib_noise_1_1_operator_1_1_curve_aef2a1ba86aa32e084016a68a69ccbf77}{Control\+Point\+Count}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the number of control points. \end{DoxyCompactList}\item 
+List$<$ Key\+Value\+Pair$<$ double, double $>$ $>$ \hyperlink{class_lib_noise_1_1_operator_1_1_curve_a2305c68faee6abf84bbc572ef0da509b}{Control\+Points}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the list of control points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_curve_a6649411136c83b617c31f608a0558c37}\label{class_lib_noise_1_1_operator_1_1_curve_a6649411136c83b617c31f608a0558c37}} 
+readonly List$<$ Key\+Value\+Pair$<$ double, double $>$ $>$ {\bfseries \+\_\+data} = new List$<$Key\+Value\+Pair$<$double, double$>$$>$()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Provides a noise module that maps the output value from a source module onto an arbitrary function curve. \mbox{[}O\+P\+E\+R\+A\+T\+OR\mbox{]} 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_curve_ae32d42df5a7a3865c2a3aaa15f40a277}\label{class_lib_noise_1_1_operator_1_1_curve_ae32d42df5a7a3865c2a3aaa15f40a277}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Curve@{Lib\+Noise\+::\+Operator\+::\+Curve}!Curve@{Curve}}
+\index{Curve@{Curve}!Lib\+Noise\+::\+Operator\+::\+Curve@{Lib\+Noise\+::\+Operator\+::\+Curve}}
+\subsubsection{\texorpdfstring{Curve()}{Curve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Lib\+Noise.\+Operator.\+Curve.\+Curve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of \hyperlink{class_lib_noise_1_1_operator_1_1_curve}{Curve}. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_curve_a67e6fbd88ca58ea59c2204db591d49bb}\label{class_lib_noise_1_1_operator_1_1_curve_a67e6fbd88ca58ea59c2204db591d49bb}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Curve@{Lib\+Noise\+::\+Operator\+::\+Curve}!Curve@{Curve}}
+\index{Curve@{Curve}!Lib\+Noise\+::\+Operator\+::\+Curve@{Lib\+Noise\+::\+Operator\+::\+Curve}}
+\subsubsection{\texorpdfstring{Curve()}{Curve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Lib\+Noise.\+Operator.\+Curve.\+Curve (\begin{DoxyParamCaption}\item[{\hyperlink{class_lib_noise_1_1_module_base}{Module\+Base}}]{input }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of \hyperlink{class_lib_noise_1_1_operator_1_1_curve}{Curve}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input module.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_curve_a74c4b5d7f66a2573ef558d8eafd0a4a9}\label{class_lib_noise_1_1_operator_1_1_curve_a74c4b5d7f66a2573ef558d8eafd0a4a9}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Curve@{Lib\+Noise\+::\+Operator\+::\+Curve}!Add@{Add}}
+\index{Add@{Add}!Lib\+Noise\+::\+Operator\+::\+Curve@{Lib\+Noise\+::\+Operator\+::\+Curve}}
+\subsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void Lib\+Noise.\+Operator.\+Curve.\+Add (\begin{DoxyParamCaption}\item[{double}]{input,  }\item[{double}]{output }\end{DoxyParamCaption})}
+
+
+
+Adds a control point to the curve. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The curves input value.\\
+\hline
+{\em output} & The curves output value.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_curve_ae495ff6ce885a7951cb04343953884d6}\label{class_lib_noise_1_1_operator_1_1_curve_ae495ff6ce885a7951cb04343953884d6}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Curve@{Lib\+Noise\+::\+Operator\+::\+Curve}!Clear@{Clear}}
+\index{Clear@{Clear}!Lib\+Noise\+::\+Operator\+::\+Curve@{Lib\+Noise\+::\+Operator\+::\+Curve}}
+\subsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Lib\+Noise.\+Operator.\+Curve.\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the control points. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_curve_a82dfe40676ac017ae05b5c9e11cdbb74}\label{class_lib_noise_1_1_operator_1_1_curve_a82dfe40676ac017ae05b5c9e11cdbb74}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Curve@{Lib\+Noise\+::\+Operator\+::\+Curve}!Get\+Value@{Get\+Value}}
+\index{Get\+Value@{Get\+Value}!Lib\+Noise\+::\+Operator\+::\+Curve@{Lib\+Noise\+::\+Operator\+::\+Curve}}
+\subsubsection{\texorpdfstring{Get\+Value()}{GetValue()}}
+{\footnotesize\ttfamily override double Lib\+Noise.\+Operator.\+Curve.\+Get\+Value (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the output value for the given input coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The input coordinate on the x-\/axis.\\
+\hline
+{\em y} & The input coordinate on the y-\/axis.\\
+\hline
+{\em z} & The input coordinate on the z-\/axis.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting output value.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_lib_noise_1_1_module_base_abb3f06725165dc1fda63de23b68f408b}{Lib\+Noise.\+Module\+Base}.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_curve_aef2a1ba86aa32e084016a68a69ccbf77}\label{class_lib_noise_1_1_operator_1_1_curve_aef2a1ba86aa32e084016a68a69ccbf77}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Curve@{Lib\+Noise\+::\+Operator\+::\+Curve}!Control\+Point\+Count@{Control\+Point\+Count}}
+\index{Control\+Point\+Count@{Control\+Point\+Count}!Lib\+Noise\+::\+Operator\+::\+Curve@{Lib\+Noise\+::\+Operator\+::\+Curve}}
+\subsubsection{\texorpdfstring{Control\+Point\+Count}{ControlPointCount}}
+{\footnotesize\ttfamily int Lib\+Noise.\+Operator.\+Curve.\+Control\+Point\+Count\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the number of control points. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_curve_a2305c68faee6abf84bbc572ef0da509b}\label{class_lib_noise_1_1_operator_1_1_curve_a2305c68faee6abf84bbc572ef0da509b}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Curve@{Lib\+Noise\+::\+Operator\+::\+Curve}!Control\+Points@{Control\+Points}}
+\index{Control\+Points@{Control\+Points}!Lib\+Noise\+::\+Operator\+::\+Curve@{Lib\+Noise\+::\+Operator\+::\+Curve}}
+\subsubsection{\texorpdfstring{Control\+Points}{ControlPoints}}
+{\footnotesize\ttfamily List$<$Key\+Value\+Pair$<$double, double$>$ $>$ Lib\+Noise.\+Operator.\+Curve.\+Control\+Points\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the list of control points. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/\+Prefabs/\+Infinite/\+Code/\+Lib\+Noise/\+Operator/Curve.\+cs\end{DoxyCompactItemize}

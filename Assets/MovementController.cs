@@ -37,11 +37,9 @@ public class MovementController : MonoBehaviour
     public static System.Timers.Timer t;
     public static LoadSceneOnScript endSimulation;
 
-    /** @file
-     * @brief Initializes variables (with some utilizing PlayerPrefs), starts a duration timer, and creates
+    /** Initializes variables (with some utilizing PlayerPrefs), starts a duration timer, and creates
      * a child thread to either read in sensor data directly from Trigno sensors via the Trigno Control 
      * Panel or from a file of test data. */
-
     void Start()
     {
         obstacleHit = false;
@@ -74,9 +72,7 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    /** @file
-     * @brief When the duration timer fires, stops collecting sensor data and loads the End Screen. */
-
+    /** When the duration timer fires, stops collecting sensor data and loads the End Screen. */
     // Once the selected duration has been reached, move to the end screen
     private void OnTimedEvent_Elapsed(System.Object source, System.Timers.ElapsedEventArgs e)
     {
@@ -87,11 +83,9 @@ public class MovementController : MonoBehaviour
         //endSimulation.LoadByIndex(2);
     }
 
-    /** @file
-     * @brief Provides functionality to manually modify player speed and end the simulation early,
+    /** Provides functionality to manually modify player speed and end the simulation early,
      * calls updateMPMText and potentially updateEMGText if enabled, and moves the player
      * forward each frame utilizing the velocity/speed of the player. */
-
     // Update is called once per frame
     void Update()
     {
@@ -132,29 +126,23 @@ public class MovementController : MonoBehaviour
         PlayerPrefs.SetFloat("countRightEMG", (countRightEMG / countEMG));
     }
 
-    /** @file
-     * @brief Updates the displayed movement speed text */
-
+    /** Updates the displayed movement speed text */
     void updateMPMText()
     {
         mpm_text.text = String.Format("{0:0,0} mpm", speed/5);
     }
 
-    /** @file
-     * @brief Updates the displayed left and right EMG text */
-
+    /** Updates the displayed left and right EMG text */
     void updateEMGText()
     {
         left_emg_text.text = String.Format("Left EMG: {0} mV", leftEMG);
         right_emg_text.text = String.Format("Right EMG: {0} mV", rightEMG);
     }
 
-    /** @file
-     * @brief Initializes a TCP client to communicate with the Trigno Control Application;
+    /** Initializes a TCP client to communicate with the Trigno Control Application;
      * Reads in data continually, sets variables with positional information so feet objects
      * can be updated in FeetScript.cs, and tracks EMG readings so that average EMG readings can
      * be determined and saved as PlayerPrefs when we move to the End Screen. */
-
     void TCP_Client()
     {
         //here is where the TCP Client will run to communicate with the Control Application
@@ -228,12 +216,10 @@ public class MovementController : MonoBehaviour
         commandWrite.WriteLine("STOP\r\n");
     }
 
-    /** @file
-     * @brief Initializes a file streamer to read from a file of test sensor data;
+    /** Initializes a file streamer to read from a file of test sensor data;
      * Reads in data continually, sets variables with positional information so feet objects
      * can be updated in FeetScript.cs, and tracks EMG readings so that average EMG readings can
      * be determined and saved as PlayerPrefs when we move to the End Screen. */
-
     void File_Streamer()
     {
         //Put code to read from EMG and Accelerometer data files here.
@@ -275,9 +261,7 @@ public class MovementController : MonoBehaviour
         Debug.Log("Reached end of File\n\n");
     }
 
-    /** @file
-     * @brief Used to assist with reading test sensor data from a file as a continuous stream of bytes. */
-
+    /**Used to assist with reading test sensor data from a file as a continuous stream of bytes. */
     public static void AppendAllBytes(string path, byte[] bytes)
     {
         using (var stream = new FileStream(path, FileMode.Append))

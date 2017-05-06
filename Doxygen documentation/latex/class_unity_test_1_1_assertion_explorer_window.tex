@@ -1,0 +1,133 @@
+\hypertarget{class_unity_test_1_1_assertion_explorer_window}{}\section{Unity\+Test.\+Assertion\+Explorer\+Window Class Reference}
+\label{class_unity_test_1_1_assertion_explorer_window}\index{Unity\+Test.\+Assertion\+Explorer\+Window@{Unity\+Test.\+Assertion\+Explorer\+Window}}
+Inheritance diagram for Unity\+Test.\+Assertion\+Explorer\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_unity_test_1_1_assertion_explorer_window}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_af2f1b477aed7dab4366506c07432cd1e}\label{class_unity_test_1_1_assertion_explorer_window_af2f1b477aed7dab4366506c07432cd1e}} 
+void {\bfseries On\+Did\+Open\+Scene} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a18aa25672464da90bd062c034e75310d}\label{class_unity_test_1_1_assertion_explorer_window_a18aa25672464da90bd062c034e75310d}} 
+void {\bfseries On\+Focus} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a002fcc4595ace1102afbe20dc39347f4}\label{class_unity_test_1_1_assertion_explorer_window_a002fcc4595ace1102afbe20dc39347f4}} 
+void {\bfseries On\+Hierarchy\+Change} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a321fdd7e33a887d553b471b3ae97a4ae}\label{class_unity_test_1_1_assertion_explorer_window_a321fdd7e33a887d553b471b3ae97a4ae}} 
+void {\bfseries On\+Inspector\+Update} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a6c8ff0c456d657666579774c375a55bf}\label{class_unity_test_1_1_assertion_explorer_window_a6c8ff0c456d657666579774c375a55bf}} 
+void {\bfseries On\+G\+UI} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a81bd8d16e37474fa099373cc8b45e04e}\label{class_unity_test_1_1_assertion_explorer_window_a81bd8d16e37474fa099373cc8b45e04e}} 
+static \hyperlink{class_unity_test_1_1_assertion_explorer_window}{Assertion\+Explorer\+Window} {\bfseries Show\+Window} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_aba035e2fad3f5f0d128bbf414a3d74a0}\label{class_unity_test_1_1_assertion_explorer_window_aba035e2fad3f5f0d128bbf414a3d74a0}} 
+static void {\bfseries Reload} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_adc03aaf521564554c58c00d7719249dc}\label{class_unity_test_1_1_assertion_explorer_window_adc03aaf521564554c58c00d7719249dc}} 
+enum {\bfseries Filter\+Type} \{ \newline
+{\bfseries Comparer\+Name}, 
+{\bfseries First\+Compared\+Game\+Object}, 
+{\bfseries First\+Compared\+Game\+Object\+Path}, 
+{\bfseries Second\+Compared\+Game\+Object}, 
+\newline
+{\bfseries Second\+Compared\+Game\+Object\+Path}, 
+{\bfseries Attached\+Game\+Object}
+ \}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a0ffae235d6b938eac1ad02c16795526d}\label{class_unity_test_1_1_assertion_explorer_window_a0ffae235d6b938eac1ad02c16795526d}} 
+enum {\bfseries Show\+Type} \{ {\bfseries Show\+All}, 
+{\bfseries Show\+Enabled}, 
+{\bfseries Show\+Disabled}
+ \}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a1adea2f333884f239f6b78204b637b68}\label{class_unity_test_1_1_assertion_explorer_window_a1adea2f333884f239f6b78204b637b68}} 
+enum {\bfseries Group\+By\+Type} \{ \newline
+{\bfseries Nothing}, 
+{\bfseries Comparer}, 
+{\bfseries Game\+Objects}, 
+{\bfseries Execution\+Method}, 
+\newline
+{\bfseries Tests}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a3408c7a0e2bb66251669a8adf3f29d45}\label{class_unity_test_1_1_assertion_explorer_window_a3408c7a0e2bb66251669a8adf3f29d45}} 
+void {\bfseries Reload\+Assertion\+List} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_ac6e8f7ecd22a6b2b9c5143221ffde17f}\label{class_unity_test_1_1_assertion_explorer_window_ac6e8f7ecd22a6b2b9c5143221ffde17f}} 
+I\+Enumerable$<$ \hyperlink{class_unity_test_1_1_assertion_component}{Assertion\+Component} $>$ {\bfseries Filter\+Results} (List$<$ \hyperlink{class_unity_test_1_1_assertion_component}{Assertion\+Component} $>$ assertion\+Components, string text)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a79618f0b373db36c6eca5bf0f991aefa}\label{class_unity_test_1_1_assertion_explorer_window_a79618f0b373db36c6eca5bf0f991aefa}} 
+\hyperlink{interface_unity_test_1_1_i_list_renderer}{I\+List\+Renderer} {\bfseries Get\+Result\+Rendere} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a97f6a31c0f8c28d871e0b65ae02673c0}\label{class_unity_test_1_1_assertion_explorer_window_a97f6a31c0f8c28d871e0b65ae02673c0}} 
+void {\bfseries Draw\+Menu\+Panel} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a49edb51316c67452cca6adcb9bf912fd}\label{class_unity_test_1_1_assertion_explorer_window_a49edb51316c67452cca6adcb9bf912fd}} 
+List$<$ \hyperlink{class_unity_test_1_1_assertion_component}{Assertion\+Component} $>$ {\bfseries m\+\_\+\+All\+Assertions} = new List$<$\hyperlink{class_unity_test_1_1_assertion_component}{Assertion\+Component}$>$()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_abef7b2207694d5ea24b294e15daaa357}\label{class_unity_test_1_1_assertion_explorer_window_abef7b2207694d5ea24b294e15daaa357}} 
+string {\bfseries m\+\_\+\+Filter\+Text} = \char`\"{}\char`\"{}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_af100c16ab6424ca9eaa82309ed81d2d3}\label{class_unity_test_1_1_assertion_explorer_window_af100c16ab6424ca9eaa82309ed81d2d3}} 
+Filter\+Type {\bfseries m\+\_\+\+Filter\+Type}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a3d09ba36559b9ce618a5f027256ae20b}\label{class_unity_test_1_1_assertion_explorer_window_a3d09ba36559b9ce618a5f027256ae20b}} 
+List$<$ string $>$ {\bfseries m\+\_\+\+Fold\+Markers} = new List$<$string$>$()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a401b54d8cd37191ce10bc8fae02d3285}\label{class_unity_test_1_1_assertion_explorer_window_a401b54d8cd37191ce10bc8fae02d3285}} 
+Group\+By\+Type {\bfseries m\+\_\+\+Group\+By}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a6321a991de8b28b41abb70c1ae09e671}\label{class_unity_test_1_1_assertion_explorer_window_a6321a991de8b28b41abb70c1ae09e671}} 
+Vector2 {\bfseries m\+\_\+\+Scroll\+Position} = Vector2.\+zero
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a58f2f431b03b57d7b833666d8619757a}\label{class_unity_test_1_1_assertion_explorer_window_a58f2f431b03b57d7b833666d8619757a}} 
+Date\+Time {\bfseries m\+\_\+\+Next\+Reload} = Date\+Time.\+Now
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a56b71a010269fa9147f255e213677f2f}\label{class_unity_test_1_1_assertion_explorer_window_a56b71a010269fa9147f255e213677f2f}} 
+Show\+Type {\bfseries m\+\_\+\+Show\+Type}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a5cf99ad755a3b2dc98bf0270fc0f0644}\label{class_unity_test_1_1_assertion_explorer_window_a5cf99ad755a3b2dc98bf0270fc0f0644}} 
+readonly \hyperlink{interface_unity_test_1_1_i_list_renderer}{I\+List\+Renderer} {\bfseries m\+\_\+\+Group\+By\+Comparer\+Renderer} = new \hyperlink{class_unity_test_1_1_group_by_comparer_renderer}{Group\+By\+Comparer\+Renderer}()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a3ef3dfb3b8c4f429326fb0a15c667710}\label{class_unity_test_1_1_assertion_explorer_window_a3ef3dfb3b8c4f429326fb0a15c667710}} 
+readonly \hyperlink{interface_unity_test_1_1_i_list_renderer}{I\+List\+Renderer} {\bfseries m\+\_\+\+Group\+By\+Execution\+Method\+Renderer} = new \hyperlink{class_unity_test_1_1_group_by_execution_method_renderer}{Group\+By\+Execution\+Method\+Renderer}()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a686370cd49d405c0568a18ba1ce451dd}\label{class_unity_test_1_1_assertion_explorer_window_a686370cd49d405c0568a18ba1ce451dd}} 
+readonly \hyperlink{interface_unity_test_1_1_i_list_renderer}{I\+List\+Renderer} {\bfseries m\+\_\+\+Group\+By\+Go\+Renderer} = new \hyperlink{class_unity_test_1_1_group_by_go_renderer}{Group\+By\+Go\+Renderer}()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_ae516f961100326c2dfd8f62718db46cb}\label{class_unity_test_1_1_assertion_explorer_window_ae516f961100326c2dfd8f62718db46cb}} 
+readonly \hyperlink{interface_unity_test_1_1_i_list_renderer}{I\+List\+Renderer} {\bfseries m\+\_\+\+Group\+By\+Tests\+Renderer} = new \hyperlink{class_unity_test_1_1_group_by_tests_renderer}{Group\+By\+Tests\+Renderer}()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_a75689918f165dbc51ea0bc6960e1528b}\label{class_unity_test_1_1_assertion_explorer_window_a75689918f165dbc51ea0bc6960e1528b}} 
+readonly \hyperlink{interface_unity_test_1_1_i_list_renderer}{I\+List\+Renderer} {\bfseries m\+\_\+\+Group\+By\+Nothing\+Renderer} = new \hyperlink{class_unity_test_1_1_group_by_nothing_renderer}{Group\+By\+Nothing\+Renderer}()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_assertion_explorer_window_ae35361bbdb5b42985b881319846e1127}\label{class_unity_test_1_1_assertion_explorer_window_ae35361bbdb5b42985b881319846e1127}} 
+static bool {\bfseries s\+\_\+\+Should\+Reload}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/\+Unity\+Test\+Tools/\+Assertions/\+Editor/Assertion\+Explorer\+Window.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,110 @@
+\hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit}{}\section{Unity\+Standard\+Assets.\+Utility.\+Waypoint\+Circuit Class Reference}
+\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit}\index{Unity\+Standard\+Assets.\+Utility.\+Waypoint\+Circuit@{Unity\+Standard\+Assets.\+Utility.\+Waypoint\+Circuit}}
+Inheritance diagram for Unity\+Standard\+Assets.\+Utility.\+Waypoint\+Circuit\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_1_1_route_point}{Route\+Point}
+\item 
+class \hyperlink{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_1_1_waypoint_list}{Waypoint\+List}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_aac0437d6b641a9dd1cb32db4170a115f}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_aac0437d6b641a9dd1cb32db4170a115f}} 
+\hyperlink{struct_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_1_1_route_point}{Route\+Point} {\bfseries Get\+Route\+Point} (float dist)
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a7f3f7803b415864a93ae5c51829a2bcd}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a7f3f7803b415864a93ae5c51829a2bcd}} 
+Vector3 {\bfseries Get\+Route\+Position} (float dist)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a7cef14c77ae5197606ba1aade971ed3d}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a7cef14c77ae5197606ba1aade971ed3d}} 
+\hyperlink{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_1_1_waypoint_list}{Waypoint\+List} {\bfseries waypoint\+List} = new \hyperlink{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_1_1_waypoint_list}{Waypoint\+List}()
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a8d79a68fb7501d467e45990cd38c0de0}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a8d79a68fb7501d467e45990cd38c0de0}} 
+float {\bfseries editor\+Visualisation\+Substeps} = 100
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a0cb31df6885aa3bd8924ece61343c529}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a0cb31df6885aa3bd8924ece61343c529}} 
+float {\bfseries Length}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_abdceee908c241b0568f6b7545c0f677a}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_abdceee908c241b0568f6b7545c0f677a}} 
+Transform \mbox{[}$\,$\mbox{]} {\bfseries Waypoints}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_aab5562ec7d393d158ccd1ef1c0149ba1}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_aab5562ec7d393d158ccd1ef1c0149ba1}} 
+void {\bfseries Awake} ()
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a261cd06b90b6bd32e69087d151164a28}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a261cd06b90b6bd32e69087d151164a28}} 
+Vector3 {\bfseries Catmull\+Rom} (Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float i)
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_ac8607bf9d7b81db94596a37a2a0fc221}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_ac8607bf9d7b81db94596a37a2a0fc221}} 
+void {\bfseries Cache\+Positions\+And\+Distances} ()
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a4c184ccb373517c3451f5216e980e092}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a4c184ccb373517c3451f5216e980e092}} 
+void {\bfseries On\+Draw\+Gizmos} ()
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_ac5f4f91cfcf388d25fe8be7581a7383a}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_ac5f4f91cfcf388d25fe8be7581a7383a}} 
+void {\bfseries On\+Draw\+Gizmos\+Selected} ()
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a1efd557e8483fe60bf221a2594a47099}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a1efd557e8483fe60bf221a2594a47099}} 
+void {\bfseries Draw\+Gizmos} (bool selected)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_adec5467c486e4fde3e9b88dac6b5507a}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_adec5467c486e4fde3e9b88dac6b5507a}} 
+bool {\bfseries smooth\+Route} = true
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_ab87c014bfa695eb629f128f3239d1dde}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_ab87c014bfa695eb629f128f3239d1dde}} 
+int {\bfseries num\+Points}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_acfed9df38162fc8812beddccc7d2ec67}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_acfed9df38162fc8812beddccc7d2ec67}} 
+Vector3 \mbox{[}$\,$\mbox{]} {\bfseries points}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a2087ecd5bb4f6dba43363f1305b2b29c}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a2087ecd5bb4f6dba43363f1305b2b29c}} 
+float \mbox{[}$\,$\mbox{]} {\bfseries distances}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a9304e554b20920838151191fc8a1b7fd}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a9304e554b20920838151191fc8a1b7fd}} 
+int {\bfseries p0n}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_aed56d95ff79f36da58387c275560139c}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_aed56d95ff79f36da58387c275560139c}} 
+int {\bfseries p1n}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a687cf91eda182a3d8a51d94208b9213a}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a687cf91eda182a3d8a51d94208b9213a}} 
+int {\bfseries p2n}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a7e2ac91270dc430f7d09c2d9f7a51510}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a7e2ac91270dc430f7d09c2d9f7a51510}} 
+int {\bfseries p3n}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a8290cf3abcaffd39e5d984b7f1e324c3}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a8290cf3abcaffd39e5d984b7f1e324c3}} 
+float {\bfseries i}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_aab5ca00123610644bda31940045a6f3b}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_aab5ca00123610644bda31940045a6f3b}} 
+Vector3 {\bfseries P0}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a93521562647a586983ff8d98d61c72a7}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a93521562647a586983ff8d98d61c72a7}} 
+Vector3 {\bfseries P1}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a7162457d330297598e305093f7cd7c0b}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_a7162457d330297598e305093f7cd7c0b}} 
+Vector3 {\bfseries P2}
+\item 
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_abd8b3ce769b0e8f70d91be2ab6f073ee}\label{class_unity_standard_assets_1_1_utility_1_1_waypoint_circuit_abd8b3ce769b0e8f70d91be2ab6f073ee}} 
+Vector3 {\bfseries P3}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/\+Prefabs/\+Infinite/\+Standard Assets/\+Utility/Waypoint\+Circuit.\+cs\end{DoxyCompactItemize}

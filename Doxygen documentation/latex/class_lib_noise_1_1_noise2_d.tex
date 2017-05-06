@@ -1,0 +1,549 @@
+\hypertarget{class_lib_noise_1_1_noise2_d}{}\section{Lib\+Noise.\+Noise2D Class Reference}
+\label{class_lib_noise_1_1_noise2_d}\index{Lib\+Noise.\+Noise2D@{Lib\+Noise.\+Noise2D}}
+
+
+Provides a two-\/dimensional noise map.  
+
+
+Inheritance diagram for Lib\+Noise.\+Noise2D\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_lib_noise_1_1_noise2_d}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_lib_noise_1_1_noise2_d_a8729ca7498a796e7c46317e3d40bdfa8}{Noise2D} (int size)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of \hyperlink{class_lib_noise_1_1_noise2_d}{Noise2D}. \end{DoxyCompactList}\item 
+\hyperlink{class_lib_noise_1_1_noise2_d_a4f2c693c60b8327c5c906f137293a8c2}{Noise2D} (int size, \hyperlink{class_lib_noise_1_1_module_base}{Module\+Base} generator)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of \hyperlink{class_lib_noise_1_1_noise2_d}{Noise2D}. \end{DoxyCompactList}\item 
+\hyperlink{class_lib_noise_1_1_noise2_d_a89d44465cd842be3f3a8b31e78f43072}{Noise2D} (int width, int height, \hyperlink{class_lib_noise_1_1_module_base}{Module\+Base} generator=null)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of \hyperlink{class_lib_noise_1_1_noise2_d}{Noise2D}. \end{DoxyCompactList}\item 
+float \mbox{[},\mbox{]} \hyperlink{class_lib_noise_1_1_noise2_d_a867fe1a88b54558bead78d9afdc0910e}{Get\+Normalized\+Data} (bool is\+Cropped=true, int x\+Crop=0, int y\+Crop=0)
+\begin{DoxyCompactList}\small\item\em Gets normalized noise map data with all values in the set of \{0..1\}. \end{DoxyCompactList}\item 
+float \mbox{[},\mbox{]} \hyperlink{class_lib_noise_1_1_noise2_d_ab2df7d84610548485750ada563a21afe}{Get\+Data} (bool is\+Cropped=true, int x\+Crop=0, int y\+Crop=0, bool is\+Normalized=false)
+\begin{DoxyCompactList}\small\item\em Gets noise map data. \end{DoxyCompactList}\item 
+void \hyperlink{class_lib_noise_1_1_noise2_d_abac1753aea45f939e42cdd236ed9b2de}{Clear} (float value=0f)
+\begin{DoxyCompactList}\small\item\em Clears the noise map. \end{DoxyCompactList}\item 
+void \hyperlink{class_lib_noise_1_1_noise2_d_ac771707226342fb931f5d25365728503}{Generate\+Planar} (double left, double right, double top, double bottom, bool is\+Seamless=true)
+\begin{DoxyCompactList}\small\item\em Generates a non-\/seamless planar projection of the noise map. \end{DoxyCompactList}\item 
+void \hyperlink{class_lib_noise_1_1_noise2_d_a02daa1c914c5dd0dc590f6f879661091}{Generate\+Cylindrical} (double angle\+Min, double angle\+Max, double height\+Min, double height\+Max)
+\begin{DoxyCompactList}\small\item\em Generates a cylindrical projection of the noise map. \end{DoxyCompactList}\item 
+void \hyperlink{class_lib_noise_1_1_noise2_d_a68c918170dee86068f4afcba0734e5e0}{Generate\+Spherical} (double south, double north, double west, double east)
+\begin{DoxyCompactList}\small\item\em Generates a spherical projection of the noise map. \end{DoxyCompactList}\item 
+Texture2D \hyperlink{class_lib_noise_1_1_noise2_d_a8f5efbd701d1f20f2a9a6c0631283749}{Get\+Texture} ()
+\begin{DoxyCompactList}\small\item\em Creates a grayscale texture map for the current content of the noise map. \end{DoxyCompactList}\item 
+Texture2D \hyperlink{class_lib_noise_1_1_noise2_d_ac378ab504b642e6da63ae4e3c3384b4f}{Get\+Texture} (Gradient gradient)
+\begin{DoxyCompactList}\small\item\em Creates a texture map for the current content of the noise map. \end{DoxyCompactList}\item 
+Texture2D \hyperlink{class_lib_noise_1_1_noise2_d_ab34a1fa5128c92fc67198038df677b35}{Get\+Normal\+Map} (float intensity)
+\begin{DoxyCompactList}\small\item\em Creates a normal map for the current content of the noise map. \end{DoxyCompactList}\item 
+void \hyperlink{class_lib_noise_1_1_noise2_d_a624a63bd15c55bd226258058726354b3}{Dispose} ()
+\begin{DoxyCompactList}\small\item\em Immediately releases the unmanaged resources used by this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a0ac5654c1b46d99aa34bf90d3354fbbe}\label{class_lib_noise_1_1_noise2_d_a0ac5654c1b46d99aa34bf90d3354fbbe}} 
+static readonly double {\bfseries South} = -\/90.\+0
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a93fcf01df9ea77848c3e68f7408d2a44}\label{class_lib_noise_1_1_noise2_d_a93fcf01df9ea77848c3e68f7408d2a44}} 
+static readonly double {\bfseries North} = 90.\+0
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a6cd13138b6bcbfc53ed6303cdace4140}\label{class_lib_noise_1_1_noise2_d_a6cd13138b6bcbfc53ed6303cdace4140}} 
+static readonly double {\bfseries West} = -\/180.\+0
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a698fd7b7df59d15ac1dd60f3a4445be6}\label{class_lib_noise_1_1_noise2_d_a698fd7b7df59d15ac1dd60f3a4445be6}} 
+static readonly double {\bfseries East} = 180.\+0
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a2c025077710d821f4ff3076a689c0f01}\label{class_lib_noise_1_1_noise2_d_a2c025077710d821f4ff3076a689c0f01}} 
+static readonly double {\bfseries Angle\+Min} = -\/180.\+0
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a314b2c748fc9490327b5467d352bfebb}\label{class_lib_noise_1_1_noise2_d_a314b2c748fc9490327b5467d352bfebb}} 
+static readonly double {\bfseries Angle\+Max} = 180.\+0
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_aa2ef0ce3a231586e0d515e3d8ca59d20}\label{class_lib_noise_1_1_noise2_d_aa2ef0ce3a231586e0d515e3d8ca59d20}} 
+static readonly double {\bfseries Left} = -\/1.\+0
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a10f29ac9a7ffac4a944beb1fc80e67af}\label{class_lib_noise_1_1_noise2_d_a10f29ac9a7ffac4a944beb1fc80e67af}} 
+static readonly double {\bfseries Right} = 1.\+0
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a0e285d6373dce3d9d09c3c2192c2b31c}\label{class_lib_noise_1_1_noise2_d_a0e285d6373dce3d9d09c3c2192c2b31c}} 
+static readonly double {\bfseries Top} = -\/1.\+0
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a23dcf60d259085c55d54bdcd7b67ace1}\label{class_lib_noise_1_1_noise2_d_a23dcf60d259085c55d54bdcd7b67ace1}} 
+static readonly double {\bfseries Bottom} = 1.\+0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_lib_noise_1_1_noise2_d_a53ddafc2f6a099d939f1eaad03a1d8fa}{Noise2D} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of \hyperlink{class_lib_noise_1_1_noise2_d}{Noise2D}. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_lib_noise_1_1_noise2_d_a937c13bf6b73e1e9b85e499f97bd1eb2}{Disposing} ()
+\begin{DoxyCompactList}\small\item\em Immediately releases the unmanaged resources used by this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{class_lib_noise_1_1_noise2_d_acfe5bd8d42d32d8250d5cbe021560195}{this\mbox{[}int x, int y, bool is\+Cropped=true\mbox{]}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value in the noise map by its position. \end{DoxyCompactList}\item 
+float \hyperlink{class_lib_noise_1_1_noise2_d_a2fe599fb07d0f17706cbd26b246660e3}{Border}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the constant value at the noise maps borders. \end{DoxyCompactList}\item 
+\hyperlink{class_lib_noise_1_1_module_base}{Module\+Base} \hyperlink{class_lib_noise_1_1_noise2_d_a02c039a4f7a9e13d7a848ed5bf83dbcd}{Generator}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the generator module. \end{DoxyCompactList}\item 
+int \hyperlink{class_lib_noise_1_1_noise2_d_adebca9dc1a1ab05075a8511fae245f27}{Height}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the height of the noise map. \end{DoxyCompactList}\item 
+int \hyperlink{class_lib_noise_1_1_noise2_d_ad99d9aacdcab01adc90804b1182797f8}{Width}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the width of the noise map. \end{DoxyCompactList}\item 
+bool \hyperlink{class_lib_noise_1_1_noise2_d_a30b537eb2a314410c25952d1b18f678c}{Is\+Disposed}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value whether the object is disposed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_lib_noise_1_1_noise2_d_ab53ca090293be5c2d927c5118c67bbaa}{Generate\+Planar} (double x, double y)
+\begin{DoxyCompactList}\small\item\em Generates a planar projection of a point in the noise map. \end{DoxyCompactList}\item 
+double \hyperlink{class_lib_noise_1_1_noise2_d_a7507549314e864809cf5deb036decd7f}{Generate\+Cylindrical} (double angle, double height)
+\begin{DoxyCompactList}\small\item\em Generates a cylindrical projection of a point in the noise map. \end{DoxyCompactList}\item 
+double \hyperlink{class_lib_noise_1_1_noise2_d_acb1b8ad121e0cce7ee070ce6d6b015da}{Generate\+Spherical} (double lat, double lon)
+\begin{DoxyCompactList}\small\item\em Generates a spherical projection of a point in the noise map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_ab13e9889d3998e18eec6040d5a5e7262}\label{class_lib_noise_1_1_noise2_d_ab13e9889d3998e18eec6040d5a5e7262}} 
+int {\bfseries \+\_\+width}
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a55d081d27f37cb7e3d50accb187c31d4}\label{class_lib_noise_1_1_noise2_d_a55d081d27f37cb7e3d50accb187c31d4}} 
+int {\bfseries \+\_\+height}
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a6c51b022771294f74cbc1e24ebf32b57}\label{class_lib_noise_1_1_noise2_d_a6c51b022771294f74cbc1e24ebf32b57}} 
+float \mbox{[},\mbox{]} {\bfseries \+\_\+data}
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a04dee0c0f47b37da091705cb6dbf775b}\label{class_lib_noise_1_1_noise2_d_a04dee0c0f47b37da091705cb6dbf775b}} 
+readonly int {\bfseries \+\_\+uc\+Width}
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a44a180b18d2b297434152fc3c7374e09}\label{class_lib_noise_1_1_noise2_d_a44a180b18d2b297434152fc3c7374e09}} 
+readonly int {\bfseries \+\_\+uc\+Height}
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_aef7668cec02ea688a4d955a0adb8eea4}\label{class_lib_noise_1_1_noise2_d_aef7668cec02ea688a4d955a0adb8eea4}} 
+int {\bfseries \+\_\+uc\+Border} = 1
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a14f8bbe6ac8d656a7af1b291a703f8e2}\label{class_lib_noise_1_1_noise2_d_a14f8bbe6ac8d656a7af1b291a703f8e2}} 
+readonly float \mbox{[},\mbox{]} {\bfseries \+\_\+uc\+Data}
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a83ee1fe5d04293a76b329da2e6388c8c}\label{class_lib_noise_1_1_noise2_d_a83ee1fe5d04293a76b329da2e6388c8c}} 
+float {\bfseries \+\_\+border\+Value} = float.\+NaN
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a43abe9eadcf0a3e94d3888fd4506c5e1}\label{class_lib_noise_1_1_noise2_d_a43abe9eadcf0a3e94d3888fd4506c5e1}} 
+\hyperlink{class_lib_noise_1_1_module_base}{Module\+Base} {\bfseries \+\_\+generator}
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a2bd208a32f1c24ab5cf0d4899842ea0e}\label{class_lib_noise_1_1_noise2_d_a2bd208a32f1c24ab5cf0d4899842ea0e}} 
+bool {\bfseries \+\_\+disposed}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides a two-\/dimensional noise map. 
+
+This covers most of the functionality from \hyperlink{namespace_lib_noise}{Lib\+Noise}\textquotesingle{}s noiseutils library, but the method calls might not be the same. See the tutorials project if you\textquotesingle{}re wondering which calls are equivalent.
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a53ddafc2f6a099d939f1eaad03a1d8fa}\label{class_lib_noise_1_1_noise2_d_a53ddafc2f6a099d939f1eaad03a1d8fa}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Noise2D@{Noise2D}}
+\index{Noise2D@{Noise2D}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Noise2\+D()}{Noise2D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Lib\+Noise.\+Noise2\+D.\+Noise2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initializes a new instance of \hyperlink{class_lib_noise_1_1_noise2_d}{Noise2D}. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a8729ca7498a796e7c46317e3d40bdfa8}\label{class_lib_noise_1_1_noise2_d_a8729ca7498a796e7c46317e3d40bdfa8}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Noise2D@{Noise2D}}
+\index{Noise2D@{Noise2D}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Noise2\+D()}{Noise2D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Lib\+Noise.\+Noise2\+D.\+Noise2D (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of \hyperlink{class_lib_noise_1_1_noise2_d}{Noise2D}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The width and height of the noise map.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a4f2c693c60b8327c5c906f137293a8c2}\label{class_lib_noise_1_1_noise2_d_a4f2c693c60b8327c5c906f137293a8c2}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Noise2D@{Noise2D}}
+\index{Noise2D@{Noise2D}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Noise2\+D()}{Noise2D()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Lib\+Noise.\+Noise2\+D.\+Noise2D (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{\hyperlink{class_lib_noise_1_1_module_base}{Module\+Base}}]{generator }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of \hyperlink{class_lib_noise_1_1_noise2_d}{Noise2D}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The width and height of the noise map.\\
+\hline
+{\em generator} & The generator module.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a89d44465cd842be3f3a8b31e78f43072}\label{class_lib_noise_1_1_noise2_d_a89d44465cd842be3f3a8b31e78f43072}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Noise2D@{Noise2D}}
+\index{Noise2D@{Noise2D}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Noise2\+D()}{Noise2D()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Lib\+Noise.\+Noise2\+D.\+Noise2D (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{\hyperlink{class_lib_noise_1_1_module_base}{Module\+Base}}]{generator = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of \hyperlink{class_lib_noise_1_1_noise2_d}{Noise2D}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the noise map.\\
+\hline
+{\em height} & The height of the noise map.\\
+\hline
+{\em generator} & The generator module.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_abac1753aea45f939e42cdd236ed9b2de}\label{class_lib_noise_1_1_noise2_d_abac1753aea45f939e42cdd236ed9b2de}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Clear@{Clear}}
+\index{Clear@{Clear}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Lib\+Noise.\+Noise2\+D.\+Clear (\begin{DoxyParamCaption}\item[{float}]{value = {\ttfamily 0f} }\end{DoxyParamCaption})}
+
+
+
+Clears the noise map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The constant value to clear the noise map with.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a624a63bd15c55bd226258058726354b3}\label{class_lib_noise_1_1_noise2_d_a624a63bd15c55bd226258058726354b3}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily void Lib\+Noise.\+Noise2\+D.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Immediately releases the unmanaged resources used by this object. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a937c13bf6b73e1e9b85e499f97bd1eb2}\label{class_lib_noise_1_1_noise2_d_a937c13bf6b73e1e9b85e499f97bd1eb2}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Disposing@{Disposing}}
+\index{Disposing@{Disposing}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Disposing()}{Disposing()}}
+{\footnotesize\ttfamily virtual bool Lib\+Noise.\+Noise2\+D.\+Disposing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Immediately releases the unmanaged resources used by this object. 
+
+\begin{DoxyReturn}{Returns}
+True if the object is completely disposed.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a7507549314e864809cf5deb036decd7f}\label{class_lib_noise_1_1_noise2_d_a7507549314e864809cf5deb036decd7f}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Generate\+Cylindrical@{Generate\+Cylindrical}}
+\index{Generate\+Cylindrical@{Generate\+Cylindrical}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Generate\+Cylindrical()}{GenerateCylindrical()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Lib\+Noise.\+Noise2\+D.\+Generate\+Cylindrical (\begin{DoxyParamCaption}\item[{double}]{angle,  }\item[{double}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generates a cylindrical projection of a point in the noise map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle of the point.\\
+\hline
+{\em height} & The height of the point.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding noise map value.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a02daa1c914c5dd0dc590f6f879661091}\label{class_lib_noise_1_1_noise2_d_a02daa1c914c5dd0dc590f6f879661091}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Generate\+Cylindrical@{Generate\+Cylindrical}}
+\index{Generate\+Cylindrical@{Generate\+Cylindrical}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Generate\+Cylindrical()}{GenerateCylindrical()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Lib\+Noise.\+Noise2\+D.\+Generate\+Cylindrical (\begin{DoxyParamCaption}\item[{double}]{angle\+Min,  }\item[{double}]{angle\+Max,  }\item[{double}]{height\+Min,  }\item[{double}]{height\+Max }\end{DoxyParamCaption})}
+
+
+
+Generates a cylindrical projection of the noise map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle\+Min} & The maximum angle of the clip region.\\
+\hline
+{\em angle\+Max} & The minimum angle of the clip region.\\
+\hline
+{\em height\+Min} & The minimum height of the clip region.\\
+\hline
+{\em height\+Max} & The maximum height of the clip region.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_ab53ca090293be5c2d927c5118c67bbaa}\label{class_lib_noise_1_1_noise2_d_ab53ca090293be5c2d927c5118c67bbaa}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Generate\+Planar@{Generate\+Planar}}
+\index{Generate\+Planar@{Generate\+Planar}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Generate\+Planar()}{GeneratePlanar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Lib\+Noise.\+Noise2\+D.\+Generate\+Planar (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generates a planar projection of a point in the noise map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The position on the x-\/axis.\\
+\hline
+{\em y} & The position on the y-\/axis.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding noise map value.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_ac771707226342fb931f5d25365728503}\label{class_lib_noise_1_1_noise2_d_ac771707226342fb931f5d25365728503}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Generate\+Planar@{Generate\+Planar}}
+\index{Generate\+Planar@{Generate\+Planar}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Generate\+Planar()}{GeneratePlanar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Lib\+Noise.\+Noise2\+D.\+Generate\+Planar (\begin{DoxyParamCaption}\item[{double}]{left,  }\item[{double}]{right,  }\item[{double}]{top,  }\item[{double}]{bottom,  }\item[{bool}]{is\+Seamless = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Generates a non-\/seamless planar projection of the noise map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & The clip region to the left.\\
+\hline
+{\em right} & The clip region to the right.\\
+\hline
+{\em top} & The clip region to the top.\\
+\hline
+{\em bottom} & The clip region to the bottom.\\
+\hline
+{\em is\+Seamless} & Indicates whether the resulting noise map should be seamless.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_acb1b8ad121e0cce7ee070ce6d6b015da}\label{class_lib_noise_1_1_noise2_d_acb1b8ad121e0cce7ee070ce6d6b015da}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Generate\+Spherical@{Generate\+Spherical}}
+\index{Generate\+Spherical@{Generate\+Spherical}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Generate\+Spherical()}{GenerateSpherical()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Lib\+Noise.\+Noise2\+D.\+Generate\+Spherical (\begin{DoxyParamCaption}\item[{double}]{lat,  }\item[{double}]{lon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generates a spherical projection of a point in the noise map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat} & The latitude of the point.\\
+\hline
+{\em lon} & The longitude of the point.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding noise map value.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a68c918170dee86068f4afcba0734e5e0}\label{class_lib_noise_1_1_noise2_d_a68c918170dee86068f4afcba0734e5e0}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Generate\+Spherical@{Generate\+Spherical}}
+\index{Generate\+Spherical@{Generate\+Spherical}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Generate\+Spherical()}{GenerateSpherical()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Lib\+Noise.\+Noise2\+D.\+Generate\+Spherical (\begin{DoxyParamCaption}\item[{double}]{south,  }\item[{double}]{north,  }\item[{double}]{west,  }\item[{double}]{east }\end{DoxyParamCaption})}
+
+
+
+Generates a spherical projection of the noise map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em south} & The clip region to the south.\\
+\hline
+{\em north} & The clip region to the north.\\
+\hline
+{\em west} & The clip region to the west.\\
+\hline
+{\em east} & The clip region to the east.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_ab2df7d84610548485750ada563a21afe}\label{class_lib_noise_1_1_noise2_d_ab2df7d84610548485750ada563a21afe}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Get\+Data@{Get\+Data}}
+\index{Get\+Data@{Get\+Data}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Get\+Data()}{GetData()}}
+{\footnotesize\ttfamily float \mbox{[},\mbox{]} Lib\+Noise.\+Noise2\+D.\+Get\+Data (\begin{DoxyParamCaption}\item[{bool}]{is\+Cropped = {\ttfamily true},  }\item[{int}]{x\+Crop = {\ttfamily 0},  }\item[{int}]{y\+Crop = {\ttfamily 0},  }\item[{bool}]{is\+Normalized = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Gets noise map data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Cropped} & Indicates whether to select the cropped (default) or uncropped noise map data.\\
+\hline
+{\em x\+Crop} & This value crops off data from the right of the noise map data.\\
+\hline
+{\em y\+Crop} & This value crops off data from the bottom of the noise map data.\\
+\hline
+{\em is\+Normalized} & Indicates whether to normalize noise map data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The noise map data.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a867fe1a88b54558bead78d9afdc0910e}\label{class_lib_noise_1_1_noise2_d_a867fe1a88b54558bead78d9afdc0910e}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Get\+Normalized\+Data@{Get\+Normalized\+Data}}
+\index{Get\+Normalized\+Data@{Get\+Normalized\+Data}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Get\+Normalized\+Data()}{GetNormalizedData()}}
+{\footnotesize\ttfamily float \mbox{[},\mbox{]} Lib\+Noise.\+Noise2\+D.\+Get\+Normalized\+Data (\begin{DoxyParamCaption}\item[{bool}]{is\+Cropped = {\ttfamily true},  }\item[{int}]{x\+Crop = {\ttfamily 0},  }\item[{int}]{y\+Crop = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Gets normalized noise map data with all values in the set of \{0..1\}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Cropped} & Indicates whether to select the cropped (default) or uncropped noise map data.\\
+\hline
+{\em x\+Crop} & This value crops off data from the right of the noise map data.\\
+\hline
+{\em y\+Crop} & This value crops off data from the bottom of the noise map data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The normalized noise map data.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_ab34a1fa5128c92fc67198038df677b35}\label{class_lib_noise_1_1_noise2_d_ab34a1fa5128c92fc67198038df677b35}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Get\+Normal\+Map@{Get\+Normal\+Map}}
+\index{Get\+Normal\+Map@{Get\+Normal\+Map}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Get\+Normal\+Map()}{GetNormalMap()}}
+{\footnotesize\ttfamily Texture2D Lib\+Noise.\+Noise2\+D.\+Get\+Normal\+Map (\begin{DoxyParamCaption}\item[{float}]{intensity }\end{DoxyParamCaption})}
+
+
+
+Creates a normal map for the current content of the noise map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em intensity} & The scaling of the normal map values.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created normal map.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a8f5efbd701d1f20f2a9a6c0631283749}\label{class_lib_noise_1_1_noise2_d_a8f5efbd701d1f20f2a9a6c0631283749}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Get\+Texture@{Get\+Texture}}
+\index{Get\+Texture@{Get\+Texture}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Get\+Texture()}{GetTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Texture2D Lib\+Noise.\+Noise2\+D.\+Get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a grayscale texture map for the current content of the noise map. 
+
+\begin{DoxyReturn}{Returns}
+The created texture map.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_ac378ab504b642e6da63ae4e3c3384b4f}\label{class_lib_noise_1_1_noise2_d_ac378ab504b642e6da63ae4e3c3384b4f}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Get\+Texture@{Get\+Texture}}
+\index{Get\+Texture@{Get\+Texture}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Get\+Texture()}{GetTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Texture2D Lib\+Noise.\+Noise2\+D.\+Get\+Texture (\begin{DoxyParamCaption}\item[{Gradient}]{gradient }\end{DoxyParamCaption})}
+
+
+
+Creates a texture map for the current content of the noise map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gradient} & The gradient to color the texture map with.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created texture map.
+\end{DoxyReturn}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a2fe599fb07d0f17706cbd26b246660e3}\label{class_lib_noise_1_1_noise2_d_a2fe599fb07d0f17706cbd26b246660e3}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Border@{Border}}
+\index{Border@{Border}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Border}{Border}}
+{\footnotesize\ttfamily float Lib\+Noise.\+Noise2\+D.\+Border\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the constant value at the noise maps borders. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a02c039a4f7a9e13d7a848ed5bf83dbcd}\label{class_lib_noise_1_1_noise2_d_a02c039a4f7a9e13d7a848ed5bf83dbcd}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Generator@{Generator}}
+\index{Generator@{Generator}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Generator}{Generator}}
+{\footnotesize\ttfamily \hyperlink{class_lib_noise_1_1_module_base}{Module\+Base} Lib\+Noise.\+Noise2\+D.\+Generator\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the generator module. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_adebca9dc1a1ab05075a8511fae245f27}\label{class_lib_noise_1_1_noise2_d_adebca9dc1a1ab05075a8511fae245f27}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Height@{Height}}
+\index{Height@{Height}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Height}{Height}}
+{\footnotesize\ttfamily int Lib\+Noise.\+Noise2\+D.\+Height\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the height of the noise map. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_a30b537eb2a314410c25952d1b18f678c}\label{class_lib_noise_1_1_noise2_d_a30b537eb2a314410c25952d1b18f678c}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Is\+Disposed@{Is\+Disposed}}
+\index{Is\+Disposed@{Is\+Disposed}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Is\+Disposed}{IsDisposed}}
+{\footnotesize\ttfamily bool Lib\+Noise.\+Noise2\+D.\+Is\+Disposed\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets a value whether the object is disposed. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_acfe5bd8d42d32d8250d5cbe021560195}\label{class_lib_noise_1_1_noise2_d_acfe5bd8d42d32d8250d5cbe021560195}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!this\mbox{[}int x, int y, bool is\+Cropped=true\mbox{]}@{this[int x, int y, bool is\+Cropped=true]}}
+\index{this\mbox{[}int x, int y, bool is\+Cropped=true\mbox{]}@{this[int x, int y, bool is\+Cropped=true]}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{this[int x, int y, bool is\+Cropped=true]}{this[int x, int y, bool isCropped=true]}}
+{\footnotesize\ttfamily float Lib\+Noise.\+Noise2\+D.\+this\mbox{[}int x, int y, bool is\+Cropped=true\mbox{]}\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets a value in the noise map by its position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The position on the x-\/axis.\\
+\hline
+{\em y} & The position on the y-\/axis.\\
+\hline
+{\em is\+Cropped} & Indicates whether to select the cropped (default) or uncropped noise map data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding value.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lib_noise_1_1_noise2_d_ad99d9aacdcab01adc90804b1182797f8}\label{class_lib_noise_1_1_noise2_d_ad99d9aacdcab01adc90804b1182797f8}} 
+\index{Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}!Width@{Width}}
+\index{Width@{Width}!Lib\+Noise\+::\+Noise2D@{Lib\+Noise\+::\+Noise2D}}
+\subsubsection{\texorpdfstring{Width}{Width}}
+{\footnotesize\ttfamily int Lib\+Noise.\+Noise2\+D.\+Width\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the width of the noise map. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/\+Prefabs/\+Infinite/\+Code/\+Lib\+Noise/Noise2\+D.\+cs\end{DoxyCompactItemize}

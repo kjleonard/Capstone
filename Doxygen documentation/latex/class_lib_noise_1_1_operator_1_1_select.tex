@@ -1,0 +1,207 @@
+\hypertarget{class_lib_noise_1_1_operator_1_1_select}{}\section{Lib\+Noise.\+Operator.\+Select Class Reference}
+\label{class_lib_noise_1_1_operator_1_1_select}\index{Lib\+Noise.\+Operator.\+Select@{Lib\+Noise.\+Operator.\+Select}}
+
+
+Provides a noise module that outputs the value selected from one of two source modules chosen by the output value from a control module. \mbox{[}O\+P\+E\+R\+A\+T\+OR\mbox{]}  
+
+
+Inheritance diagram for Lib\+Noise.\+Operator.\+Select\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_lib_noise_1_1_operator_1_1_select}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_lib_noise_1_1_operator_1_1_select_acb4f276703eed6184d9c982d6670191b}{Select} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of \hyperlink{class_lib_noise_1_1_operator_1_1_select}{Select}. \end{DoxyCompactList}\item 
+\hyperlink{class_lib_noise_1_1_operator_1_1_select_a37dc6565fe49d63aa5bef700d58d615f}{Select} (\hyperlink{class_lib_noise_1_1_module_base}{Module\+Base} inputA, \hyperlink{class_lib_noise_1_1_module_base}{Module\+Base} inputB, \hyperlink{class_lib_noise_1_1_module_base}{Module\+Base} controller)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of \hyperlink{class_lib_noise_1_1_operator_1_1_select}{Select}. \end{DoxyCompactList}\item 
+\hyperlink{class_lib_noise_1_1_operator_1_1_select_a2a29c69bf154fd755d05f42429f020d5}{Select} (double min, double max, double fall\+Off, \hyperlink{class_lib_noise_1_1_module_base}{Module\+Base} inputA, \hyperlink{class_lib_noise_1_1_module_base}{Module\+Base} inputB)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of \hyperlink{class_lib_noise_1_1_operator_1_1_select}{Select}. \end{DoxyCompactList}\item 
+void \hyperlink{class_lib_noise_1_1_operator_1_1_select_a249d52efba7fa4cf33a9f64ff12b9887}{Set\+Bounds} (double min, double max)
+\begin{DoxyCompactList}\small\item\em Sets the bounds. \end{DoxyCompactList}\item 
+override double \hyperlink{class_lib_noise_1_1_operator_1_1_select_a16ab75303a00d00756fe9ec740184aef}{Get\+Value} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em Returns the output value for the given input coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_lib_noise_1_1_module_base}{Module\+Base} \hyperlink{class_lib_noise_1_1_operator_1_1_select_a302be03766a4c564588078b0cbde4445}{Controller}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the controlling module. \end{DoxyCompactList}\item 
+double \hyperlink{class_lib_noise_1_1_operator_1_1_select_a03f1c9cfacabc7b43efef9f4beefc8b0}{Fall\+Off}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the falloff value at the edge transition. \end{DoxyCompactList}\item 
+double \hyperlink{class_lib_noise_1_1_operator_1_1_select_ac3d0dd2ba9be417b85e2d0c1c0dcb57e}{Maximum}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the maximum, and re-\/calculated the fall-\/off accordingly. \end{DoxyCompactList}\item 
+double \hyperlink{class_lib_noise_1_1_operator_1_1_select_aefa3d148847562fba2ccda301d5e983d}{Minimum}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the minimum, and re-\/calculated the fall-\/off accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_select_a9f5cc5c505e98efd8301142e10a45c7d}\label{class_lib_noise_1_1_operator_1_1_select_a9f5cc5c505e98efd8301142e10a45c7d}} 
+double {\bfseries \+\_\+fall\+Off}
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_select_a5a5bcc94d9875251c3fe9c91b74e8b13}\label{class_lib_noise_1_1_operator_1_1_select_a5a5bcc94d9875251c3fe9c91b74e8b13}} 
+double {\bfseries \+\_\+raw}
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_select_af03f42298e811c62005748e99a7fd6e2}\label{class_lib_noise_1_1_operator_1_1_select_af03f42298e811c62005748e99a7fd6e2}} 
+double {\bfseries \+\_\+min} = -\/1.\+0
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_select_abd22363430aed16e3cc1c65cd9c33d68}\label{class_lib_noise_1_1_operator_1_1_select_abd22363430aed16e3cc1c65cd9c33d68}} 
+double {\bfseries \+\_\+max} = 1.\+0
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Provides a noise module that outputs the value selected from one of two source modules chosen by the output value from a control module. \mbox{[}O\+P\+E\+R\+A\+T\+OR\mbox{]} 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_select_acb4f276703eed6184d9c982d6670191b}\label{class_lib_noise_1_1_operator_1_1_select_acb4f276703eed6184d9c982d6670191b}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}!Select@{Select}}
+\index{Select@{Select}!Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}}
+\subsubsection{\texorpdfstring{Select()}{Select()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Lib\+Noise.\+Operator.\+Select.\+Select (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of \hyperlink{class_lib_noise_1_1_operator_1_1_select}{Select}. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_select_a37dc6565fe49d63aa5bef700d58d615f}\label{class_lib_noise_1_1_operator_1_1_select_a37dc6565fe49d63aa5bef700d58d615f}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}!Select@{Select}}
+\index{Select@{Select}!Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}}
+\subsubsection{\texorpdfstring{Select()}{Select()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Lib\+Noise.\+Operator.\+Select.\+Select (\begin{DoxyParamCaption}\item[{\hyperlink{class_lib_noise_1_1_module_base}{Module\+Base}}]{inputA,  }\item[{\hyperlink{class_lib_noise_1_1_module_base}{Module\+Base}}]{inputB,  }\item[{\hyperlink{class_lib_noise_1_1_module_base}{Module\+Base}}]{controller }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of \hyperlink{class_lib_noise_1_1_operator_1_1_select}{Select}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inputA} & The first input module.\\
+\hline
+{\em inputB} & The second input module.\\
+\hline
+{\em controller} & The controller module.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_select_a2a29c69bf154fd755d05f42429f020d5}\label{class_lib_noise_1_1_operator_1_1_select_a2a29c69bf154fd755d05f42429f020d5}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}!Select@{Select}}
+\index{Select@{Select}!Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}}
+\subsubsection{\texorpdfstring{Select()}{Select()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Lib\+Noise.\+Operator.\+Select.\+Select (\begin{DoxyParamCaption}\item[{double}]{min,  }\item[{double}]{max,  }\item[{double}]{fall\+Off,  }\item[{\hyperlink{class_lib_noise_1_1_module_base}{Module\+Base}}]{inputA,  }\item[{\hyperlink{class_lib_noise_1_1_module_base}{Module\+Base}}]{inputB }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of \hyperlink{class_lib_noise_1_1_operator_1_1_select}{Select}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum value.\\
+\hline
+{\em max} & The maximum value.\\
+\hline
+{\em fall\+Off} & The falloff value at the edge transition.\\
+\hline
+{\em inputA} & The first input module.\\
+\hline
+{\em inputB} & The second input module.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_select_a16ab75303a00d00756fe9ec740184aef}\label{class_lib_noise_1_1_operator_1_1_select_a16ab75303a00d00756fe9ec740184aef}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}!Get\+Value@{Get\+Value}}
+\index{Get\+Value@{Get\+Value}!Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}}
+\subsubsection{\texorpdfstring{Get\+Value()}{GetValue()}}
+{\footnotesize\ttfamily override double Lib\+Noise.\+Operator.\+Select.\+Get\+Value (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the output value for the given input coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The input coordinate on the x-\/axis.\\
+\hline
+{\em y} & The input coordinate on the y-\/axis.\\
+\hline
+{\em z} & The input coordinate on the z-\/axis.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting output value.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_lib_noise_1_1_module_base_abb3f06725165dc1fda63de23b68f408b}{Lib\+Noise.\+Module\+Base}.
+
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_select_a249d52efba7fa4cf33a9f64ff12b9887}\label{class_lib_noise_1_1_operator_1_1_select_a249d52efba7fa4cf33a9f64ff12b9887}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}!Set\+Bounds@{Set\+Bounds}}
+\index{Set\+Bounds@{Set\+Bounds}!Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}}
+\subsubsection{\texorpdfstring{Set\+Bounds()}{SetBounds()}}
+{\footnotesize\ttfamily void Lib\+Noise.\+Operator.\+Select.\+Set\+Bounds (\begin{DoxyParamCaption}\item[{double}]{min,  }\item[{double}]{max }\end{DoxyParamCaption})}
+
+
+
+Sets the bounds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum value.\\
+\hline
+{\em max} & The maximum value.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_select_a302be03766a4c564588078b0cbde4445}\label{class_lib_noise_1_1_operator_1_1_select_a302be03766a4c564588078b0cbde4445}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}!Controller@{Controller}}
+\index{Controller@{Controller}!Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}}
+\subsubsection{\texorpdfstring{Controller}{Controller}}
+{\footnotesize\ttfamily \hyperlink{class_lib_noise_1_1_module_base}{Module\+Base} Lib\+Noise.\+Operator.\+Select.\+Controller\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the controlling module. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_select_a03f1c9cfacabc7b43efef9f4beefc8b0}\label{class_lib_noise_1_1_operator_1_1_select_a03f1c9cfacabc7b43efef9f4beefc8b0}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}!Fall\+Off@{Fall\+Off}}
+\index{Fall\+Off@{Fall\+Off}!Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}}
+\subsubsection{\texorpdfstring{Fall\+Off}{FallOff}}
+{\footnotesize\ttfamily double Lib\+Noise.\+Operator.\+Select.\+Fall\+Off\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the falloff value at the edge transition. 
+
+Called Set\+Edge\+Fall\+Off() on the original \hyperlink{namespace_lib_noise}{Lib\+Noise}. \mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_select_ac3d0dd2ba9be417b85e2d0c1c0dcb57e}\label{class_lib_noise_1_1_operator_1_1_select_ac3d0dd2ba9be417b85e2d0c1c0dcb57e}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}!Maximum@{Maximum}}
+\index{Maximum@{Maximum}!Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}}
+\subsubsection{\texorpdfstring{Maximum}{Maximum}}
+{\footnotesize\ttfamily double Lib\+Noise.\+Operator.\+Select.\+Maximum\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the maximum, and re-\/calculated the fall-\/off accordingly. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_operator_1_1_select_aefa3d148847562fba2ccda301d5e983d}\label{class_lib_noise_1_1_operator_1_1_select_aefa3d148847562fba2ccda301d5e983d}} 
+\index{Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}!Minimum@{Minimum}}
+\index{Minimum@{Minimum}!Lib\+Noise\+::\+Operator\+::\+Select@{Lib\+Noise\+::\+Operator\+::\+Select}}
+\subsubsection{\texorpdfstring{Minimum}{Minimum}}
+{\footnotesize\ttfamily double Lib\+Noise.\+Operator.\+Select.\+Minimum\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the minimum, and re-\/calculated the fall-\/off accordingly. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/\+Prefabs/\+Infinite/\+Code/\+Lib\+Noise/\+Operator/Select.\+cs\end{DoxyCompactItemize}

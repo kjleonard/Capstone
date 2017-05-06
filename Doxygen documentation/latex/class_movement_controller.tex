@@ -1,0 +1,164 @@
+\hypertarget{class_movement_controller}{}\section{Movement\+Controller Class Reference}
+\label{class_movement_controller}\index{Movement\+Controller@{Movement\+Controller}}
+Inheritance diagram for Movement\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_movement_controller}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_movement_controller_a169d1a4b063c53bce40ab6088fb26acd}{Append\+All\+Bytes} (string path, byte\mbox{[}$\,$\mbox{]} bytes)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_movement_controller_af592232f828eed1dd8bc5037c759926b}\label{class_movement_controller_af592232f828eed1dd8bc5037c759926b}} 
+Text {\bfseries mpm\+\_\+text}
+\item 
+\mbox{\Hypertarget{class_movement_controller_ad20a17e573e5e5d52440ae688c6967d8}\label{class_movement_controller_ad20a17e573e5e5d52440ae688c6967d8}} 
+Text {\bfseries left\+\_\+emg\+\_\+text}
+\item 
+\mbox{\Hypertarget{class_movement_controller_a5689c4c782317bf9b4f30be9bd1d5e54}\label{class_movement_controller_a5689c4c782317bf9b4f30be9bd1d5e54}} 
+Text {\bfseries right\+\_\+emg\+\_\+text}
+\item 
+\mbox{\Hypertarget{class_movement_controller_a97f3849a690d5b22d3bac7fbcbb1f7bd}\label{class_movement_controller_a97f3849a690d5b22d3bac7fbcbb1f7bd}} 
+float {\bfseries leftX}
+\item 
+\mbox{\Hypertarget{class_movement_controller_abec5b29852820310165cf4050389fff7}\label{class_movement_controller_abec5b29852820310165cf4050389fff7}} 
+float {\bfseries leftY}
+\item 
+\mbox{\Hypertarget{class_movement_controller_a5d8a78eb9709e2f95679e133ba026048}\label{class_movement_controller_a5d8a78eb9709e2f95679e133ba026048}} 
+float {\bfseries leftZ}
+\item 
+\mbox{\Hypertarget{class_movement_controller_a841ba3c870223fa20a45f7b3f2d0c208}\label{class_movement_controller_a841ba3c870223fa20a45f7b3f2d0c208}} 
+float {\bfseries rightX}
+\item 
+\mbox{\Hypertarget{class_movement_controller_a5c518204eacab975af62e5841859d224}\label{class_movement_controller_a5c518204eacab975af62e5841859d224}} 
+float {\bfseries rightY}
+\item 
+\mbox{\Hypertarget{class_movement_controller_a2f48e9cfa858c3b97451e64909d18b66}\label{class_movement_controller_a2f48e9cfa858c3b97451e64909d18b66}} 
+float {\bfseries rightZ}
+\item 
+\mbox{\Hypertarget{class_movement_controller_a96195d65828749e744000dbca5fa1f3a}\label{class_movement_controller_a96195d65828749e744000dbca5fa1f3a}} 
+int {\bfseries count\+E\+MG}
+\item 
+\mbox{\Hypertarget{class_movement_controller_a6b0e805518faad792d61dc20d4a22f91}\label{class_movement_controller_a6b0e805518faad792d61dc20d4a22f91}} 
+float {\bfseries count\+Left\+E\+MG}
+\item 
+\mbox{\Hypertarget{class_movement_controller_ab7d732620e293a363a5b46ed7dd977f3}\label{class_movement_controller_ab7d732620e293a363a5b46ed7dd977f3}} 
+float {\bfseries count\+Right\+E\+MG}
+\item 
+\mbox{\Hypertarget{class_movement_controller_aa5e594139d89e83c012dcb013c55f163}\label{class_movement_controller_aa5e594139d89e83c012dcb013c55f163}} 
+Boolean {\bfseries obstacle\+Hit}
+\item 
+\mbox{\Hypertarget{class_movement_controller_abe37faad562603b0e3124ef1335e7325}\label{class_movement_controller_abe37faad562603b0e3124ef1335e7325}} 
+bool {\bfseries end\+Sim} = false
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_movement_controller_a27b2def4f884db9ba74d7d62fe789573}\label{class_movement_controller_a27b2def4f884db9ba74d7d62fe789573}} 
+static System.\+Timers.\+Timer {\bfseries t}
+\item 
+\mbox{\Hypertarget{class_movement_controller_a2a6a4b0ea88299286e99abe025a3701a}\label{class_movement_controller_a2a6a4b0ea88299286e99abe025a3701a}} 
+static \hyperlink{class_load_scene_on_script}{Load\+Scene\+On\+Script} {\bfseries end\+Simulation}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_movement_controller_a6625f01290af846b3b61ea1e1432fb19}{Start} ()
+\item 
+void \hyperlink{class_movement_controller_a60a8ed424efc24c04354f4741ed184c9}{On\+Timed\+Event\+\_\+\+Elapsed} (System.\+Object source, System.\+Timers.\+Elapsed\+Event\+Args e)
+\item 
+void \hyperlink{class_movement_controller_a380c48ddf4dadb2df3d58cad2f6718a7}{Update} ()
+\item 
+void \hyperlink{class_movement_controller_abe71887d2658d9031b2b11ae2f48f810}{update\+M\+P\+M\+Text} ()
+\item 
+void \hyperlink{class_movement_controller_afd47400566c9ec385c6cb19574de283e}{update\+E\+M\+G\+Text} ()
+\item 
+void \hyperlink{class_movement_controller_a6617aa6bca661e3ccdf0412d8dab2dc2}{T\+C\+P\+\_\+\+Client} ()
+\item 
+void \hyperlink{class_movement_controller_a7df00ba99e9eb0a7c55fb9724e6bec1d}{File\+\_\+\+Streamer} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_movement_controller_a00c528555c7f5959b3942ded1eb43b33}\label{class_movement_controller_a00c528555c7f5959b3942ded1eb43b33}} 
+bool {\bfseries debug} = false
+\item 
+\mbox{\Hypertarget{class_movement_controller_aff5f35e406fcb7cff3402f7ff666be3d}\label{class_movement_controller_aff5f35e406fcb7cff3402f7ff666be3d}} 
+Vector3 {\bfseries velocity}
+\item 
+\mbox{\Hypertarget{class_movement_controller_afef3c088f09142fe007219818445d82a}\label{class_movement_controller_afef3c088f09142fe007219818445d82a}} 
+float {\bfseries speed}
+\item 
+\mbox{\Hypertarget{class_movement_controller_a163d16675c9432f2eef6acd3c35ae3b6}\label{class_movement_controller_a163d16675c9432f2eef6acd3c35ae3b6}} 
+Vector3 {\bfseries dir}
+\item 
+\mbox{\Hypertarget{class_movement_controller_a651a2ef11955441e52455216aefc79b3}\label{class_movement_controller_a651a2ef11955441e52455216aefc79b3}} 
+float {\bfseries left\+E\+MG}
+\item 
+\mbox{\Hypertarget{class_movement_controller_a6d33281171e2ffc755f67d3824468ab3}\label{class_movement_controller_a6d33281171e2ffc755f67d3824468ab3}} 
+float {\bfseries right\+E\+MG}
+\item 
+\mbox{\Hypertarget{class_movement_controller_ade79cdb1a96847f5e2f74047c04b0985}\label{class_movement_controller_ade79cdb1a96847f5e2f74047c04b0985}} 
+bool {\bfseries is\+Running} = true
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_movement_controller_a169d1a4b063c53bce40ab6088fb26acd}\label{class_movement_controller_a169d1a4b063c53bce40ab6088fb26acd}} 
+\index{Movement\+Controller@{Movement\+Controller}!Append\+All\+Bytes@{Append\+All\+Bytes}}
+\index{Append\+All\+Bytes@{Append\+All\+Bytes}!Movement\+Controller@{Movement\+Controller}}
+\subsubsection{\texorpdfstring{Append\+All\+Bytes()}{AppendAllBytes()}}
+{\footnotesize\ttfamily static void Movement\+Controller.\+Append\+All\+Bytes (\begin{DoxyParamCaption}\item[{string}]{path,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Used to assist with reading test sensor data from a file as a continuous stream of bytes. \mbox{\Hypertarget{class_movement_controller_a7df00ba99e9eb0a7c55fb9724e6bec1d}\label{class_movement_controller_a7df00ba99e9eb0a7c55fb9724e6bec1d}} 
+\index{Movement\+Controller@{Movement\+Controller}!File\+\_\+\+Streamer@{File\+\_\+\+Streamer}}
+\index{File\+\_\+\+Streamer@{File\+\_\+\+Streamer}!Movement\+Controller@{Movement\+Controller}}
+\subsubsection{\texorpdfstring{File\+\_\+\+Streamer()}{File\_Streamer()}}
+{\footnotesize\ttfamily void Movement\+Controller.\+File\+\_\+\+Streamer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Initializes a file streamer to read from a file of test sensor data; Reads in data continually, sets variables with positional information so feet objects can be updated in Feet\+Script.\+cs, and tracks E\+MG readings so that average E\+MG readings can be determined and saved as Player\+Prefs when we move to the End Screen. \mbox{\Hypertarget{class_movement_controller_a60a8ed424efc24c04354f4741ed184c9}\label{class_movement_controller_a60a8ed424efc24c04354f4741ed184c9}} 
+\index{Movement\+Controller@{Movement\+Controller}!On\+Timed\+Event\+\_\+\+Elapsed@{On\+Timed\+Event\+\_\+\+Elapsed}}
+\index{On\+Timed\+Event\+\_\+\+Elapsed@{On\+Timed\+Event\+\_\+\+Elapsed}!Movement\+Controller@{Movement\+Controller}}
+\subsubsection{\texorpdfstring{On\+Timed\+Event\+\_\+\+Elapsed()}{OnTimedEvent\_Elapsed()}}
+{\footnotesize\ttfamily void Movement\+Controller.\+On\+Timed\+Event\+\_\+\+Elapsed (\begin{DoxyParamCaption}\item[{System.\+Object}]{source,  }\item[{System.\+Timers.\+Elapsed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+When the duration timer fires, stops collecting sensor data and loads the End Screen. \mbox{\Hypertarget{class_movement_controller_a6625f01290af846b3b61ea1e1432fb19}\label{class_movement_controller_a6625f01290af846b3b61ea1e1432fb19}} 
+\index{Movement\+Controller@{Movement\+Controller}!Start@{Start}}
+\index{Start@{Start}!Movement\+Controller@{Movement\+Controller}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Movement\+Controller.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Initializes variables (with some utilizing Player\+Prefs), starts a duration timer, and creates a child thread to either read in sensor data directly from Trigno sensors via the Trigno Control Panel or from a file of test data. \mbox{\Hypertarget{class_movement_controller_a6617aa6bca661e3ccdf0412d8dab2dc2}\label{class_movement_controller_a6617aa6bca661e3ccdf0412d8dab2dc2}} 
+\index{Movement\+Controller@{Movement\+Controller}!T\+C\+P\+\_\+\+Client@{T\+C\+P\+\_\+\+Client}}
+\index{T\+C\+P\+\_\+\+Client@{T\+C\+P\+\_\+\+Client}!Movement\+Controller@{Movement\+Controller}}
+\subsubsection{\texorpdfstring{T\+C\+P\+\_\+\+Client()}{TCP\_Client()}}
+{\footnotesize\ttfamily void Movement\+Controller.\+T\+C\+P\+\_\+\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Initializes a T\+CP client to communicate with the Trigno Control Application; Reads in data continually, sets variables with positional information so feet objects can be updated in Feet\+Script.\+cs, and tracks E\+MG readings so that average E\+MG readings can be determined and saved as Player\+Prefs when we move to the End Screen. \mbox{\Hypertarget{class_movement_controller_a380c48ddf4dadb2df3d58cad2f6718a7}\label{class_movement_controller_a380c48ddf4dadb2df3d58cad2f6718a7}} 
+\index{Movement\+Controller@{Movement\+Controller}!Update@{Update}}
+\index{Update@{Update}!Movement\+Controller@{Movement\+Controller}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Movement\+Controller.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Provides functionality to manually modify player speed and end the simulation early, calls update\+M\+P\+M\+Text and potentially update\+E\+M\+G\+Text if enabled, and moves the player forward each frame utilizing the velocity/speed of the player. \mbox{\Hypertarget{class_movement_controller_afd47400566c9ec385c6cb19574de283e}\label{class_movement_controller_afd47400566c9ec385c6cb19574de283e}} 
+\index{Movement\+Controller@{Movement\+Controller}!update\+E\+M\+G\+Text@{update\+E\+M\+G\+Text}}
+\index{update\+E\+M\+G\+Text@{update\+E\+M\+G\+Text}!Movement\+Controller@{Movement\+Controller}}
+\subsubsection{\texorpdfstring{update\+E\+M\+G\+Text()}{updateEMGText()}}
+{\footnotesize\ttfamily void Movement\+Controller.\+update\+E\+M\+G\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Updates the displayed left and right E\+MG text \mbox{\Hypertarget{class_movement_controller_abe71887d2658d9031b2b11ae2f48f810}\label{class_movement_controller_abe71887d2658d9031b2b11ae2f48f810}} 
+\index{Movement\+Controller@{Movement\+Controller}!update\+M\+P\+M\+Text@{update\+M\+P\+M\+Text}}
+\index{update\+M\+P\+M\+Text@{update\+M\+P\+M\+Text}!Movement\+Controller@{Movement\+Controller}}
+\subsubsection{\texorpdfstring{update\+M\+P\+M\+Text()}{updateMPMText()}}
+{\footnotesize\ttfamily void Movement\+Controller.\+update\+M\+P\+M\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Updates the displayed movement speed text 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/Movement\+Controller.\+cs\end{DoxyCompactItemize}

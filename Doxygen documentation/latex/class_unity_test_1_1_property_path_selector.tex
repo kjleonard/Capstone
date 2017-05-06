@@ -1,0 +1,61 @@
+\hypertarget{class_unity_test_1_1_property_path_selector}{}\section{Unity\+Test.\+Property\+Path\+Selector Class Reference}
+\label{class_unity_test_1_1_property_path_selector}\index{Unity\+Test.\+Property\+Path\+Selector@{Unity\+Test.\+Property\+Path\+Selector}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_property_path_selector_a1d0fd9249cc7ceb907a6b2e860ecdd3f}\label{class_unity_test_1_1_property_path_selector_a1d0fd9249cc7ceb907a6b2e860ecdd3f}} 
+{\bfseries Property\+Path\+Selector} (string name)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_property_path_selector_a298c2a3cf7ad503afcff8f39820505f7}\label{class_unity_test_1_1_property_path_selector_a298c2a3cf7ad503afcff8f39820505f7}} 
+void {\bfseries Draw} (Game\+Object go, \hyperlink{class_unity_test_1_1_action_base}{Action\+Base} comparer, string propert\+Path, Type\mbox{[}$\,$\mbox{]} accepatble\+Types, Action$<$ Game\+Object $>$ on\+Selected\+Go, Action$<$ string $>$ on\+Selected\+Path)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_property_path_selector_ad81f0fff0fa2752f31f32156a4143f16}\label{class_unity_test_1_1_property_path_selector_ad81f0fff0fa2752f31f32156a4143f16}} 
+enum {\bfseries Selected\+Path\+Error} \{ {\bfseries None}, 
+{\bfseries Missing\+Component}, 
+{\bfseries Invalid\+Path}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_property_path_selector_a08abe8fd3d1b0ef59c76892396e1fc12}\label{class_unity_test_1_1_property_path_selector_a08abe8fd3d1b0ef59c76892396e1fc12}} 
+string {\bfseries Draw\+List\+Of\+Methods} (Game\+Object go, \hyperlink{class_unity_test_1_1_action_base}{Action\+Base} comparer, string propert\+Path, Type\mbox{[}$\,$\mbox{]} accepatble\+Types, Drop\+Down\+Control$<$ string $>$ drop\+Down)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_property_path_selector_a670564c300b80a730d9f60bbee27ac02}\label{class_unity_test_1_1_property_path_selector_a670564c300b80a730d9f60bbee27ac02}} 
+string {\bfseries Draw\+Manual\+Property\+Edit\+Field} (Game\+Object go, string propert\+Path, Type\mbox{[}$\,$\mbox{]} acceptable\+Types, Drop\+Down\+Control$<$ string $>$ drop\+Down)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_property_path_selector_aba6d337d1add257846b1c34cfdade813}\label{class_unity_test_1_1_property_path_selector_aba6d337d1add257846b1c34cfdade813}} 
+Selected\+Path\+Error {\bfseries Does\+Property\+Exist} (Game\+Object go, string propert\+Path)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_property_path_selector_a91d72c0895d3a6324b98456b08b50dc8}\label{class_unity_test_1_1_property_path_selector_a91d72c0895d3a6324b98456b08b50dc8}} 
+static List$<$ string $>$ {\bfseries Get\+Fields\+And\+Properties} (Game\+Object go, \hyperlink{class_unity_test_1_1_action_base}{Action\+Base} comparer, string extend\+Path, Type\mbox{[}$\,$\mbox{]} accepatble\+Types)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_property_path_selector_a0e958be4ecaca522822bff0e46d62bd4}\label{class_unity_test_1_1_property_path_selector_a0e958be4ecaca522822bff0e46d62bd4}} 
+readonly Drop\+Down\+Control$<$ string $>$ {\bfseries m\+\_\+\+This\+Drop\+Down} = new Drop\+Down\+Control$<$string$>$()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_property_path_selector_afe8dd1ce8d4bf5c1ca6dcb3a47266673}\label{class_unity_test_1_1_property_path_selector_afe8dd1ce8d4bf5c1ca6dcb3a47266673}} 
+readonly Func$<$ string, string $>$ {\bfseries m\+\_\+\+Replace\+Dot\+With\+Slash\+And\+Add\+Go\+Group} = s =$>$ s.\+Replace(\textquotesingle{}.\textquotesingle{}, \textquotesingle{}/\textquotesingle{})
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_property_path_selector_ae91d2c6f3a1ec6c40a877b2ab988c90d}\label{class_unity_test_1_1_property_path_selector_ae91d2c6f3a1ec6c40a877b2ab988c90d}} 
+readonly string {\bfseries m\+\_\+\+Name}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_property_path_selector_adb68f42d8f5a17d304b3d3309df9d810}\label{class_unity_test_1_1_property_path_selector_adb68f42d8f5a17d304b3d3309df9d810}} 
+bool {\bfseries m\+\_\+\+Focus\+Back\+To\+Edit}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_property_path_selector_a30dd291bc3ec3f6fac773a758fa1a065}\label{class_unity_test_1_1_property_path_selector_a30dd291bc3ec3f6fac773a758fa1a065}} 
+Selected\+Path\+Error {\bfseries m\+\_\+\+Error}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/\+Unity\+Test\+Tools/\+Assertions/\+Editor/Property\+Path\+Selector.\+cs\end{DoxyCompactItemize}

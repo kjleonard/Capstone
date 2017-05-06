@@ -1,0 +1,171 @@
+\hypertarget{class_unity_test_1_1_test_runner}{}\section{Unity\+Test.\+Test\+Runner Class Reference}
+\label{class_unity_test_1_1_test_runner}\index{Unity\+Test.\+Test\+Runner@{Unity\+Test.\+Test\+Runner}}
+Inheritance diagram for Unity\+Test.\+Test\+Runner\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_unity_test_1_1_test_runner}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a08fabb881727154a0b1b911fb30d4bc8}\label{class_unity_test_1_1_test_runner_a08fabb881727154a0b1b911fb30d4bc8}} 
+void {\bfseries Awake} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a7912178881cb317fb94c6d2d44f9fa0d}\label{class_unity_test_1_1_test_runner_a7912178881cb317fb94c6d2d44f9fa0d}} 
+void {\bfseries Start} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a3b996c61381e60fb782890d80be416f4}\label{class_unity_test_1_1_test_runner_a3b996c61381e60fb782890d80be416f4}} 
+void {\bfseries Init\+Runner} (List$<$ \hyperlink{class_unity_test_1_1_test_component}{Test\+Component} $>$ tests, List$<$ string $>$ dynamic\+Tests\+To\+Run)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a7d18db8935c55f5f60bc5e8c2022fb11}\label{class_unity_test_1_1_test_runner_a7d18db8935c55f5f60bc5e8c2022fb11}} 
+void {\bfseries Update} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_ad4f87fc739278006b4ce7d10799910be}\label{class_unity_test_1_1_test_runner_ad4f87fc739278006b4ce7d10799910be}} 
+void {\bfseries On\+Destroy} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_ae71321c85eba5e0646f1363baf184029}\label{class_unity_test_1_1_test_runner_ae71321c85eba5e0646f1363baf184029}} 
+I\+Enumerator {\bfseries State\+Machine} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_ac789a35cab7b8175caece248a256ba9d}\label{class_unity_test_1_1_test_runner_ac789a35cab7b8175caece248a256ba9d}} 
+void {\bfseries On\+G\+UI} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_ac12b3855acc4f29c8fb68d459da169af}\label{class_unity_test_1_1_test_runner_ac12b3855acc4f29c8fb68d459da169af}} 
+static \hyperlink{class_unity_test_1_1_test_runner}{Test\+Runner} {\bfseries Get\+Test\+Runner} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_ac21c989bc2f629bfba638f4f37b629fc}\label{class_unity_test_1_1_test_runner_ac21c989bc2f629bfba638f4f37b629fc}} 
+\hyperlink{class_unity_test_1_1_test_component}{Test\+Component} {\bfseries current\+Test}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a6eecc30d5caeed6ddda79286538003ce}\label{class_unity_test_1_1_test_runner_a6eecc30d5caeed6ddda79286538003ce}} 
+\hyperlink{class_unity_test_1_1_integration_test_runner_1_1_test_runner_callback_list}{Test\+Runner\+Callback\+List} {\bfseries Test\+Runner\+Callback} = new \hyperlink{class_unity_test_1_1_integration_test_runner_1_1_test_runner_callback_list}{Test\+Runner\+Callback\+List}()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a8de3376e2ec0fb79add2203cf4ccf89a}\label{class_unity_test_1_1_test_runner_a8de3376e2ec0fb79add2203cf4ccf89a}} 
+bool {\bfseries is\+Initialized\+By\+Runner}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_abdd475451c0d369dc513578fa77c4945}\label{class_unity_test_1_1_test_runner_abdd475451c0d369dc513578fa77c4945}} 
+enum {\bfseries Test\+State} \{ \newline
+{\bfseries Running}, 
+{\bfseries Success}, 
+{\bfseries Failure}, 
+{\bfseries Exception}, 
+\newline
+{\bfseries Timeout}, 
+{\bfseries Ignored}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a809b5eb7e177b13ee26813326aff98a0}\label{class_unity_test_1_1_test_runner_a809b5eb7e177b13ee26813326aff98a0}} 
+void {\bfseries Log\+Handler} (string condition, string stacktrace, Log\+Type type)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a03ce3d82aec4b0d100ab593ece464b51}\label{class_unity_test_1_1_test_runner_a03ce3d82aec4b0d100ab593ece464b51}} 
+void {\bfseries Log\+Message} (string message)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_acc50c3107b62ce11d3137550fc020871}\label{class_unity_test_1_1_test_runner_acc50c3107b62ce11d3137550fc020871}} 
+void {\bfseries Finish\+Test\+Run} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a8c6756f9df87dc483a133b6fcdebd300}\label{class_unity_test_1_1_test_runner_a8c6756f9df87dc483a133b6fcdebd300}} 
+void {\bfseries Print\+Result\+To\+Log} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_ad180c73b7e0b37ad082815317e07272c}\label{class_unity_test_1_1_test_runner_ad180c73b7e0b37ad082815317e07272c}} 
+void {\bfseries Load\+Next\+Level\+Or\+Quit} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a9369f8ff8565f8162e931dfad4f62d9d}\label{class_unity_test_1_1_test_runner_a9369f8ff8565f8162e931dfad4f62d9d}} 
+void {\bfseries Start\+New\+Test} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_ae5b967e3c9433164e54182a4f44122a9}\label{class_unity_test_1_1_test_runner_ae5b967e3c9433164e54182a4f44122a9}} 
+void {\bfseries Finish\+Test} (Test\+Result.\+Result\+Type result)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_afde99fcc749e9919638d39d708abd6bc}\label{class_unity_test_1_1_test_runner_afde99fcc749e9919638d39d708abd6bc}} 
+static I\+Enumerable$<$ \hyperlink{class_unity_test_1_1_test_component}{Test\+Component} $>$ {\bfseries Parse\+List\+For\+Groups} (I\+Enumerable$<$ \hyperlink{class_unity_test_1_1_test_component}{Test\+Component} $>$ tests)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a55550470dfe9bc28a3032a23e3c3cd83}\label{class_unity_test_1_1_test_runner_a55550470dfe9bc28a3032a23e3c3cd83}} 
+static Game\+Object {\bfseries Create} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_af86aeb226f819f2ae499cd718fee6403}\label{class_unity_test_1_1_test_runner_af86aeb226f819f2ae499cd718fee6403}} 
+static bool {\bfseries Is\+Batch\+Mode} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_af513fdba2cdf4a5235e449c140cc7dbd}\label{class_unity_test_1_1_test_runner_af513fdba2cdf4a5235e449c140cc7dbd}} 
+List$<$ \hyperlink{class_unity_test_1_1_test_result}{Test\+Result} $>$ {\bfseries m\+\_\+\+Result\+List} = new List$<$\hyperlink{class_unity_test_1_1_test_result}{Test\+Result}$>$()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a0684a62338ff8d48a8bf842d3087a88a}\label{class_unity_test_1_1_test_runner_a0684a62338ff8d48a8bf842d3087a88a}} 
+List$<$ \hyperlink{class_unity_test_1_1_test_component}{Test\+Component} $>$ {\bfseries m\+\_\+\+Test\+Components}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a12eb580e1e1eceba2c8e3f540e106eed}\label{class_unity_test_1_1_test_runner_a12eb580e1e1eceba2c8e3f540e106eed}} 
+double {\bfseries m\+\_\+\+Start\+Time}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_aeca129db8e54695033c238ea9d7861fa}\label{class_unity_test_1_1_test_runner_aeca129db8e54695033c238ea9d7861fa}} 
+bool {\bfseries m\+\_\+\+Ready\+To\+Run}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a7160811a417953229059810aeb042d55}\label{class_unity_test_1_1_test_runner_a7160811a417953229059810aeb042d55}} 
+string {\bfseries m\+\_\+\+Test\+Messages}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a35ea6527f0d5ead14f85bc27fe037d21}\label{class_unity_test_1_1_test_runner_a35ea6527f0d5ead14f85bc27fe037d21}} 
+string {\bfseries m\+\_\+\+Stacktrace}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a81e98e180129d6010e2ad6d229d4b36e}\label{class_unity_test_1_1_test_runner_a81e98e180129d6010e2ad6d229d4b36e}} 
+Test\+State {\bfseries m\+\_\+\+Test\+State} = Test\+State.\+Running
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_afd348544131633bd952752eba89d752d}\label{class_unity_test_1_1_test_runner_afd348544131633bd952752eba89d752d}} 
+\hyperlink{class_unity_test_1_1_test_runner_configurator}{Test\+Runner\+Configurator} {\bfseries m\+\_\+\+Configurator}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a1acf1a8cedef86f18e9016031951306f}\label{class_unity_test_1_1_test_runner_a1acf1a8cedef86f18e9016031951306f}} 
+\hyperlink{class_unity_test_1_1_integration_test_runner_1_1_integration_tests_provider}{Integration\+Tests\+Provider} {\bfseries m\+\_\+\+Tests\+Provider}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a31b7c453ff7ebe0886ba9f63b8d2eb9d}\label{class_unity_test_1_1_test_runner_a31b7c453ff7ebe0886ba9f63b8d2eb9d}} 
+const string {\bfseries k\+\_\+\+Prefix} = \char`\"{}Integration\+Test\char`\"{}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a2d4282bc77ce03d599e8a6cd171f1875}\label{class_unity_test_1_1_test_runner_a2d4282bc77ce03d599e8a6cd171f1875}} 
+const string {\bfseries k\+\_\+\+Started\+Message} = k\+\_\+\+Prefix + \char`\"{} Started\char`\"{}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_ad77246a9a526d0ffa212b616471c3947}\label{class_unity_test_1_1_test_runner_ad77246a9a526d0ffa212b616471c3947}} 
+const string {\bfseries k\+\_\+\+Finished\+Message} = k\+\_\+\+Prefix + \char`\"{} Finished\char`\"{}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a077eaded917ae466cee65dadc898ed6e}\label{class_unity_test_1_1_test_runner_a077eaded917ae466cee65dadc898ed6e}} 
+const string {\bfseries k\+\_\+\+Timeout\+Message} = k\+\_\+\+Prefix + \char`\"{} Timeout\char`\"{}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a531d386c39cec615af2a0adf5f92b16c}\label{class_unity_test_1_1_test_runner_a531d386c39cec615af2a0adf5f92b16c}} 
+const string {\bfseries k\+\_\+\+Failed\+Message} = k\+\_\+\+Prefix + \char`\"{} Failed\char`\"{}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_ab0f2d3e56a42ed2f7592e6ed7935b461}\label{class_unity_test_1_1_test_runner_ab0f2d3e56a42ed2f7592e6ed7935b461}} 
+const string {\bfseries k\+\_\+\+Failed\+Exception\+Message} = k\+\_\+\+Prefix + \char`\"{} Failed with exception\char`\"{}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_aac7a132be225a06e7cc0567add57a55e}\label{class_unity_test_1_1_test_runner_aac7a132be225a06e7cc0567add57a55e}} 
+const string {\bfseries k\+\_\+\+Ignored\+Message} = k\+\_\+\+Prefix + \char`\"{} Ignored\char`\"{}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_abdd2cd25d4b11f06af31ed6145f8ba9d}\label{class_unity_test_1_1_test_runner_abdd2cd25d4b11f06af31ed6145f8ba9d}} 
+const string {\bfseries k\+\_\+\+Interrupted\+Message} = k\+\_\+\+Prefix + \char`\"{} Run interrupted\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_a3ec7e180f403fa575425a0708701798a}\label{class_unity_test_1_1_test_runner_a3ec7e180f403fa575425a0708701798a}} 
+static int {\bfseries Test\+Scene\+Number} = 0
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_ab223ee199ec62491215777e4f9a4e692}\label{class_unity_test_1_1_test_runner_ab223ee199ec62491215777e4f9a4e692}} 
+static readonly \hyperlink{class_test_result_renderer}{Test\+Result\+Renderer} {\bfseries k\+\_\+\+Result\+Renderer} = new \hyperlink{class_test_result_renderer}{Test\+Result\+Renderer}()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/\+Unity\+Test\+Tools/\+Integration\+Tests\+Framework/\+Test\+Runner/Test\+Runner.\+cs\end{DoxyCompactItemize}

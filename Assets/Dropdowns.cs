@@ -9,16 +9,14 @@ public class Dropdowns : MonoBehaviour {
     // RegEdit -> HKEY_CURRENT_USER -> SOFTWARE -> Unity -> UnityEditor -> android -> game
 
 
-    /**@file
-     * @brief Clears the value of the specified PlayerPref based upon the name of the PlayerPref in question. */
+    /**Clears the value of the specified PlayerPref based upon the name of the PlayerPref in question. */
 
     public void clearValue(string x)
     {
         PlayerPrefs.SetInt(x, 0);
     }
 
-    /** @file
-     * @brief Sets a PlayerPref int value based upon the selected index of a specified Dropdown menu; 
+    /** Sets a PlayerPref int value based upon the selected index of a specified Dropdown menu; 
      *  contains specialized handling for specific Dropdown menus. */
     public void setValue(Dropdown x)
     {
@@ -58,8 +56,7 @@ public class Dropdowns : MonoBehaviour {
 		}
     }
 
-    /** @file
-     * @brief Sets a PlayerPref float value based upon the value of a specified Dropdown menu. */
+    /** Sets a PlayerPref float value based upon the value of a specified Dropdown menu. */
 
     public void setFloat(Dropdown x)
 	{
@@ -71,16 +68,14 @@ public class Dropdowns : MonoBehaviour {
 		PlayerPrefs.SetFloat(x.name, f);
 	}
 
-    /** @file
-     * @brief Gets the value of an int PlayerPref value and assigns the index of a specified dropdown to that value. */
+    /** Gets the value of an int PlayerPref value and assigns the index of a specified dropdown to that value. */
 
     public void getValue(Dropdown x)
     {
         x.value = PlayerPrefs.GetInt(x.name);
     }
 
-    /** @file
-     * @brief Gets the value of an int PlayerPref value and returns that value. */
+    /** Gets the value of an int PlayerPref value and returns that value. */
 
     public float getFloat(Dropdown x)
     {

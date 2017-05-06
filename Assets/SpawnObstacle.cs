@@ -23,8 +23,7 @@ public class SpawnObstacle : MonoBehaviour {
 	private bool obstacleTimerFired;
 	private int obstacleFrequency;
 
-    /** @file
-     * @brief Initializes variables and starts obstacle drop timer; called when the Tunnel scene is loaded.
+    /** Initializes variables and starts obstacle drop timer; called when the Tunnel scene is loaded.
      * 
      * This function is called once when the Tunnel scene is loaded. Positional information, obstacle frequency
      * and timing, and feedback and obstacle drop timers are initialized. */
@@ -90,8 +89,7 @@ public class SpawnObstacle : MonoBehaviour {
 
     }
 
-    /** @file
-     * @brief Activated when the Feedback timer fires; the flag feedbackTimerFired causes the next frame of
+    /** Activated when the Feedback timer fires; the flag feedbackTimerFired causes the next frame of
      * the program to disable the feedback text. */
 
     // Display Feedback
@@ -102,8 +100,7 @@ public class SpawnObstacle : MonoBehaviour {
 
     }
 
-    /** @file
-     * @brief Activated when the Obstacle timer fires; the flag obstacleTimerFired causes the next frame of
+    /** Activated when the Obstacle timer fires; the flag obstacleTimerFired causes the next frame of
      * the program to destroy the existing obstacle and spawn a new obstacle. */
 
     private void OnObstacleEvent_Elapsed(System.Object source, System.Timers.ElapsedEventArgs e)
@@ -111,8 +108,7 @@ public class SpawnObstacle : MonoBehaviour {
 		obstacleTimerFired = true;
 	}
 
-    /** @file
-     * @brief Determines whether the player has passed the existing obstacle, generates feedback dependent upon
+    /** Determines whether the player has passed the existing obstacle, generates feedback dependent upon
      * whether the player hit the obstacle or not, destroys the existing obstacle, and spawns a new obstacle.
      * 
      * This function is called once per frame and performs a number of functions. If feedback is present

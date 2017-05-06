@@ -1,0 +1,70 @@
+\hypertarget{class_unity_test_1_1_test_runner_configurator}{}\section{Unity\+Test.\+Test\+Runner\+Configurator Class Reference}
+\label{class_unity_test_1_1_test_runner_configurator}\index{Unity\+Test.\+Test\+Runner\+Configurator@{Unity\+Test.\+Test\+Runner\+Configurator}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_configurator_a02622dedaef5135db8caf540ed3bc608}\label{class_unity_test_1_1_test_runner_configurator_a02622dedaef5135db8caf540ed3bc608}} 
+string {\bfseries Get\+Integration\+Test\+Scenes} (int test\+Scene\+Num)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_configurator_ac20005122b8e54a5b4ca717c71df2433}\label{class_unity_test_1_1_test_runner_configurator_ac20005122b8e54a5b4ca717c71df2433}} 
+\hyperlink{interface_unity_test_1_1_integration_test_runner_1_1_i_test_runner_callback}{I\+Test\+Runner\+Callback} {\bfseries Resolve\+Network\+Connection} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_configurator_a6b6c47c200e605a3c72f1c09efa92bef}\label{class_unity_test_1_1_test_runner_configurator_a6b6c47c200e605a3c72f1c09efa92bef}} 
+static List$<$ string $>$ {\bfseries Get\+Available\+Network\+I\+Ps} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_configurator_aa9fd51e7151a746d047f1c9974005baf}\label{class_unity_test_1_1_test_runner_configurator_aa9fd51e7151a746d047f1c9974005baf}} 
+static string {\bfseries integration\+Tests\+Network} = \char`\"{}networkconfig.\+txt\char`\"{}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_configurator_a2947e3249df5c7dbac09f0e6c221abbc}\label{class_unity_test_1_1_test_runner_configurator_a2947e3249df5c7dbac09f0e6c221abbc}} 
+static string {\bfseries batch\+Run\+File\+Marker} = \char`\"{}batchrun.\+txt\char`\"{}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_configurator_acb476cd102dd0dc2142e9368124a283d}\label{class_unity_test_1_1_test_runner_configurator_acb476cd102dd0dc2142e9368124a283d}} 
+static string {\bfseries test\+Scenes\+To\+Run} = \char`\"{}testscenes.\+txt\char`\"{}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_configurator_ad2512d3d0e22f5faf42255088c12d29c}\label{class_unity_test_1_1_test_runner_configurator_ad2512d3d0e22f5faf42255088c12d29c}} 
+static string {\bfseries previous\+Scenes} = \char`\"{}previous\+Scenes.\+txt\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_configurator_a578c178d571184a5fc3d459b33382d11}\label{class_unity_test_1_1_test_runner_configurator_a578c178d571184a5fc3d459b33382d11}} 
+bool {\bfseries is\+Batch\+Run}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_configurator_aa39dc5b53b13c031628fd2a750a6a234}\label{class_unity_test_1_1_test_runner_configurator_aa39dc5b53b13c031628fd2a750a6a234}} 
+bool {\bfseries send\+Results\+Over\+Network}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_configurator_a9bc84b5239414b68346f3dcb33ddc69d}\label{class_unity_test_1_1_test_runner_configurator_a9bc84b5239414b68346f3dcb33ddc69d}} 
+void {\bfseries Check\+For\+Sending\+Results\+Over\+Network} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_configurator_aa5b51e7c9f45a9140f736b75bf6262ac}\label{class_unity_test_1_1_test_runner_configurator_aa5b51e7c9f45a9140f736b75bf6262ac}} 
+void {\bfseries Check\+For\+Batch\+Mode} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_configurator_a97e355a9b4994e24889de26f5606c29a}\label{class_unity_test_1_1_test_runner_configurator_a97e355a9b4994e24889de26f5606c29a}} 
+static string {\bfseries Get\+Text\+From\+Text\+Asset} (string file\+Name)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_configurator_a0ddd675b47fbb6ca4c6a470df4a22e7a}\label{class_unity_test_1_1_test_runner_configurator_a0ddd675b47fbb6ca4c6a470df4a22e7a}} 
+static string {\bfseries Get\+Text\+From\+Temp\+File} (string file\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_test_runner_configurator_af6cc63f81f1641518227390659263e96}\label{class_unity_test_1_1_test_runner_configurator_af6cc63f81f1641518227390659263e96}} 
+readonly List$<$ I\+P\+End\+Point $>$ {\bfseries m\+\_\+\+I\+P\+End\+Point\+List} = new List$<$I\+P\+End\+Point$>$()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/\+Unity\+Test\+Tools/\+Integration\+Tests\+Framework/\+Test\+Runner/Test\+Runner\+Configurator.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,73 @@
+\hypertarget{class_unity_test_1_1_member_resolver}{}\section{Unity\+Test.\+Member\+Resolver Class Reference}
+\label{class_unity_test_1_1_member_resolver}\index{Unity\+Test.\+Member\+Resolver@{Unity\+Test.\+Member\+Resolver}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_abcdadb537933948d971987b495653531}\label{class_unity_test_1_1_member_resolver_abcdadb537933948d971987b495653531}} 
+{\bfseries Member\+Resolver} (Game\+Object game\+Object, string path)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_a815847583954de8bb2a3842f88cef77b}\label{class_unity_test_1_1_member_resolver_a815847583954de8bb2a3842f88cef77b}} 
+object {\bfseries Get\+Value} (bool use\+Cache)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_a3e5ed17fdc21ce2b3e4ce3fdb85f2398}\label{class_unity_test_1_1_member_resolver_a3e5ed17fdc21ce2b3e4ce3fdb85f2398}} 
+Type {\bfseries Get\+Member\+Type} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_a6ba998e2f3b560743f1d0d1b894cae00}\label{class_unity_test_1_1_member_resolver_a6ba998e2f3b560743f1d0d1b894cae00}} 
+static bool {\bfseries Try\+Get\+Member\+Type} (Game\+Object game\+Object, string path, out Type value)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_ab8f62b859938eb5d3adab6af48199553}\label{class_unity_test_1_1_member_resolver_ab8f62b859938eb5d3adab6af48199553}} 
+static bool {\bfseries Try\+Get\+Value} (Game\+Object game\+Object, string path, out object value)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_a0a363e01eec4d0ef9473bfec23143f47}\label{class_unity_test_1_1_member_resolver_a0a363e01eec4d0ef9473bfec23143f47}} 
+object {\bfseries Get\+Value\+From\+Member} (object obj, Member\+Info member\+Info)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_a8d8db9e88208340377c7d88a0b468310}\label{class_unity_test_1_1_member_resolver_a8d8db9e88208340377c7d88a0b468310}} 
+object {\bfseries Get\+Base\+Object} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_a7a6e350b61d9ef8ed68700ba7f7d97e2}\label{class_unity_test_1_1_member_resolver_a7a6e350b61d9ef8ed68700ba7f7d97e2}} 
+Member\+Info \mbox{[}$\,$\mbox{]} {\bfseries Get\+Callstack} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_a6ea33d4e6caeb628457ad7c4b64fff82}\label{class_unity_test_1_1_member_resolver_a6ea33d4e6caeb628457ad7c4b64fff82}} 
+void {\bfseries Validate\+Path} (string path)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_a883bfbc4b3dbd80d239ce4ee5de84820}\label{class_unity_test_1_1_member_resolver_a883bfbc4b3dbd80d239ce4ee5de84820}} 
+static bool {\bfseries Is\+Value\+Type} (Type type)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_a115293aa9de01e6dd14ecd07f7a67aaa}\label{class_unity_test_1_1_member_resolver_a115293aa9de01e6dd14ecd07f7a67aaa}} 
+static Field\+Info {\bfseries Get\+Field} (Type type, string field\+Name)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_a7ee69dc13f07c29ecdf1075ff810b713}\label{class_unity_test_1_1_member_resolver_a7ee69dc13f07c29ecdf1075ff810b713}} 
+static Property\+Info {\bfseries Get\+Property} (Type type, string property\+Name)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_a3b22fc2e593b269d8458740a6ab5e124}\label{class_unity_test_1_1_member_resolver_a3b22fc2e593b269d8458740a6ab5e124}} 
+static Method\+Info {\bfseries Get\+Get\+Method} (Property\+Info property\+Info)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_a036702e750d2256941be4fb4cb4f58e0}\label{class_unity_test_1_1_member_resolver_a036702e750d2256941be4fb4cb4f58e0}} 
+object {\bfseries m\+\_\+\+Calling\+Object\+Ref}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_a224a0967852fdc4c975a5b8161d96399}\label{class_unity_test_1_1_member_resolver_a224a0967852fdc4c975a5b8161d96399}} 
+Member\+Info \mbox{[}$\,$\mbox{]} {\bfseries m\+\_\+\+Callstack}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_a9d484d94a4dd73272c6f20d496c2f05e}\label{class_unity_test_1_1_member_resolver_a9d484d94a4dd73272c6f20d496c2f05e}} 
+readonly Game\+Object {\bfseries m\+\_\+\+Game\+Object}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_member_resolver_a327de8e363f54121b8209f16cb7b3687}\label{class_unity_test_1_1_member_resolver_a327de8e363f54121b8209f16cb7b3687}} 
+readonly string {\bfseries m\+\_\+\+Path}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/\+Unity\+Test\+Tools/\+Assertions/Member\+Resolver.\+cs\end{DoxyCompactItemize}

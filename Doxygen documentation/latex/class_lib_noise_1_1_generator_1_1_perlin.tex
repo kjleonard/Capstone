@@ -1,0 +1,199 @@
+\hypertarget{class_lib_noise_1_1_generator_1_1_perlin}{}\section{Lib\+Noise.\+Generator.\+Perlin Class Reference}
+\label{class_lib_noise_1_1_generator_1_1_perlin}\index{Lib\+Noise.\+Generator.\+Perlin@{Lib\+Noise.\+Generator.\+Perlin}}
+
+
+Provides a noise module that outputs a three-\/dimensional perlin noise. \mbox{[}G\+E\+N\+E\+R\+A\+T\+OR\mbox{]}  
+
+
+Inheritance diagram for Lib\+Noise.\+Generator.\+Perlin\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_lib_noise_1_1_generator_1_1_perlin}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_lib_noise_1_1_generator_1_1_perlin_a3602fdceebc6f930056880627e7c013e}{Perlin} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of \hyperlink{class_lib_noise_1_1_generator_1_1_perlin}{Perlin}. \end{DoxyCompactList}\item 
+\hyperlink{class_lib_noise_1_1_generator_1_1_perlin_a0495e8f6b923ad4edd734a477594827e}{Perlin} (double frequency, double lacunarity, double persistence, int octaves, int seed, \hyperlink{namespace_lib_noise_ab253d2180e71b8b4b51e250163ca0e27}{Quality\+Mode} quality)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of \hyperlink{class_lib_noise_1_1_generator_1_1_perlin}{Perlin}. \end{DoxyCompactList}\item 
+override double \hyperlink{class_lib_noise_1_1_generator_1_1_perlin_ad665421f8002cebae781765259a1152d}{Get\+Value} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em Returns the output value for the given input coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_lib_noise_1_1_generator_1_1_perlin_ad04e48902d648cec3c11d94fcef98040}{Frequency}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the frequency of the first octave. \end{DoxyCompactList}\item 
+double \hyperlink{class_lib_noise_1_1_generator_1_1_perlin_a9110ced4dbaa7e042a0afd9e5fc0cde0}{Lacunarity}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the lacunarity of the perlin noise. \end{DoxyCompactList}\item 
+\hyperlink{namespace_lib_noise_ab253d2180e71b8b4b51e250163ca0e27}{Quality\+Mode} \hyperlink{class_lib_noise_1_1_generator_1_1_perlin_a7d39fef8e1ac911f62aa9a9547e0ba6a}{Quality}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the quality of the perlin noise. \end{DoxyCompactList}\item 
+int \hyperlink{class_lib_noise_1_1_generator_1_1_perlin_a5770828024af5b41ca3af590cbcd6966}{Octave\+Count}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the number of octaves of the perlin noise. \end{DoxyCompactList}\item 
+double \hyperlink{class_lib_noise_1_1_generator_1_1_perlin_aacede83f79ff8a71737257a5e74546ef}{Persistence}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the persistence of the perlin noise. \end{DoxyCompactList}\item 
+int \hyperlink{class_lib_noise_1_1_generator_1_1_perlin_a4f2c8cf99ee95e317cfc09d7de9f11e6}{Seed}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the seed of the perlin noise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_generator_1_1_perlin_afa84236a4784143aa81553388e569d02}\label{class_lib_noise_1_1_generator_1_1_perlin_afa84236a4784143aa81553388e569d02}} 
+double {\bfseries \+\_\+frequency} = 1.\+0
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_generator_1_1_perlin_a3abf50219746d5767bd57b1bbb0e4d8b}\label{class_lib_noise_1_1_generator_1_1_perlin_a3abf50219746d5767bd57b1bbb0e4d8b}} 
+double {\bfseries \+\_\+lacunarity} = 2.\+0
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_generator_1_1_perlin_a4beba8358b039c7d9fc7f4c8a5a11c8c}\label{class_lib_noise_1_1_generator_1_1_perlin_a4beba8358b039c7d9fc7f4c8a5a11c8c}} 
+\hyperlink{namespace_lib_noise_ab253d2180e71b8b4b51e250163ca0e27}{Quality\+Mode} {\bfseries \+\_\+quality} = Quality\+Mode.\+Medium
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_generator_1_1_perlin_a2cacff140eebbcb098d41af365e6f141}\label{class_lib_noise_1_1_generator_1_1_perlin_a2cacff140eebbcb098d41af365e6f141}} 
+int {\bfseries \+\_\+octave\+Count} = 6
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_generator_1_1_perlin_aba2908ce7d0c3f6116985354a74269e7}\label{class_lib_noise_1_1_generator_1_1_perlin_aba2908ce7d0c3f6116985354a74269e7}} 
+double {\bfseries \+\_\+persistence} = 0.\+5
+\item 
+\mbox{\Hypertarget{class_lib_noise_1_1_generator_1_1_perlin_af6a2ff60c31280c5557e798dc2d0c9df}\label{class_lib_noise_1_1_generator_1_1_perlin_af6a2ff60c31280c5557e798dc2d0c9df}} 
+int {\bfseries \+\_\+seed}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Provides a noise module that outputs a three-\/dimensional perlin noise. \mbox{[}G\+E\+N\+E\+R\+A\+T\+OR\mbox{]} 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_lib_noise_1_1_generator_1_1_perlin_a3602fdceebc6f930056880627e7c013e}\label{class_lib_noise_1_1_generator_1_1_perlin_a3602fdceebc6f930056880627e7c013e}} 
+\index{Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}!Perlin@{Perlin}}
+\index{Perlin@{Perlin}!Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}}
+\subsubsection{\texorpdfstring{Perlin()}{Perlin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Lib\+Noise.\+Generator.\+Perlin.\+Perlin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of \hyperlink{class_lib_noise_1_1_generator_1_1_perlin}{Perlin}. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_generator_1_1_perlin_a0495e8f6b923ad4edd734a477594827e}\label{class_lib_noise_1_1_generator_1_1_perlin_a0495e8f6b923ad4edd734a477594827e}} 
+\index{Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}!Perlin@{Perlin}}
+\index{Perlin@{Perlin}!Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}}
+\subsubsection{\texorpdfstring{Perlin()}{Perlin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Lib\+Noise.\+Generator.\+Perlin.\+Perlin (\begin{DoxyParamCaption}\item[{double}]{frequency,  }\item[{double}]{lacunarity,  }\item[{double}]{persistence,  }\item[{int}]{octaves,  }\item[{int}]{seed,  }\item[{\hyperlink{namespace_lib_noise_ab253d2180e71b8b4b51e250163ca0e27}{Quality\+Mode}}]{quality }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of \hyperlink{class_lib_noise_1_1_generator_1_1_perlin}{Perlin}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frequency} & The frequency of the first octave.\\
+\hline
+{\em lacunarity} & The lacunarity of the perlin noise.\\
+\hline
+{\em persistence} & The persistence of the perlin noise.\\
+\hline
+{\em octaves} & The number of octaves of the perlin noise.\\
+\hline
+{\em seed} & The seed of the perlin noise.\\
+\hline
+{\em quality} & The quality of the perlin noise.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lib_noise_1_1_generator_1_1_perlin_ad665421f8002cebae781765259a1152d}\label{class_lib_noise_1_1_generator_1_1_perlin_ad665421f8002cebae781765259a1152d}} 
+\index{Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}!Get\+Value@{Get\+Value}}
+\index{Get\+Value@{Get\+Value}!Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}}
+\subsubsection{\texorpdfstring{Get\+Value()}{GetValue()}}
+{\footnotesize\ttfamily override double Lib\+Noise.\+Generator.\+Perlin.\+Get\+Value (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the output value for the given input coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The input coordinate on the x-\/axis.\\
+\hline
+{\em y} & The input coordinate on the y-\/axis.\\
+\hline
+{\em z} & The input coordinate on the z-\/axis.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting output value.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_lib_noise_1_1_module_base_abb3f06725165dc1fda63de23b68f408b}{Lib\+Noise.\+Module\+Base}.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_lib_noise_1_1_generator_1_1_perlin_ad04e48902d648cec3c11d94fcef98040}\label{class_lib_noise_1_1_generator_1_1_perlin_ad04e48902d648cec3c11d94fcef98040}} 
+\index{Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}!Frequency@{Frequency}}
+\index{Frequency@{Frequency}!Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}}
+\subsubsection{\texorpdfstring{Frequency}{Frequency}}
+{\footnotesize\ttfamily double Lib\+Noise.\+Generator.\+Perlin.\+Frequency\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the frequency of the first octave. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_generator_1_1_perlin_a9110ced4dbaa7e042a0afd9e5fc0cde0}\label{class_lib_noise_1_1_generator_1_1_perlin_a9110ced4dbaa7e042a0afd9e5fc0cde0}} 
+\index{Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}!Lacunarity@{Lacunarity}}
+\index{Lacunarity@{Lacunarity}!Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}}
+\subsubsection{\texorpdfstring{Lacunarity}{Lacunarity}}
+{\footnotesize\ttfamily double Lib\+Noise.\+Generator.\+Perlin.\+Lacunarity\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the lacunarity of the perlin noise. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_generator_1_1_perlin_a5770828024af5b41ca3af590cbcd6966}\label{class_lib_noise_1_1_generator_1_1_perlin_a5770828024af5b41ca3af590cbcd6966}} 
+\index{Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}!Octave\+Count@{Octave\+Count}}
+\index{Octave\+Count@{Octave\+Count}!Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}}
+\subsubsection{\texorpdfstring{Octave\+Count}{OctaveCount}}
+{\footnotesize\ttfamily int Lib\+Noise.\+Generator.\+Perlin.\+Octave\+Count\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the number of octaves of the perlin noise. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_generator_1_1_perlin_aacede83f79ff8a71737257a5e74546ef}\label{class_lib_noise_1_1_generator_1_1_perlin_aacede83f79ff8a71737257a5e74546ef}} 
+\index{Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}!Persistence@{Persistence}}
+\index{Persistence@{Persistence}!Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}}
+\subsubsection{\texorpdfstring{Persistence}{Persistence}}
+{\footnotesize\ttfamily double Lib\+Noise.\+Generator.\+Perlin.\+Persistence\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the persistence of the perlin noise. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_generator_1_1_perlin_a7d39fef8e1ac911f62aa9a9547e0ba6a}\label{class_lib_noise_1_1_generator_1_1_perlin_a7d39fef8e1ac911f62aa9a9547e0ba6a}} 
+\index{Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}!Quality@{Quality}}
+\index{Quality@{Quality}!Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}}
+\subsubsection{\texorpdfstring{Quality}{Quality}}
+{\footnotesize\ttfamily \hyperlink{namespace_lib_noise_ab253d2180e71b8b4b51e250163ca0e27}{Quality\+Mode} Lib\+Noise.\+Generator.\+Perlin.\+Quality\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the quality of the perlin noise. 
+
+\mbox{\Hypertarget{class_lib_noise_1_1_generator_1_1_perlin_a4f2c8cf99ee95e317cfc09d7de9f11e6}\label{class_lib_noise_1_1_generator_1_1_perlin_a4f2c8cf99ee95e317cfc09d7de9f11e6}} 
+\index{Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}!Seed@{Seed}}
+\index{Seed@{Seed}!Lib\+Noise\+::\+Generator\+::\+Perlin@{Lib\+Noise\+::\+Generator\+::\+Perlin}}
+\subsubsection{\texorpdfstring{Seed}{Seed}}
+{\footnotesize\ttfamily int Lib\+Noise.\+Generator.\+Perlin.\+Seed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the seed of the perlin noise. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/\+Prefabs/\+Infinite/\+Code/\+Lib\+Noise/\+Generator/Perlin.\+cs\end{DoxyCompactItemize}

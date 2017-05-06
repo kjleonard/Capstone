@@ -1,0 +1,76 @@
+\hypertarget{class_terrain_generator_1_1_chunk_cache}{}\section{Terrain\+Generator.\+Chunk\+Cache Class Reference}
+\label{class_terrain_generator_1_1_chunk_cache}\index{Terrain\+Generator.\+Chunk\+Cache@{Terrain\+Generator.\+Chunk\+Cache}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_a634f6d4f76a9a0f772ce58b24c59b3a1}\label{class_terrain_generator_1_1_chunk_cache_a634f6d4f76a9a0f772ce58b24c59b3a1}} 
+void {\bfseries Update} ()
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_aeec39940a5770da7992058502d07d9ea}\label{class_terrain_generator_1_1_chunk_cache_aeec39940a5770da7992058502d07d9ea}} 
+void {\bfseries Add\+New\+Chunk} (\hyperlink{class_terrain_generator_1_1_terrain_chunk}{Terrain\+Chunk} chunk)
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_aa7d3ccbafd3da46ba061b8ca4b02cd28}\label{class_terrain_generator_1_1_chunk_cache_aa7d3ccbafd3da46ba061b8ca4b02cd28}} 
+void {\bfseries Remove\+Chunk} (int x, int z)
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_ad6a6d36166d146a0307c9a085f6c2944}\label{class_terrain_generator_1_1_chunk_cache_ad6a6d36166d146a0307c9a085f6c2944}} 
+bool {\bfseries Chunk\+Can\+Be\+Added} (int x, int z)
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_aa464ff7c171f041bc0ce36c15d8b14e2}\label{class_terrain_generator_1_1_chunk_cache_aa464ff7c171f041bc0ce36c15d8b14e2}} 
+bool {\bfseries Chunk\+Can\+Be\+Removed} (int x, int z)
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_a40388252b52bcc4e6d8b0d8e0bc6ce34}\label{class_terrain_generator_1_1_chunk_cache_a40388252b52bcc4e6d8b0d8e0bc6ce34}} 
+bool {\bfseries Is\+Chunk\+Generated} (\hyperlink{class_terrain_generator_1_1_vector2i}{Vector2i} chunk\+Position)
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_a27d2056a252f119cc976a3ee5f9ed9eb}\label{class_terrain_generator_1_1_chunk_cache_a27d2056a252f119cc976a3ee5f9ed9eb}} 
+\hyperlink{class_terrain_generator_1_1_terrain_chunk}{Terrain\+Chunk} {\bfseries Get\+Generated\+Chunk} (\hyperlink{class_terrain_generator_1_1_vector2i}{Vector2i} chunk\+Position)
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_a334802dd71d9ab71a06e608cbc965d9d}\label{class_terrain_generator_1_1_chunk_cache_a334802dd71d9ab71a06e608cbc965d9d}} 
+List$<$ \hyperlink{class_terrain_generator_1_1_vector2i}{Vector2i} $>$ {\bfseries Get\+Generated\+Chunks} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_af0bfe6a9cf852531c84070c7d4412772}\label{class_terrain_generator_1_1_chunk_cache_af0bfe6a9cf852531c84070c7d4412772}} 
+Dictionary$<$ \hyperlink{class_terrain_generator_1_1_vector2i}{Vector2i}, \hyperlink{class_terrain_generator_1_1_terrain_chunk}{Terrain\+Chunk} $>$ {\bfseries Requested\+Chunks}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_a19af08581f373d9fd6416389d2e88300}\label{class_terrain_generator_1_1_chunk_cache_a19af08581f373d9fd6416389d2e88300}} 
+Dictionary$<$ \hyperlink{class_terrain_generator_1_1_vector2i}{Vector2i}, \hyperlink{class_terrain_generator_1_1_terrain_chunk}{Terrain\+Chunk} $>$ {\bfseries Chunks\+Being\+Generated}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_a428248110b685a5c7d0b7efadd6c6681}\label{class_terrain_generator_1_1_chunk_cache_a428248110b685a5c7d0b7efadd6c6681}} 
+Dictionary$<$ \hyperlink{class_terrain_generator_1_1_vector2i}{Vector2i}, \hyperlink{class_terrain_generator_1_1_terrain_chunk}{Terrain\+Chunk} $>$ {\bfseries Loaded\+Chunks}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_a112cefbe58c6cc7613caf01ec1ca70f4}\label{class_terrain_generator_1_1_chunk_cache_a112cefbe58c6cc7613caf01ec1ca70f4}} 
+Hash\+Set$<$ \hyperlink{class_terrain_generator_1_1_vector2i}{Vector2i} $>$ {\bfseries Chunks\+To\+Remove}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_a08cafbe5bb47c7e87dcceaeaaead881e}\label{class_terrain_generator_1_1_chunk_cache_a08cafbe5bb47c7e87dcceaeaaead881e}} 
+On\+Chunk\+Generated\+Delegate {\bfseries On\+Chunk\+Generated}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_a92634880cb9e648def5d6f46252fb675}\label{class_terrain_generator_1_1_chunk_cache_a92634880cb9e648def5d6f46252fb675}} 
+void {\bfseries Generate\+Heightmap\+For\+Available\+Chunks} ()
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_ace36381e1561085f6e198b8e96f86203}\label{class_terrain_generator_1_1_chunk_cache_ace36381e1561085f6e198b8e96f86203}} 
+void {\bfseries Create\+Terrain\+For\+Ready\+Chunks} ()
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_a5b11904573854f383ff528a3f93571c8}\label{class_terrain_generator_1_1_chunk_cache_a5b11904573854f383ff528a3f93571c8}} 
+void {\bfseries Try\+To\+Delete\+Queued\+Chunks} ()
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_a084093aac88906af0a0cb3a6aad78277}\label{class_terrain_generator_1_1_chunk_cache_a084093aac88906af0a0cb3a6aad78277}} 
+void {\bfseries Set\+Chunk\+Neighborhood} (\hyperlink{class_terrain_generator_1_1_terrain_chunk}{Terrain\+Chunk} chunk)
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_a25994bd99a0d681b7bcd46053905a33a}\label{class_terrain_generator_1_1_chunk_cache_a25994bd99a0d681b7bcd46053905a33a}} 
+void {\bfseries Update\+All\+Chunk\+Neighbors} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_terrain_generator_1_1_chunk_cache_a61391defc5efe827376ffdc4ce90cd3d}\label{class_terrain_generator_1_1_chunk_cache_a61391defc5efe827376ffdc4ce90cd3d}} 
+readonly int {\bfseries Max\+Chunk\+Threads} = 3
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/\+Prefabs/\+Infinite/\+Code/\+Generator/\+Chunk/Chunk\+Cache.\+cs\end{DoxyCompactItemize}

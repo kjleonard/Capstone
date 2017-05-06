@@ -1,0 +1,61 @@
+\hypertarget{class_unity_test_1_1_network_result_sender}{}\section{Unity\+Test.\+Network\+Result\+Sender Class Reference}
+\label{class_unity_test_1_1_network_result_sender}\index{Unity\+Test.\+Network\+Result\+Sender@{Unity\+Test.\+Network\+Result\+Sender}}
+Inheritance diagram for Unity\+Test.\+Network\+Result\+Sender\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_unity_test_1_1_network_result_sender}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_network_result_sender_a40da48399de61c8039af45df7182de72}\label{class_unity_test_1_1_network_result_sender_a40da48399de61c8039af45df7182de72}} 
+{\bfseries Network\+Result\+Sender} (string ip, int port)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_network_result_sender_a4b7655dff471e842cf255792b295d015}\label{class_unity_test_1_1_network_result_sender_a4b7655dff471e842cf255792b295d015}} 
+bool {\bfseries Ping} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_network_result_sender_a4f0df19d2e674c535f82c102b3f9f012}\label{class_unity_test_1_1_network_result_sender_a4f0df19d2e674c535f82c102b3f9f012}} 
+void {\bfseries Run\+Started} (string platform, List$<$ \hyperlink{class_unity_test_1_1_test_component}{Test\+Component} $>$ tests\+To\+Run)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_network_result_sender_a5f284dd3df52cb36b7b50605bf62587e}\label{class_unity_test_1_1_network_result_sender_a5f284dd3df52cb36b7b50605bf62587e}} 
+void {\bfseries Run\+Finished} (List$<$ \hyperlink{class_unity_test_1_1_test_result}{Test\+Result} $>$ test\+Results)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_network_result_sender_a0d90ced88f305b4dd0335e1017cf4d0a}\label{class_unity_test_1_1_network_result_sender_a0d90ced88f305b4dd0335e1017cf4d0a}} 
+void {\bfseries Test\+Started} (\hyperlink{class_unity_test_1_1_test_result}{Test\+Result} test)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_network_result_sender_a5dd585414299cb1cc3652fe76d81c72d}\label{class_unity_test_1_1_network_result_sender_a5dd585414299cb1cc3652fe76d81c72d}} 
+void {\bfseries Test\+Finished} (\hyperlink{class_unity_test_1_1_test_result}{Test\+Result} test)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_network_result_sender_a64d3f8143d7adbcc19c30b0c71a7b12a}\label{class_unity_test_1_1_network_result_sender_a64d3f8143d7adbcc19c30b0c71a7b12a}} 
+void {\bfseries All\+Scenes\+Finished} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_network_result_sender_a220318f863c91e8a933200cb9c51d86a}\label{class_unity_test_1_1_network_result_sender_a220318f863c91e8a933200cb9c51d86a}} 
+void {\bfseries Test\+Run\+Interrupted} (List$<$ \hyperlink{interface_unity_test_1_1_i_test_component}{I\+Test\+Component} $>$ tests\+Not\+Run)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_network_result_sender_a85480377ac331e13f9cf37c42c4fff06}\label{class_unity_test_1_1_network_result_sender_a85480377ac331e13f9cf37c42c4fff06}} 
+bool {\bfseries Send\+D\+TO} (\hyperlink{class_unity_test_1_1_result_d_t_o}{Result\+D\+TO} dto)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_network_result_sender_a9353ffcb74fd6cde21e363bf048378fe}\label{class_unity_test_1_1_network_result_sender_a9353ffcb74fd6cde21e363bf048378fe}} 
+readonly Time\+Span {\bfseries m\+\_\+\+Connection\+Timeout} = Time\+Span.\+From\+Seconds(5)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_network_result_sender_afc5ef8e031d5533add35a8083be0c6a1}\label{class_unity_test_1_1_network_result_sender_afc5ef8e031d5533add35a8083be0c6a1}} 
+readonly string {\bfseries m\+\_\+\+Ip}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_network_result_sender_abe6afbcfc2ed53ac7b8e5804fa391bb2}\label{class_unity_test_1_1_network_result_sender_abe6afbcfc2ed53ac7b8e5804fa391bb2}} 
+readonly int {\bfseries m\+\_\+\+Port}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_network_result_sender_ac7fdbd1d228a5bcd6fb90871d26fd584}\label{class_unity_test_1_1_network_result_sender_ac7fdbd1d228a5bcd6fb90871d26fd584}} 
+bool {\bfseries m\+\_\+\+Lost\+Connection}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/\+Unity\+Test\+Tools/\+Integration\+Tests\+Framework/\+Test\+Runner/Network\+Result\+Sender.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,115 @@
+\hypertarget{class_unity_test_1_1_xml_result_writer}{}\section{Unity\+Test.\+Xml\+Result\+Writer Class Reference}
+\label{class_unity_test_1_1_xml_result_writer}\index{Unity\+Test.\+Xml\+Result\+Writer@{Unity\+Test.\+Xml\+Result\+Writer}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_ad8b7d331715ddfa516face3e9b1635a5}\label{class_unity_test_1_1_xml_result_writer_ad8b7d331715ddfa516face3e9b1635a5}} 
+{\bfseries Xml\+Result\+Writer} (string suite\+Name, string platform, \hyperlink{interface_i_test_result}{I\+Test\+Result}\mbox{[}$\,$\mbox{]} results)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_af0ed18a86117293c046c40946a77bebf}\label{class_unity_test_1_1_xml_result_writer_af0ed18a86117293c046c40946a77bebf}} 
+string {\bfseries Get\+Test\+Result} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_ad2bd046059415e5dcac6cbc150c488d2}\label{class_unity_test_1_1_xml_result_writer_ad2bd046059415e5dcac6cbc150c488d2}} 
+void {\bfseries Write\+To\+File} (string result\+Destiantion, string result\+File\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a36f95b374224c1f0a15ac1b8bb3f3745}\label{class_unity_test_1_1_xml_result_writer_a36f95b374224c1f0a15ac1b8bb3f3745}} 
+void {\bfseries Initialize\+Xml\+File} (string results\+Name, \hyperlink{class_unity_test_1_1_result_summarizer}{Result\+Summarizer} summary\+Results)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_af405573eba8842ac9afddc2e746b033e}\label{class_unity_test_1_1_xml_result_writer_af405573eba8842ac9afddc2e746b033e}} 
+void {\bfseries Write\+Opening\+Element} (string element\+Name)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a6c92a441bec1dd219caba53001ba6af1}\label{class_unity_test_1_1_xml_result_writer_a6c92a441bec1dd219caba53001ba6af1}} 
+void {\bfseries Write\+Opening\+Element} (string element\+Name, Dictionary$<$ string, string $>$ attributes)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_ad750b3e69241b36a1e0d0d7b0d2516fe}\label{class_unity_test_1_1_xml_result_writer_ad750b3e69241b36a1e0d0d7b0d2516fe}} 
+void {\bfseries Write\+Opening\+Element} (string element\+Name, Dictionary$<$ string, string $>$ attributes, bool close\+Immediatelly)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a6be40bc3542fc926cab66a7a2124b065}\label{class_unity_test_1_1_xml_result_writer_a6be40bc3542fc926cab66a7a2124b065}} 
+void {\bfseries Write\+Indend} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a3833948863c5a7fde59ca9d1dd1f2cdf}\label{class_unity_test_1_1_xml_result_writer_a3833948863c5a7fde59ca9d1dd1f2cdf}} 
+void {\bfseries Write\+Closing\+Element} (string element\+Name)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_aa3fa745cbd99e8c7ab5e22a326249d8c}\label{class_unity_test_1_1_xml_result_writer_aa3fa745cbd99e8c7ab5e22a326249d8c}} 
+void {\bfseries Write\+Header} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_aa5aac36f944c738c716c535ee3cb591f}\label{class_unity_test_1_1_xml_result_writer_aa5aac36f944c738c716c535ee3cb591f}} 
+void {\bfseries Write\+Environment} (string target\+Platform)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_aef7fbec6126dcf44f0661bc771aba16b}\label{class_unity_test_1_1_xml_result_writer_aef7fbec6126dcf44f0661bc771aba16b}} 
+void {\bfseries Write\+Culture\+Info} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a159b33f6e45ab6d0728bf52da28216dd}\label{class_unity_test_1_1_xml_result_writer_a159b33f6e45ab6d0728bf52da28216dd}} 
+void {\bfseries Write\+Test\+Suite} (string results\+Name, \hyperlink{class_unity_test_1_1_result_summarizer}{Result\+Summarizer} summary\+Results)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_ac3b64dee42473c685f5816be0d9c1bcb}\label{class_unity_test_1_1_xml_result_writer_ac3b64dee42473c685f5816be0d9c1bcb}} 
+void {\bfseries Write\+Result\+Element} (\hyperlink{interface_i_test_result}{I\+Test\+Result} result)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a1f58843ef4cadf85cb75345793e5668c}\label{class_unity_test_1_1_xml_result_writer_a1f58843ef4cadf85cb75345793e5668c}} 
+void {\bfseries Terminate\+Xml\+File} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a768ab39a7139b12ddb767cec4fa49f91}\label{class_unity_test_1_1_xml_result_writer_a768ab39a7139b12ddb767cec4fa49f91}} 
+void {\bfseries Start\+Test\+Element} (\hyperlink{interface_i_test_result}{I\+Test\+Result} result)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a56763690fe6636c33002d4ab579c2f6a}\label{class_unity_test_1_1_xml_result_writer_a56763690fe6636c33002d4ab579c2f6a}} 
+void {\bfseries Write\+Reason\+Element} (\hyperlink{interface_i_test_result}{I\+Test\+Result} result)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_ae2aa21f1a9112892147cdca369342845}\label{class_unity_test_1_1_xml_result_writer_ae2aa21f1a9112892147cdca369342845}} 
+void {\bfseries Write\+Failure\+Element} (\hyperlink{interface_i_test_result}{I\+Test\+Result} result)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_afe6f90960e4693030c63ed99adc346cd}\label{class_unity_test_1_1_xml_result_writer_afe6f90960e4693030c63ed99adc346cd}} 
+void {\bfseries Write\+C\+Data} (string text)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a23b16d527efe3679ac2c03ab83c4d2da}\label{class_unity_test_1_1_xml_result_writer_a23b16d527efe3679ac2c03ab83c4d2da}} 
+static string {\bfseries Get\+Environment\+User\+Name} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a8baf9b1930dd306ebe6e3211bf6aaf8d}\label{class_unity_test_1_1_xml_result_writer_a8baf9b1930dd306ebe6e3211bf6aaf8d}} 
+static string {\bfseries Get\+Environment\+Machine\+Name} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_ada8d7349094472d4f8d4c63905b3385c}\label{class_unity_test_1_1_xml_result_writer_ada8d7349094472d4f8d4c63905b3385c}} 
+static string {\bfseries Get\+Environment\+User\+Domain\+Name} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_ae7bfdfe4d9ea0c8b90670d4e0e384f99}\label{class_unity_test_1_1_xml_result_writer_ae7bfdfe4d9ea0c8b90670d4e0e384f99}} 
+static string {\bfseries Get\+Environment\+Version} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a0bb4faca7efaca830df4bee49683e9ab}\label{class_unity_test_1_1_xml_result_writer_a0bb4faca7efaca830df4bee49683e9ab}} 
+static string {\bfseries Get\+Environment\+O\+S\+Version} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a71189331d2b0f43a7817109fc5adc1a0}\label{class_unity_test_1_1_xml_result_writer_a71189331d2b0f43a7817109fc5adc1a0}} 
+static string {\bfseries Get\+Environment\+O\+S\+Version\+Platform} ()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_af601b3342eed0ea1be8fffd8edf19318}\label{class_unity_test_1_1_xml_result_writer_af601b3342eed0ea1be8fffd8edf19318}} 
+static string {\bfseries Environment\+Get\+Current\+Directory} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a4e0e74510ae1b33a51f5655b96768642}\label{class_unity_test_1_1_xml_result_writer_a4e0e74510ae1b33a51f5655b96768642}} 
+readonly String\+Builder {\bfseries m\+\_\+\+Result\+Writer} = new String\+Builder()
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_aae8d89e36faaba4ca45f08be8e06d67a}\label{class_unity_test_1_1_xml_result_writer_aae8d89e36faaba4ca45f08be8e06d67a}} 
+int {\bfseries m\+\_\+\+Indend}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a12445ae7faa3546b29b9a47ae84fe471}\label{class_unity_test_1_1_xml_result_writer_a12445ae7faa3546b29b9a47ae84fe471}} 
+readonly string {\bfseries m\+\_\+\+Suite\+Name}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a01153b59faa985bfcb18dc21bac1518d}\label{class_unity_test_1_1_xml_result_writer_a01153b59faa985bfcb18dc21bac1518d}} 
+readonly \hyperlink{interface_i_test_result}{I\+Test\+Result} \mbox{[}$\,$\mbox{]} {\bfseries m\+\_\+\+Results}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a28ed1ab841dd61423821cbf1b9a628b7}\label{class_unity_test_1_1_xml_result_writer_a28ed1ab841dd61423821cbf1b9a628b7}} 
+string {\bfseries m\+\_\+\+Platform}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_xml_result_writer_a86a2c575ed21233c5c179bbaebcb75dd}\label{class_unity_test_1_1_xml_result_writer_a86a2c575ed21233c5c179bbaebcb75dd}} 
+const string {\bfseries k\+\_\+\+N\+Unit\+Version} = \char`\"{}2.\+6.\+2-\/Unity\char`\"{}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/\+Unity\+Test\+Tools/\+Common/\+Editor/\+Result\+Writer/Xml\+Result\+Writer.\+cs\end{DoxyCompactItemize}

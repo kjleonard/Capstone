@@ -13,8 +13,7 @@ public class EndScreen : MonoBehaviour {
     public Text lblLeftEMG;
     public Text lblRightEMG;
 
-    /** @file
-     * @brief Gets PlayerPref values and sets End Screen label text based upon those values. */
+    /** Gets PlayerPref values and sets End Screen label text based upon those values. */
 
     // Use this for initialization
     void Start () {

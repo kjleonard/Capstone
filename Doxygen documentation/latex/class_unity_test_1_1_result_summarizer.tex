@@ -1,0 +1,173 @@
+\hypertarget{class_unity_test_1_1_result_summarizer}{}\section{Unity\+Test.\+Result\+Summarizer Class Reference}
+\label{class_unity_test_1_1_result_summarizer}\index{Unity\+Test.\+Result\+Summarizer@{Unity\+Test.\+Result\+Summarizer}}
+
+
+Summary description for \hyperlink{class_unity_test_1_1_result_summarizer}{Result\+Summarizer}.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_a5ebf0666ccc0a7954b15449bb10249bc}\label{class_unity_test_1_1_result_summarizer_a5ebf0666ccc0a7954b15449bb10249bc}} 
+{\bfseries Result\+Summarizer} (I\+Enumerable$<$ \hyperlink{interface_i_test_result}{I\+Test\+Result} $>$ results)
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_a1f0d05eb743ef41c2d697023592843f5}\label{class_unity_test_1_1_result_summarizer_a1f0d05eb743ef41c2d697023592843f5}} 
+void {\bfseries Summarize} (\hyperlink{interface_i_test_result}{I\+Test\+Result} result)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_a4947409d1c021e72d16be1f2f416d52c}\label{class_unity_test_1_1_result_summarizer_a4947409d1c021e72d16be1f2f416d52c}} 
+bool {\bfseries Success}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+int \hyperlink{class_unity_test_1_1_result_summarizer_a6b425bd332a8c61fa111bcc393eeffe3}{Result\+Count}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the number of test cases for which results have been summarized. Any tests excluded by use of Category or Explicit attributes are not counted. \end{DoxyCompactList}\item 
+int \hyperlink{class_unity_test_1_1_result_summarizer_a3bd8726e51300403ced1456d12ddad19}{Tests\+Run}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the number of test cases actually run, which is the same as Result\+Count, less any Skipped, Ignored or Non\+Runnable tests. \end{DoxyCompactList}\item 
+int \hyperlink{class_unity_test_1_1_result_summarizer_ab45133d40f94fc4ea8af38dbe9b8753f}{Passed}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the number of tests that passed \end{DoxyCompactList}\item 
+int \hyperlink{class_unity_test_1_1_result_summarizer_a50a3a7b171d773c3aaa2902add53e1a5}{Errors}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the number of test cases that had an error. \end{DoxyCompactList}\item 
+int \hyperlink{class_unity_test_1_1_result_summarizer_ae35cdf403fdbc166a21e45c69d43fd33}{Failures}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the number of test cases that failed. \end{DoxyCompactList}\item 
+int \hyperlink{class_unity_test_1_1_result_summarizer_a0feb00e5dd27d55296c2c0831c122f6f}{Inconclusive}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the number of test cases that failed. \end{DoxyCompactList}\item 
+int \hyperlink{class_unity_test_1_1_result_summarizer_aad69952763ca19c491beb984a3b66ffb}{Not\+Runnable}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the number of test cases that were not runnable due to errors in the signature of the class or method. Such tests are also counted as Errors. \end{DoxyCompactList}\item 
+int \hyperlink{class_unity_test_1_1_result_summarizer_a80b800e5fcdea3ed9fb2959a4183bc04}{Skipped}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the number of test cases that were skipped. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_a8b17df3dbd67628019c75c2062d72cf3}\label{class_unity_test_1_1_result_summarizer_a8b17df3dbd67628019c75c2062d72cf3}} 
+int {\bfseries Ignored}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_adc65280f39d9a6c1bb101d23b26dcf58}\label{class_unity_test_1_1_result_summarizer_adc65280f39d9a6c1bb101d23b26dcf58}} 
+double {\bfseries Duration}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_af662dad814cef005a002d00110dafba4}\label{class_unity_test_1_1_result_summarizer_af662dad814cef005a002d00110dafba4}} 
+int {\bfseries Tests\+Not\+Run}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_afba9c63d02b8273c4e4aa4097e0ad52f}\label{class_unity_test_1_1_result_summarizer_afba9c63d02b8273c4e4aa4097e0ad52f}} 
+int {\bfseries m\+\_\+\+Error\+Count}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_ab760b6db7610b289780ddad2c4901f1a}\label{class_unity_test_1_1_result_summarizer_ab760b6db7610b289780ddad2c4901f1a}} 
+int {\bfseries m\+\_\+\+Failure\+Count}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_aa6d189f2d3a751fe91d6961a47782044}\label{class_unity_test_1_1_result_summarizer_aa6d189f2d3a751fe91d6961a47782044}} 
+int {\bfseries m\+\_\+\+Ignore\+Count}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_a3580250c57344a5dc039381c0434f15d}\label{class_unity_test_1_1_result_summarizer_a3580250c57344a5dc039381c0434f15d}} 
+int {\bfseries m\+\_\+\+Inconclusive\+Count}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_a4b974c98c45cef2b721e415c2838acb6}\label{class_unity_test_1_1_result_summarizer_a4b974c98c45cef2b721e415c2838acb6}} 
+int {\bfseries m\+\_\+\+Not\+Runnable}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_afbfee6fa4e96301db061d9afa71b0a54}\label{class_unity_test_1_1_result_summarizer_afbfee6fa4e96301db061d9afa71b0a54}} 
+int {\bfseries m\+\_\+\+Result\+Count}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_aa2c6a9e304d64f0a4251e72548019878}\label{class_unity_test_1_1_result_summarizer_aa2c6a9e304d64f0a4251e72548019878}} 
+int {\bfseries m\+\_\+\+Skip\+Count}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_ad0b15ea16b86f86e9ca2bcee7b2fade3}\label{class_unity_test_1_1_result_summarizer_ad0b15ea16b86f86e9ca2bcee7b2fade3}} 
+int {\bfseries m\+\_\+\+Success\+Count}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_a4b698a3774eeb5e3c2526a68b6423d90}\label{class_unity_test_1_1_result_summarizer_a4b698a3774eeb5e3c2526a68b6423d90}} 
+int {\bfseries m\+\_\+\+Tests\+Run}
+\item 
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_ab5494d4f32ad9475697719e9debb1cb2}\label{class_unity_test_1_1_result_summarizer_ab5494d4f32ad9475697719e9debb1cb2}} 
+Time\+Span {\bfseries m\+\_\+\+Duration}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Summary description for \hyperlink{class_unity_test_1_1_result_summarizer}{Result\+Summarizer}. 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_a50a3a7b171d773c3aaa2902add53e1a5}\label{class_unity_test_1_1_result_summarizer_a50a3a7b171d773c3aaa2902add53e1a5}} 
+\index{Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}!Errors@{Errors}}
+\index{Errors@{Errors}!Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}}
+\subsubsection{\texorpdfstring{Errors}{Errors}}
+{\footnotesize\ttfamily int Unity\+Test.\+Result\+Summarizer.\+Errors\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the number of test cases that had an error. 
+
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_ae35cdf403fdbc166a21e45c69d43fd33}\label{class_unity_test_1_1_result_summarizer_ae35cdf403fdbc166a21e45c69d43fd33}} 
+\index{Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}!Failures@{Failures}}
+\index{Failures@{Failures}!Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}}
+\subsubsection{\texorpdfstring{Failures}{Failures}}
+{\footnotesize\ttfamily int Unity\+Test.\+Result\+Summarizer.\+Failures\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the number of test cases that failed. 
+
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_a0feb00e5dd27d55296c2c0831c122f6f}\label{class_unity_test_1_1_result_summarizer_a0feb00e5dd27d55296c2c0831c122f6f}} 
+\index{Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}!Inconclusive@{Inconclusive}}
+\index{Inconclusive@{Inconclusive}!Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}}
+\subsubsection{\texorpdfstring{Inconclusive}{Inconclusive}}
+{\footnotesize\ttfamily int Unity\+Test.\+Result\+Summarizer.\+Inconclusive\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the number of test cases that failed. 
+
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_aad69952763ca19c491beb984a3b66ffb}\label{class_unity_test_1_1_result_summarizer_aad69952763ca19c491beb984a3b66ffb}} 
+\index{Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}!Not\+Runnable@{Not\+Runnable}}
+\index{Not\+Runnable@{Not\+Runnable}!Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}}
+\subsubsection{\texorpdfstring{Not\+Runnable}{NotRunnable}}
+{\footnotesize\ttfamily int Unity\+Test.\+Result\+Summarizer.\+Not\+Runnable\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the number of test cases that were not runnable due to errors in the signature of the class or method. Such tests are also counted as Errors. 
+
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_ab45133d40f94fc4ea8af38dbe9b8753f}\label{class_unity_test_1_1_result_summarizer_ab45133d40f94fc4ea8af38dbe9b8753f}} 
+\index{Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}!Passed@{Passed}}
+\index{Passed@{Passed}!Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}}
+\subsubsection{\texorpdfstring{Passed}{Passed}}
+{\footnotesize\ttfamily int Unity\+Test.\+Result\+Summarizer.\+Passed\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the number of tests that passed 
+
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_a6b425bd332a8c61fa111bcc393eeffe3}\label{class_unity_test_1_1_result_summarizer_a6b425bd332a8c61fa111bcc393eeffe3}} 
+\index{Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}!Result\+Count@{Result\+Count}}
+\index{Result\+Count@{Result\+Count}!Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}}
+\subsubsection{\texorpdfstring{Result\+Count}{ResultCount}}
+{\footnotesize\ttfamily int Unity\+Test.\+Result\+Summarizer.\+Result\+Count\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the number of test cases for which results have been summarized. Any tests excluded by use of Category or Explicit attributes are not counted. 
+
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_a80b800e5fcdea3ed9fb2959a4183bc04}\label{class_unity_test_1_1_result_summarizer_a80b800e5fcdea3ed9fb2959a4183bc04}} 
+\index{Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}!Skipped@{Skipped}}
+\index{Skipped@{Skipped}!Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}}
+\subsubsection{\texorpdfstring{Skipped}{Skipped}}
+{\footnotesize\ttfamily int Unity\+Test.\+Result\+Summarizer.\+Skipped\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the number of test cases that were skipped. 
+
+\mbox{\Hypertarget{class_unity_test_1_1_result_summarizer_a3bd8726e51300403ced1456d12ddad19}\label{class_unity_test_1_1_result_summarizer_a3bd8726e51300403ced1456d12ddad19}} 
+\index{Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}!Tests\+Run@{Tests\+Run}}
+\index{Tests\+Run@{Tests\+Run}!Unity\+Test\+::\+Result\+Summarizer@{Unity\+Test\+::\+Result\+Summarizer}}
+\subsubsection{\texorpdfstring{Tests\+Run}{TestsRun}}
+{\footnotesize\ttfamily int Unity\+Test.\+Result\+Summarizer.\+Tests\+Run\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the number of test cases actually run, which is the same as Result\+Count, less any Skipped, Ignored or Non\+Runnable tests. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/\+Unity\+Test\+Tools/\+Common/\+Editor/\+Result\+Writer/Result\+Summarizer.\+cs\end{DoxyCompactItemize}

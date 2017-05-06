@@ -5,8 +5,7 @@ using UnityEngine.VR;
 
 public class LoadSceneOnScript : MonoBehaviour {
 
-    /** @file
-     * @brief Loads the scene with the given index; enables VR and disables the cursor if the scene
+    /** Loads the scene with the given index; enables VR and disables the cursor if the scene
      * in question is the Tunnel simulation. */
 
     public void LoadByIndex(int sceneIndex)
@@ -20,8 +19,7 @@ public class LoadSceneOnScript : MonoBehaviour {
         SceneManager.LoadScene(sceneIndex);
     }
 
-    /** @file
-     * @brief Exits the application. */
+    /** Exits the application. */
 
     public void EndSimulation()
     {

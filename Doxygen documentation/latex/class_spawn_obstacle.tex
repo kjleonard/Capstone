@@ -1,0 +1,112 @@
+\hypertarget{class_spawn_obstacle}{}\section{Spawn\+Obstacle Class Reference}
+\label{class_spawn_obstacle}\index{Spawn\+Obstacle@{Spawn\+Obstacle}}
+Inheritance diagram for Spawn\+Obstacle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_spawn_obstacle}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_a188c266348b667f86dda7972d8be0530}\label{class_spawn_obstacle_a188c266348b667f86dda7972d8be0530}} 
+Game\+Object {\bfseries player\+Pos}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_aaface08251917fffdeef322ffc2d0ad3}\label{class_spawn_obstacle_aaface08251917fffdeef322ffc2d0ad3}} 
+Game\+Object {\bfseries obstacle}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_aa79793ef4057e90a9b9ce9ea7e8c28ee}\label{class_spawn_obstacle_aa79793ef4057e90a9b9ce9ea7e8c28ee}} 
+Unity\+Engine.\+Audio\+Source {\bfseries chime}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_a8454fe701058226c6bec47223333e5d3}\label{class_spawn_obstacle_a8454fe701058226c6bec47223333e5d3}} 
+Unity\+Engine.\+U\+I.\+Text {\bfseries Feedback\+\_\+\+Text}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_a398c6a655c82015acdbe6bd070ad8a55}\label{class_spawn_obstacle_a398c6a655c82015acdbe6bd070ad8a55}} 
+System.\+Timers.\+Timer {\bfseries feedback\+Timer}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_a17a688a0a99907b1295be2700035dcff}\label{class_spawn_obstacle_a17a688a0a99907b1295be2700035dcff}} 
+System.\+Timers.\+Timer {\bfseries obstacle\+Spawn\+Timer}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_a065f47a785a616e28055e80500d4e95f}\label{class_spawn_obstacle_a065f47a785a616e28055e80500d4e95f}} 
+bool {\bfseries obstacle\+Hit}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_spawn_obstacle_ac1cc195163c333ad19d7b234fa6fb717}{Start} ()
+\item 
+void \hyperlink{class_spawn_obstacle_a4bb922374a8cace9764162b060d73ad7}{On\+Timed\+Event\+\_\+\+Elapsed} (System.\+Object source, System.\+Timers.\+Elapsed\+Event\+Args e)
+\item 
+void \hyperlink{class_spawn_obstacle_ab2292dd85546b40f5c9e7c2cbf8e5198}{On\+Obstacle\+Event\+\_\+\+Elapsed} (System.\+Object source, System.\+Timers.\+Elapsed\+Event\+Args e)
+\item 
+void \hyperlink{class_spawn_obstacle_abf68463f09c58b50d42ede1be0a5d7ec}{Update} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_a099de80125a16c570bcf51ed802187ee}\label{class_spawn_obstacle_a099de80125a16c570bcf51ed802187ee}} 
+Transform {\bfseries spawn\+Location}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_ac1138935dca16e4d69e494971021caa6}\label{class_spawn_obstacle_ac1138935dca16e4d69e494971021caa6}} 
+float {\bfseries Next\+Pos\+To\+Generate} = 50f
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_a79990f95054a37c580ac35e6b0155644}\label{class_spawn_obstacle_a79990f95054a37c580ac35e6b0155644}} 
+Game\+Object {\bfseries generated\+Cube}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_ab9168bcf16ada31f86469036861ac25f}\label{class_spawn_obstacle_ab9168bcf16ada31f86469036861ac25f}} 
+float {\bfseries x}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_a30ffdb0a2d1cd2c66e2e07cfae790223}\label{class_spawn_obstacle_a30ffdb0a2d1cd2c66e2e07cfae790223}} 
+float {\bfseries y}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_a25054077fb908a632836163b2e0ea82c}\label{class_spawn_obstacle_a25054077fb908a632836163b2e0ea82c}} 
+float {\bfseries z}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_a0ae32e6fb5e6851e19f967b57fd344bc}\label{class_spawn_obstacle_a0ae32e6fb5e6851e19f967b57fd344bc}} 
+bool {\bfseries feedback\+Timer\+Fired}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_ad5578345ba89f373fa09372355dffe05}\label{class_spawn_obstacle_ad5578345ba89f373fa09372355dffe05}} 
+bool {\bfseries first\+Run}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_a9a66a1a4931d9cec08ce8a41bd572061}\label{class_spawn_obstacle_a9a66a1a4931d9cec08ce8a41bd572061}} 
+bool {\bfseries obstacle\+Timer\+Fired}
+\item 
+\mbox{\Hypertarget{class_spawn_obstacle_a4f76843c486ddc1baa730fdf80e14480}\label{class_spawn_obstacle_a4f76843c486ddc1baa730fdf80e14480}} 
+int {\bfseries obstacle\+Frequency}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_spawn_obstacle_ab2292dd85546b40f5c9e7c2cbf8e5198}\label{class_spawn_obstacle_ab2292dd85546b40f5c9e7c2cbf8e5198}} 
+\index{Spawn\+Obstacle@{Spawn\+Obstacle}!On\+Obstacle\+Event\+\_\+\+Elapsed@{On\+Obstacle\+Event\+\_\+\+Elapsed}}
+\index{On\+Obstacle\+Event\+\_\+\+Elapsed@{On\+Obstacle\+Event\+\_\+\+Elapsed}!Spawn\+Obstacle@{Spawn\+Obstacle}}
+\subsubsection{\texorpdfstring{On\+Obstacle\+Event\+\_\+\+Elapsed()}{OnObstacleEvent\_Elapsed()}}
+{\footnotesize\ttfamily void Spawn\+Obstacle.\+On\+Obstacle\+Event\+\_\+\+Elapsed (\begin{DoxyParamCaption}\item[{System.\+Object}]{source,  }\item[{System.\+Timers.\+Elapsed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Activated when the Obstacle timer fires; the flag obstacle\+Timer\+Fired causes the next frame of the program to destroy the existing obstacle and spawn a new obstacle. \mbox{\Hypertarget{class_spawn_obstacle_a4bb922374a8cace9764162b060d73ad7}\label{class_spawn_obstacle_a4bb922374a8cace9764162b060d73ad7}} 
+\index{Spawn\+Obstacle@{Spawn\+Obstacle}!On\+Timed\+Event\+\_\+\+Elapsed@{On\+Timed\+Event\+\_\+\+Elapsed}}
+\index{On\+Timed\+Event\+\_\+\+Elapsed@{On\+Timed\+Event\+\_\+\+Elapsed}!Spawn\+Obstacle@{Spawn\+Obstacle}}
+\subsubsection{\texorpdfstring{On\+Timed\+Event\+\_\+\+Elapsed()}{OnTimedEvent\_Elapsed()}}
+{\footnotesize\ttfamily void Spawn\+Obstacle.\+On\+Timed\+Event\+\_\+\+Elapsed (\begin{DoxyParamCaption}\item[{System.\+Object}]{source,  }\item[{System.\+Timers.\+Elapsed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Activated when the Feedback timer fires; the flag feedback\+Timer\+Fired causes the next frame of the program to disable the feedback text. \mbox{\Hypertarget{class_spawn_obstacle_ac1cc195163c333ad19d7b234fa6fb717}\label{class_spawn_obstacle_ac1cc195163c333ad19d7b234fa6fb717}} 
+\index{Spawn\+Obstacle@{Spawn\+Obstacle}!Start@{Start}}
+\index{Start@{Start}!Spawn\+Obstacle@{Spawn\+Obstacle}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Spawn\+Obstacle.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Initializes variables and starts obstacle drop timer; called when the Tunnel scene is loaded.
+
+This function is called once when the Tunnel scene is loaded. Positional information, obstacle frequency and timing, and feedback and obstacle drop timers are initialized. \mbox{\Hypertarget{class_spawn_obstacle_abf68463f09c58b50d42ede1be0a5d7ec}\label{class_spawn_obstacle_abf68463f09c58b50d42ede1be0a5d7ec}} 
+\index{Spawn\+Obstacle@{Spawn\+Obstacle}!Update@{Update}}
+\index{Update@{Update}!Spawn\+Obstacle@{Spawn\+Obstacle}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Spawn\+Obstacle.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Determines whether the player has passed the existing obstacle, generates feedback dependent upon whether the player hit the obstacle or not, destroys the existing obstacle, and spawns a new obstacle.
+
+This function is called once per frame and performs a number of functions. If feedback is present and the feedback timer has expired, the feedback is hidden. If it is time to spawn a new obstacle, a check is made to determine whether the existing obstacle has been hit or not. If the obstacle has not been hit, visual and audio feedback is displayed to the user. If the obstacle has been hit, the obstacles hit counter is incremented. In either case, the existing obstacle is destroyed, a new obstacle is instantiated, and the obstacle timer resets. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ristaccia/\+Desktop/\+Rehabilitation/\+Capstone/\+Assets/Spawn\+Obstacle.\+cs\end{DoxyCompactItemize}
