@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CollisionDetectionScript : MonoBehaviour {
 
-    /** Used for testing collisions with obstacles and other game objects; prints the name
+    /** @file
+     * @brief Used for testing collisions with obstacles and other game objects; prints the name
      * of hit obstacles to Debug.Log. */
 
-	void OnTriggerEnter(Collider col){
+    void OnTriggerEnter(Collider col){
 		if (col.gameObject.name == "Obstacle" || col.gameObject.name == "Obstacle(Clone)") {
 			Debug.Log("We hit obstacle");
 			GameObject theSpawner = GameObject.Find ("spawner");

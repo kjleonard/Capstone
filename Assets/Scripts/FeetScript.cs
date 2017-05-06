@@ -43,7 +43,8 @@ public class FeetScript : MonoBehaviour {
 	private float prev_right_y;
 	private float prev_right_z;
 
-    /** Initializes variables used for the starting position of the feet objects. */
+    /** @file
+     * @brief Initializes variables used for the starting position of the feet objects. */
 
     // Use this for initialization
     void Start () {
@@ -57,12 +58,13 @@ public class FeetScript : MonoBehaviour {
         max_backward = 2.3f;
     }
 
-    /** Updates the position of both feet objects each frame with positional data from the
+    /** @file
+     * @brief Updates the position of both feet objects each frame with positional data from the
      * Trigno sensors which is collected in MovementController.cs; utilizes boundaries to
      * ensure that neither foot object moves off screen. */
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
         //This keeps the child thread from modifying the values used for translation after they are checked to be within the boundaries.
 
         left_x = playerMovement.leftX;
