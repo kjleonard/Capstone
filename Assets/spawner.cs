@@ -23,11 +23,16 @@ public class spawner : MonoBehaviour {
     private Vector3 needPos; // Represents the point the player must cross in order to destroy the previous chunk and instantiating the next chunk
     private int count;
 
+    /** Determines the initial spawn location of the player upon Tunnel scene load. */
+
     void Start()
     {
         needPos = spawnLocation.position; 
         count = 2;
     }
+
+    /** Checks each frame to determine whether to generate a new Tunnel chunk; if so,
+     * destroys the chunk behind the player and calls spawnObject(). */
 
     void Update()
     {
@@ -73,9 +78,11 @@ public class spawner : MonoBehaviour {
                 destroy = true;
 
             spawnObject();
-        }
-        
+        }   
     }
+
+    /** Spawns a new Tunnel chunk ahead of existing Tunnel chunks, allowing the appearance of an
+     * infinitely-long hallway. */
 
     void spawnObject()
     {

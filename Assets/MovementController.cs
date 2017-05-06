@@ -37,6 +37,9 @@ public class MovementController : MonoBehaviour
     public static System.Timers.Timer t;
     public static LoadSceneOnScript endSimulation;
 
+    /** Initializes variables (with some utilizing PlayerPrefs), starts a duration timer, and creates
+     * a child thread to either read in sensor data directly from Trigno sensors via the Trigno Control 
+     * Panel or from a file of test data. */
 
     void Start()
     {
@@ -70,6 +73,8 @@ public class MovementController : MonoBehaviour
         }
     }
 
+    /** When the duration timer fires, stops collecting sensor data and loads the End Screen. */
+
     // Once the selected duration has been reached, move to the end screen
     private void OnTimedEvent_Elapsed(System.Object source, System.Timers.ElapsedEventArgs e)
     {
@@ -79,6 +84,10 @@ public class MovementController : MonoBehaviour
         //endSimulation = new LoadSceneOnScript();
         //endSimulation.LoadByIndex(2);
     }
+
+    /** Provides functionality to manually modify player speed and end the simulation early,
+     * calls updateMPMText and potentially updateEMGText if enabled, and moves the player
+     * forward each frame utilizing the velocity/speed of the player. */
 
     // Update is called once per frame
     void Update()
@@ -120,16 +129,25 @@ public class MovementController : MonoBehaviour
         PlayerPrefs.SetFloat("countRightEMG", (countRightEMG / countEMG));
     }
 
+    /** Updates the displayed movement speed text */
+
     void updateMPMText()
     {
         mpm_text.text = String.Format("{0:0,0} mpm", speed/5);
     }
+
+    /** Updates the displayed left and right EMG text */
 
     void updateEMGText()
     {
         left_emg_text.text = String.Format("Left EMG: {0} mV", leftEMG);
         right_emg_text.text = String.Format("Right EMG: {0} mV", rightEMG);
     }
+
+    /** Initializes a TCP client to communicate with the Trigno Control Application;
+     * Reads in data continually, sets variables with positional information so feet objects
+     * can be updated in FeetScript.cs, and tracks EMG readings so that average EMG readings can
+     * be determined and saved as PlayerPrefs when we move to the End Screen. */
 
     void TCP_Client()
     {
@@ -203,7 +221,12 @@ public class MovementController : MonoBehaviour
         Debug.Log("Reached STOP");
         commandWrite.WriteLine("STOP\r\n");
     }
-    
+
+    /** Initializes a file streamer to read from a file of test sensor data;
+     * Reads in data continually, sets variables with positional information so feet objects
+     * can be updated in FeetScript.cs, and tracks EMG readings so that average EMG readings can
+     * be determined and saved as PlayerPrefs when we move to the End Screen. */
+
     void File_Streamer()
     {
         //Put code to read from EMG and Accelerometer data files here.
@@ -244,6 +267,8 @@ public class MovementController : MonoBehaviour
         }
         Debug.Log("Reached end of File\n\n");
     }
+
+    /** Used to assist with reading test sensor data from a file as a continuous stream of bytes. */
 
     public static void AppendAllBytes(string path, byte[] bytes)
     {

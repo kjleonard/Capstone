@@ -8,11 +8,16 @@ public class Dropdowns : MonoBehaviour {
     // PlayerPrefs can be found in the following path:
     // RegEdit -> HKEY_CURRENT_USER -> SOFTWARE -> Unity -> UnityEditor -> android -> game
 
+
+    /**Clears the value of the specified PlayerPref based upon the name of the PlayerPref in question. */
+
    public void clearValue(string x)
     {
         PlayerPrefs.SetInt(x, 0);
     }
 
+    /** Sets a PlayerPref int value based upon the selected index of a specified Dropdown menu; 
+     *  contains specialized handling for specific Dropdown menus. */
     public void setValue(Dropdown x)
     {
 		if (x.name == "selDuration") {
@@ -51,6 +56,8 @@ public class Dropdowns : MonoBehaviour {
 		}
     }
 
+    /** Sets a PlayerPref float value based upon the value of a specified Dropdown menu. */
+
 	public void setFloat(Dropdown x)
 	{
 		int menuIndex = x.GetComponent<Dropdown> ().value;
@@ -61,10 +68,14 @@ public class Dropdowns : MonoBehaviour {
 		PlayerPrefs.SetFloat(x.name, f);
 	}
 
+    /** Gets the value of an int PlayerPref value and assigns the index of a specified dropdown to that value. */
+
     public void getValue(Dropdown x)
     {
         x.value = PlayerPrefs.GetInt(x.name);
     }
+
+    /** Gets the value of an int PlayerPref value and returns that value. */
 
     public float getFloat(Dropdown x)
     {
